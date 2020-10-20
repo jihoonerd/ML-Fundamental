@@ -1,6 +1,6 @@
 * [Home](/README.md)
-
-
 * [Linear Algebra](/LA/README.md "Linear Algebra")
   * [Vector Space](/LA/VectorSpace.md "Vector Space")
+  * [Linear Independence](/LA/LinearIndependence "Linear Independence")
+  * [Linear Mapping](/LA/LinearMapping.md "Linear Mapping")
 * [Probability and Statistics](/PS/README.md)

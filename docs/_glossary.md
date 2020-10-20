@@ -1,11 +1,35 @@
+##### 가우스 소거법
+Gaussian elimination
+
 ##### 군
 Group
+
+##### 기저
+Basis
+
+##### 내적
+Inner product
+
+##### 랭크
+Rank
 
 ##### 머신러닝
 Machine Learning
 
 ##### 벡터공간
 Vector space
+
+##### 벡터부분공간
+Vector subspace
+
+##### 선형결합
+Linear combination
+
+##### 선형독립
+Linear independence
+
+##### 선형종속
+Linear dependence
 
 ##### 추상대수학
 Abstract algebra
