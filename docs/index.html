@@ -17,11 +17,20 @@
       coverpage: true,
       loadNavbar: true,
       loadSidebar: true,
+      alias: {'/.*/_sidebar.md': '/_sidebar.md',},
+      subMaxLevel: 0,
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h1, h2, h3, h4, h5, h6',
+        title: 'Table of Contents',
+      },
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 
   <!-- Plugins -->
+  <!-- docsify-sidebar-collapse -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   
   <!-- Docsify Table of Contents -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
