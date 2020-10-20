@@ -1,6 +1,6 @@
 * [Home](/README.md)
 
-* [Math](/Math/README.md)
-  * [Linear Algebra](/Math/LA/README.md)
-    * [Vector Space](/Math/LA/VectorSpace.md)
-  * [Probability and Statistics](/Math/PS/README.md)
+
+* [Linear Algebra](/LA/README.md "Linear Algebra")
+  * [Vector Space](/LA/VectorSpace.md "Vector Space")
+* [Probability and Statistics](/PS/README.md)
