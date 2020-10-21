@@ -2,7 +2,7 @@
 
 앞의 [선형독립문서](/LA/LinearIndependence.md)에서 기저(basis)의 정의를 간단하게 다루었다. 여기서는 geterating set과 span을 사용해 기저와 기저의 성질을 다룬다. 그리고 차원의 개념을 기저로써 정의해본다.
 
-## Generating Set and Span
+## Span
 
 Generating set은 문자 그대로 풀어내면 "만들어내는 집합"이라는 뜻이다. 어떤 벡터집합을 가지고 있다면 이 벡터들의 선형결합을 통해 벡터공간을 만들 수 있을 것이다. 이런 벡터공간을 만드는데 재료역할을 하는 벡터집합을 generating set이라고하며 만들어진 벡터공간은 span이라고 한다. 엄밀한 정의는 아래와 같다.
 
