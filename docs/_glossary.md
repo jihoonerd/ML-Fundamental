@@ -31,6 +31,9 @@ Linear independence
 ##### 선형종속
 Linear dependence
 
+##### 차원
+Dimension
+
 ##### 추상대수학
 Abstract algebra
 
