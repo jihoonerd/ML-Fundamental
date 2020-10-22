@@ -8,4 +8,4 @@
 - and more...
 
 [GitHub](https://github.com/jihoonerd/ML-Fundamental)
-[Get Started](#machine-learning-fundamental)
+[Get Started](/README.md)
