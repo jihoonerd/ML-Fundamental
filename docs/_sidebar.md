@@ -3,6 +3,7 @@
   * [Vector Space](/LA/VectorSpace.md "Vector Space")
   * [Linear Independence](/LA/LinearIndependence "Linear Independence")
   * [Basis](/LA/Basis.md "Basis")
+  * [Rank](/LA/Rank.md "Rank")
   * [Linear Mapping](/LA/LinearMapping.md "Linear Mapping")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
