@@ -25,11 +25,17 @@ Vector subspace
 ##### 선형결합
 Linear combination
 
+##### 선형종속
+Linear dependence
+
 ##### 선형독립
 Linear independence
 
-##### 선형종속
-Linear dependence
+##### 선형변환
+Linear mapping, Linear Transform
+
+##### 좌표
+Coordinate
 
 ##### 차원
 Dimension

@@ -27,18 +27,18 @@ Affine subspace는 $V$의 벡터부분공간이 아니라는 점에 유의하자
 
 ## Affine Mappings
 
-벡터공간에서의 linear mapping처럼 affine subspace에서의 affine mapping에 대해 생각해 볼 수 있다. 두 mapping은 많은 성질을 공유한다. Affine mapping은 다음과 같이 정의된다.
+벡터공간에서의 선형변환처럼 affine subspace에서의 affine mapping에 대해 생각해 볼 수 있다. 두 mapping은 많은 성질을 공유한다. Affine mapping은 다음과 같이 정의된다.
 
 > [!NOTE]
 > **Definition: Affine Mapping**
 >
-> 두 벡터공간 $V$, $W$이 있을 때, linear mapping: $\Phi: V \rightarrow W$과 $W$의 원소 $\boldsymbol{a} \in W$에 대해 다음의 mapping을 $V$에서 $W$로의 **affine mapping**이라고 한다.
+> 두 벡터공간 $V$, $W$이 있을 때, 선형변환: $\Phi: V \rightarrow W$과 $W$의 원소 $\boldsymbol{a} \in W$에 대해 다음의 mapping을 $V$에서 $W$로의 **affine mapping**이라고 한다.
 > $$\begin{aligned} \phi: V & \rightarrow W \\ & \boldsymbol{x} \mapsto \boldsymbol{a} + \Phi(\boldsymbol{x}) \end{aligned}$$
 > 그리고 벡터 $\boldsymbol{a}$를 $\phi$의 **translation vector**라고 한다.
 
 Affine mapping은 다음의 성질을 갖는다.
 
-* 모든 affine mapping $\phi: V \rightarrow W$은 linear mapping으로 구성할 수 있다. 예를 들어 $\Phi: V \rightarrow W$인 linear mapping과 $W$ 내에서의 mapping $\tau: W \rightarrow W$가 있을 때, $\phi = \tau \circ \Phi$로 표현할 수 있으며 $\Phi$와 $\tau$는 유일하게 결정된다.
+* 모든 affine mapping $\phi: V \rightarrow W$은 선형변환으로 구성할 수 있다. 예를 들어 $\Phi: V \rightarrow W$인 선형변환과 $W$ 내에서의 mapping $\tau: W \rightarrow W$가 있을 때, $\phi = \tau \circ \Phi$로 표현할 수 있으며 $\Phi$와 $\tau$는 유일하게 결정된다.
 * Affine mapping끼리의 합성은 affine mapping이다.
 * Affine mapping은 기하학적 구조를 보존한다.(차원, 평행 등)
 
