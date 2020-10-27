@@ -11,6 +11,8 @@ $$
 \end{aligned}
 $$
 
+## Linear Mapping
+
 선형변환은 다음과 같이 정의한다.
 
 > [!NOTE]

@@ -16,7 +16,7 @@ Generating set은 문자 그대로 풀어내면 "만들어내는 집합"이라�
 >
 > $\mathcal{A}$의 벡터 $\boldsymbol{x}_{1}, \ldots, \boldsymbol{x}_{k}$로 만들어지는 선형결합의 집합을 **span** of $\mathcal{A}$라고 한다. $\mathcal{A}$가 벡터공간 $V$로 span한다면 $V = \text{span}[\mathcal{A}]$ 또는 $V = \text{span}[\boldsymbol{x}_{1}, \ldots, \boldsymbol{x}_{k}]$으로 표기한다.
 
-## Definition of Basis
+## Basis
 
 이제 generating set과 span을 사용해 기저를 정의해보자. Generating set은 꼭 서로 선형독립으로 중복되는 정보가 없을 필요는 없다. 예로 2차원 평면의 generating set이 꼭 $\left\{ \begin{bmatrix}1 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1\end{bmatrix} \right\}$일 필요는 없다. $\left\{ \begin{bmatrix}1 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1\end{bmatrix}, \begin{bmatrix}1 \\ 1 \end{bmatrix} \right\}$일 수도 있는 것이다. 따라서 generating set의 정의에 조건을 추가해 기저를 정의할 수 있다. 기저는 다음과 같이 정의된다.
 

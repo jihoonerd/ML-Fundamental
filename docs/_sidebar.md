@@ -6,5 +6,6 @@
   * [Rank](/LA/Rank.md "Rank")
   * [Linear Mapping](/LA/LinearMapping.md "Linear Mapping")
   * [Affine Spaces](/LA/AffineSpaces.md "Affine Spaces")
+  * [Norm](/LA/Norm.md "Norm")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
