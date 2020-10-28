@@ -29,9 +29,10 @@ $$
 
 ### Injective
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Injection.svg/150px-Injection.svg.png"/>
-</div>
+<figcaption>Wikipedia: Bijection, injection and surjection</figcaption>
+</figure>
 
 임의의 집합 $\mathcal{V}$, $\mathcal{W}$에 대해서, 변환 $\Phi: \mathcal{V} \rightarrow \mathcal{W}$이 다음을 만족하면 **injective**라고 한다.
 
@@ -39,9 +40,10 @@ $$\forall \boldsymbol{x}, \boldsymbol{y} \in \mathcal{V} : \Phi(\boldsymbol{x}) 
 
 ### Surjective
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Surjection.svg/150px-Surjection.svg.png"/>
-</div>
+<figcaption>Wikipedia: Bijection, injection and surjection</figcaption>
+</figure>
 
 임의의 집합 $\mathcal{V}$, $\mathcal{W}$에 대해서, 변환 $\Phi: \mathcal{V} \rightarrow \mathcal{W}$이 다음을 만족하면 **surjective**라고 한다.
 
@@ -49,9 +51,10 @@ $$\Phi(\mathcal{V}) = \mathcal{W}$$
 
 ### Bijective
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bijection.svg/150px-Bijection.svg.png"/>
-</div>
+<figcaption>Wikipedia: Bijection, injection and surjection</figcaption>
+</figure>
 
 임의의 집합 $\mathcal{V}$, $\mathcal{W}$에 대해서, 변환 $\Phi: \mathcal{V} \rightarrow \mathcal{W}$이 injective, surjective를 모두 만족하면 **bijective**라고 한다.
 

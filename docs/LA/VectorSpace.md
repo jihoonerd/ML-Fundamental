@@ -10,9 +10,10 @@
 
 아래 그림은 대수 구조를 나타낸다.
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Algebraic_structures.png"/>
-</div>
+<figcaption>Wikipedia: Algebraic structures</figcaption>
+</figure>
 
 도표는 마치 프로그램의 상속구조처럼 읽으면 된다. 예를 들어 가장 상단을 볼 때 Magma는 Set의 성질을 상속받고 이항연산(bin. op.)에 대해 닫혀있는 성질을 추가로 갖는 것이다. 정말 무시무시하게 생긴 도표지만 관심있는 것은 어차피 군이므로 오른쪽 상단에 위치한 군(Group)을 보자.
 

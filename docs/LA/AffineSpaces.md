@@ -2,9 +2,10 @@
 
 Affine 공간에 대해 엄밀하게 정의하기에 앞서 대략적인 느낌을 먼저 잡아보자.
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Affine_space_R3.png/1280px-Affine_space_R3.png" height=50% width=50% />
-</div>
+<figcaption>Wikipedia: Affine Space</figcaption>
+</figure>
 
 위 그림은 위키피디아에서 affine 공간을 설명하는 그림이다. 위의 3차원 공간에서 원점을 포함하는 평면 $P_1$이 있다. 그리고 이 $P_1$은 벡터부분공간이다. 하지만 $z$방향으로 평행이동된 평면 $P_2$는 원점을 포함하지 않을 뿐더러 $P_2$ 공간 내의 벡터 $\boldsymbol{a}, \boldsymbol{b}$의 합에 대해 닫혀있지도 않다. 따라서 $P_2$는 벡터부분공간이 아니고 이 공간을 affine 공간이라고 한다.
 

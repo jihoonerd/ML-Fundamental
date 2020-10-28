@@ -50,9 +50,10 @@ Generating set은 문자 그대로 풀어내면 "만들어내는 집합"이라�
 
 이번 문서에서는 기저를 중심으로 다루었다. 선형대수학은 벡터공간에서의 변환을 다루게 되는데 벡터공간에서의 기준역할을 해주는 것이 바로 기저이다. 2차원이나 3차원에서 익숙하게 사용하는 좌표계도 암묵적으로 합의한 기저가 있기 때문에 공간내 벡터를 표현하는 수 많은 방식이 있음에도 혼동없이 사용할 수가 있는 것이다. 
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/AI_aircraft_orientation.png" width=50% height=50%/>
-</div>
+<figcaption>Wikipedia: Attitude indicator</figcaption>
+</figure>
 
 전투기를 조종하는 파일럿은 야간음속비행에서 바다와 하늘을 구분하기 어려운 경우가 있다고 한다. "나"를 기준으로 위쪽 방향이 늘 하늘은 아닌 것이기 때문에 기준이 되는 벡터가 필요하고, 조종사에게 계기판(HUD)의 자세지시계(Attitude indicataor)는 일반적으로 땅에 있을 때 기준의 하늘방향벡터를 제시해 줌으로써 의도한 방향으로 갈 수 있는 것과 비슷한 이치라고 보면 되겠다.
 

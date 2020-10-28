@@ -8,9 +8,10 @@
 
 예를 들어, 2차원의 대표적인 기저가 $\left\{ \begin{bmatrix}1 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1\end{bmatrix} \right\}$, 3차원의 대표적인 기저가 $\left\{ \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}$이다. 
 
-<div align=center>
+<figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/3d_two_bases_same_vector.svg/130px-3d_two_bases_same_vector.svg.png"/>
-</div>
+<figcaption>Wikipedia: Basis</figcaption>
+</figure>
 
 3차원 벡터공간의 임의의 벡터는 위의 기저벡터들의 스칼라곱과 합으로써 표현이 가능하다.
 

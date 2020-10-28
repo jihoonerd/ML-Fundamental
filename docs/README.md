@@ -1,8 +1,8 @@
 # Machine Learning Fundamental
 
-<div align=center>
+<figure align=center>
 <img src="assets/cover.jpg"/>
-</div>
+</figure>
 
 ## Introduction
 
