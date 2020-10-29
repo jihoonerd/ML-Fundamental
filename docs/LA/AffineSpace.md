@@ -1,4 +1,4 @@
-# Affine Spaces
+# Affine Space
 
 Affine 공간에 대해 엄밀하게 정의하기에 앞서 대략적인 느낌을 먼저 잡아보자.
 
@@ -11,7 +11,7 @@ Affine 공간에 대해 엄밀하게 정의하기에 앞서 대략적인 느낌�
 
 벡터공간에서 원점의 개념이 사라지므로 당황스럽지만 사실 우리가 살 수 있는 공간은 affine 공간의 하나라고 볼 수 있다. 이 세상의 원점은 존재하지 않기때문에 나의 위치와 친구의 위치를 더한 벡터는 정의될 수가 없다. 원점이 없으므로 두 벡터의 합이 정의될 수 없는 것이다. 하지만 벡터의 차이는 유효하다. 세상의 원점을 어디로 설정하더라도 **상대적**인 위치차이는 정의할 수 있으며 특정 점에 대한 벡터를 더하는 것은 가능하다. 이러한 느낌을 가지고 affine 공간에 대해 다루어보자.
 
-## Affine Subspaces
+## Affine Subspace
 
 > [!NOTE]
 > **Definition: Affine Subspaces**
@@ -26,7 +26,7 @@ Affine subspace는 $V$의 벡터부분공간이 아니라는 점에 유의하자
 
 선형대수학에서 기본이 되는 선형시스템의 해를 구하는 방법을 생각해보자. $\boldsymbol{Ax} = {b}$의 선형방정식을 풀 때, 일반해는 particular solution과 special solution의 합으로 나누어 풀게 되는데, 이 때 inhomogeneous system의 particular solution이 구성하는 공간이 바로 affine subspace가 되는 것이며 special solution이 구성하는 공간(homogeneous system)은 벡터부분공간이 된다.
 
-## Affine Mappings
+## Affine Mapping
 
 벡터공간에서의 선형변환처럼 affine subspace에서의 affine mapping에 대해 생각해 볼 수 있다. 두 mapping은 많은 성질을 공유한다. Affine mapping은 다음과 같이 정의된다.
 
