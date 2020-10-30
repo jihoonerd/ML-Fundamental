@@ -8,5 +8,6 @@
   * [Affine Space](/LA/AffineSpace.md "Affine Space")
   * [Norm](/LA/Norm.md "Norm")
   * [Inner Product](/LA/InnerProduct.md "Inner Product")
+  * [Length and Distance](/LA/LengthandDistance.md "Length and Distance")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
