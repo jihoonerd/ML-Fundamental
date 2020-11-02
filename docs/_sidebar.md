@@ -12,5 +12,6 @@
   * [Angle and Orthogonality](/LA/Angle-and-Orthogonality.md "Angle and Orthogonality")
   * [Orthonormal Basis](/LA/Orthonormal-Basis.md "Orthonormal Basis")
   * [Orthogonal Complement](/LA/Orthogonal-Complement.md "Orthogonal Complement")
+  * [Inner Product of Functions](/LA/Inner-Product-of-Functions.md "Inner Product of Functions")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)

@@ -40,6 +40,9 @@ Linear independence
 ##### 선형변환
 Linear mapping, Linear Transform
 
+##### 정적분
+Definite integral
+
 ##### 좌표
 Coordinate
 
