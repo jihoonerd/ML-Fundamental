@@ -11,5 +11,6 @@
   * [Length and Distance](/LA/Length-and-Distance.md "Length and Distance")
   * [Angle and Orthogonality](/LA/Angle-and-Orthogonality.md "Angle and Orthogonality")
   * [Orthonormal Basis](/LA/Orthonormal-Basis.md "Orthonormal Basis")
+  * [Orthogonal Complement](/LA/Orthogonal-Complement.md "Orthogonal Complement")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
