@@ -1,6 +1,6 @@
 # Basis
 
-앞의 [선형독립문서](/LA/LinearIndependence.md)에서 기저(basis)의 정의를 간단하게 다루었다. 여기서는 geterating set과 span을 사용해 기저와 기저의 성질을 다룬다. 그리고 차원의 개념을 기저로써 정의해본다.
+앞의 [선형독립문서](/LA/Linear-Independence.md)에서 기저(basis)의 정의를 간단하게 다루었다. 여기서는 geterating set과 span을 사용해 기저와 기저의 성질을 다룬다. 그리고 차원의 개념을 기저로써 정의해본다.
 
 ## Span
 
