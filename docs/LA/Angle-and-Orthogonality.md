@@ -26,7 +26,7 @@ $$
 > 두 벡터 $\boldsymbol{x}, \boldsymbol{y}$에 대해서 다음을 두 벡터가 이루는 **각도(angle)** 로 정의한다.
 > $$\cos{\omega} = \frac{\langle \boldsymbol{x}, \boldsymbol{y} \rangle}{\lVert \boldsymbol{x} \rVert \lVert \boldsymbol{y} \rVert}$$
 
-내적으로 정의되어 있음에 유의한다. Dot product를 내적으로 사용할 때 우리가 익숙하게 사용하는 유클리드 공간에서의 각도가 된다.
+내적으로 정의되어 있음에 유의한다. Dot product를 내적으로 사용할 때 우리가 익숙하게 사용하는 Euclidean 공간에서의 각도가 된다.
 
 ## Orthogonality
 
