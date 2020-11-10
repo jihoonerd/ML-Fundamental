@@ -36,9 +36,7 @@ $$
   
   $$\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b}, \ \text{for some } \lambda \in \mathbb{R}$$
 
-#### Calculation
-
-다음의 과정을 통해 $\boldsymbol{x} \in \mathbb{R}^n$를 $U$로 projection하는 $\lambda, \pi_{U}(\boldsymbol{x}) \in U, \boldsymbol{P}_{\pi}$를 구할 수 있다.
+다음의 과정을 통해 $\boldsymbol{x} \in \mathbb{R}^n$를 $U$로 projection하는 $\lambda, \pi_{U}(\boldsymbol{x}) \in U, \boldsymbol{P}_{\pi}$를 유도할 수 있다.
 
 1. Finding the coordinate $\lambda$
 
@@ -128,3 +126,105 @@ $$
 $$
 
 또한, 이미 projection된 벡터에 대해 같은 projection matrix을 적용하면 달라지는 것이 없음도 확인할 수 있다. ($\boldsymbol{P}_{\pi}^{2} \boldsymbol{x} = \boldsymbol{P}_{\pi} \boldsymbol{x}$)
+
+### Projection onto General Subspaces
+
+여기서는 직선에 국한되지 않고 일반공간으로의 projection에 대해 다룬다. 3차원 공간에서 2차원 평면으로의 projection, 혹은 그릴 수는 없지만 4차원 이상 공간에서 3차원으로의 projection 등이 이에 해당한다. 이에 따라 앞에서 예시로 삼았던 기저벡터 $\boldsymbol{b}$도 여러개의 기저벡터가 되면서 행렬로 표현하게 된다.
+
+Subspace $U$의 ordered basis가 $(\boldsymbol{b}_1, \ldots, \boldsymbol{b}_m)$이라고 할 때, $U$ 위로의 어떤 projection $\pi_{U}(\boldsymbol{x})$은 반드시 $U$의 원소여야 한다. 따라서 Projection은 $U$의 Basis로 표현이 가능하다.
+
+$$
+\pi_{U}(\boldsymbol{x}) = \sum_{i=1}^{m} \lambda_i \boldsymbol{b}_{i}
+$$
+
+앞에서 다룬 직선으로의 projection과 마찬가지로 세 가지 단계를 통해 $\boldsymbol{\lambda}$, $\pi_{U}(\boldsymbol{x})$와 projection matrix $\boldsymbol{P}_{\pi}$를 유도해보자.
+
+1. Finding the coordinates $\lambda_1, \ldots, \lambda_m$
+  
+  일반공간으로의 projection을 할 때는 기저가 여러 개이므로 행렬로 표현하면 projection은 다음과 같이 표현할 수 있다.
+  
+  기저행렬 $\boldsymbol{B}$을 다음과 같이 정의하자.
+  
+  $$
+  \boldsymbol{B} = [\boldsymbol{b}_1, \ldots, \boldsymbol{b}_m] \in \mathbb{R}^{n \times m}
+  $$
+  
+  좌표를 나타내는 $\boldsymbol{\lambda}$는 다음과 같이 정의하자.
+  
+  $$
+  \boldsymbol{\lambda} = [\lambda_1, \ldots, \lambda_m]^\intercal \in \mathbb{R}^m
+  $$
+  
+  이 때, projection의 선형결합은 다음처럼 쓸 수 있다.
+  
+  $$
+  \pi_{U}(\boldsymbol{x}) = \sum_{i=1}^{m} \lambda_i \boldsymbol{b}_{i} = \boldsymbol{B\lambda}
+  $$
+  
+  차원은 늘어났지만 정의 자체는 변함이 없다. $\boldsymbol{x} \in \mathbb{R}^n$와 해당 벡터의 projection $\pi_{U}(\boldsymbol{x}) \in U$은   최단거리를 가져야하며 이는 $\boldsymbol{x} \in \mathbb{R}^n$와 $\pi_{U}(\boldsymbol{x}) \in U$를 잇는 벡터 $\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})$가 $U$의 모든 기저들과 직교할 때 성립한다. 따라서 $m$개의 Basis가 있다면 모두에 대해 다음 조건을 만족해야 한다.
+  
+  $$
+  \begin{aligned}
+  \langle \boldsymbol{b}_1, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_1^\intercal (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0 \\
+  &\vdots \\
+  \langle \boldsymbol{b}_m, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_m^\intercal (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0
+  \end{aligned}
+  $$
+  
+  $\pi_{U}(\boldsymbol{x}) = \sum_{i=1}^{m} \lambda_i \boldsymbol{b}_{i} = \boldsymbol{B\lambda}$이므로 다음과 같이 쓸 수 있다.
+  
+  $$
+  \begin{aligned}
+  \boldsymbol{b}_1^\intercal (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0 \\
+  \vdots \\
+  \boldsymbol{b}_m^\intercal (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0
+  \end{aligned}
+  $$
+  
+  이를 다시쓰면 다음과 같은 homogeneous linear equation을 얻을 수 있다.
+  
+  $$
+  \begin{bmatrix}
+  \boldsymbol{b}_1^\intercal \\
+  \vdots \\
+  \boldsymbol{b}_m^\intercal
+  \end{bmatrix}
+  \begin{bmatrix}
+  \boldsymbol{x} - \boldsymbol{B}\boldsymbol{\lambda}
+  \end{bmatrix}
+  = \boldsymbol{0} \iff \boldsymbol{B}^\intercal(\boldsymbol{x} - \boldsymbol{B}\boldsymbol{\lambda}) = \boldsymbol{0}
+  $$
+  
+  우항을 정리하면 다음이 된다.
+  
+  $$
+  \boldsymbol{B}^\intercal \boldsymbol{B} \boldsymbol{\lambda} = \boldsymbol{B}^\intercal \boldsymbol{x}
+  $$
+  
+  그리고 이 식을 **normal equation**이라고 한다.
+  
+  $\boldsymbol{B}$의 열벡터들이 ordered basis이므로 각각의 열벡터들은 선형독립이다. 따라서 $\boldsymbol{B}^\intercal \boldsymbol{B} \in   \mathbb{R}^{m \times m}$은 regular하고 invertible하다. 따라서 $\boldsymbol{\lambda}$는 다음을 통해 얻을 수 있다.
+  
+  $$
+  \boldsymbol{\lambda} = (\boldsymbol{B}^{\intercal} \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal \boldsymbol{x}
+  $$
+  
+  이 때, $(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal$를 $\boldsymbol{B}$의 **pseudo-inverse**라고 한다.   $\boldsymbol{B}^\intercal \boldsymbol{B}$는 항상 square matrix형태이므로 $\boldsymbol{B}^\intercal \boldsymbol{B}$가   positive-definite하기만 하다면(즉 $\boldsymbol{B}$가 full-rank라면!) 이는 non-square matrix $\boldsymbol{B}$에 대해서도 적용가능하다. 다만 컴퓨터 연산시에 수치적 안정성때문에 $\boldsymbol{B}^\intercal \boldsymbol{B}$에 $\epsilon I$를 더해주기도 한다.
+  
+2. Finding the projection $\pi_{U}(\boldsymbol{x}) \in U$
+  
+  앞에서 대부분의 내용을 다루어 $\pi_{U}(\boldsymbol{x})$를 구하는 것은 간단하다. $\pi_{U}(\boldsymbol{x}) = \boldsymbol{B} \boldsymbol  {\lambda}$이므로 projection은 다음과 같이 구할 수 있다.
+  
+  $$
+  \pi_{U}(\boldsymbol{x}) = \boldsymbol{B}(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal \boldsymbol{x}
+  $$
+    
+3. Finding the projection matrix $\boldsymbol{P}_{\pi}$
+  
+  $\boldsymbol{P}_{\pi}\boldsymbol{x} = \pi_{U}(\boldsymbol{x})$로 부터 projection matrix는 위 식과 비교해 간단히 확인할 수 있다.
+  
+  $$
+  \boldsymbol{P}_{\pi} = \boldsymbol{B}(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal 
+  $$
+  
+  앞에서 다룬 1차원은 위 식에서 $\boldsymbol{B}^\intercal \boldsymbol{B} \in \mathbb{R}$인 특수한 경우라고 볼 수 있다.
