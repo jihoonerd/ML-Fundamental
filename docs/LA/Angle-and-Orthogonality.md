@@ -85,7 +85,7 @@ $$\begin{aligned} \lVert \boldsymbol{A} \boldsymbol{x} \rVert^{2} &= (\boldsymbo
 
 임의의 벡터 $\boldsymbol{x}, \boldsymbol{y}$가 이루는 각도는 각각의 벡터를 orthogonal matrix $\boldsymbol{A}$로 변환한하여도 보존된다.
 
-$$\begin{aligned} \cos \omega &= \frac{ (\boldsymbol{Ax}^{\intercal}) (\boldsymbol{Ay}) }{\lVert \boldsymbol{Ax} \rVert \lVert \boldsymbol{Ay} \rVert} \\ &= \frac{\boldsymbol{x}^{\intercal} \boldsymbol{A}^{\intercal} \boldsymbol{A} \boldsymbol{y}}{\boldsymbol{x}^{\intercal} \boldsymbol{A}^{\intercal} \boldsymbol{Ax} \boldsymbol{y}^{\intercal} \boldsymbol{A}^{\intercal} \boldsymbol{A} \boldsymbol{y}} \\ &= \frac{\boldsymbol{x}^{\intercal} \boldsymbol{y}}{\lVert \boldsymbol{x} \rVert \lVert \boldsymbol{y} \rVert} \end{aligned}$$
+$$\begin{aligned} \cos \omega &= \frac{ (\boldsymbol{Ax}^{\top}) (\boldsymbol{Ay}) }{\lVert \boldsymbol{Ax} \rVert \lVert \boldsymbol{Ay} \rVert} \\ &= \frac{\boldsymbol{x}^{\top} \boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{y}}{\boldsymbol{x}^{\top} \boldsymbol{A}^{\top} \boldsymbol{Ax} \boldsymbol{y}^{\top} \boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{y}} \\ &= \frac{\boldsymbol{x}^{\top} \boldsymbol{y}}{\lVert \boldsymbol{x} \rVert \lVert \boldsymbol{y} \rVert} \end{aligned}$$
 
 길이와 각도의 보존은 위와 같이 정의식을 이용해서 간단하게 보일 수 있다. 기하적으로는 어떤 의미가 있을까? 공간에서 어떠한 변환을 했을 때 길이와 각도가 보존되는 변환은 무엇이 있을까? 결과적으로 orthogonal matrix가 정의하는 변환은 공간에서 회전에 해당하는 변환이다. 직관적으로 생각해보아도 이러한 성질은 회전변환에서 만족된다는 것을 쉽게 예상해볼 수 있다. 이 내용은 이후 회전을 다룰 때 자세히 다루게 된다.
 

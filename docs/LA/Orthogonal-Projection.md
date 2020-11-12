@@ -20,7 +20,7 @@ $$
 \boldsymbol{P}_{\pi}^2 = \boldsymbol{P}_{\pi}
 $$
 
-이제부터 벡터의 orthogonal projection을 inner product space ($\mathbb{R}^n, \langle \cdot, \cdot \rangle$)에서 벡터부분공간의 함수로 다루게 된다. 거창하게 표현되었지만 쉽게 표현하면 $n$차원 데이터와 내적이 정의된 공간을 벡터부분공간으로 보내는 함수에 관한 내용이다. 아래의 projection 내용을 다룰 때 별도의 언급이 없는 한 내적은 dot product $\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \boldsymbol{x}^\intercal \boldsymbol{y}$라고 가정한다.
+이제부터 벡터의 orthogonal projection을 inner product space ($\mathbb{R}^n, \langle \cdot, \cdot \rangle$)에서 벡터부분공간의 함수로 다루게 된다. 거창하게 표현되었지만 쉽게 표현하면 $n$차원 데이터와 내적이 정의된 공간을 벡터부분공간으로 보내는 함수에 관한 내용이다. 아래의 projection 내용을 다룰 때 별도의 언급이 없는 한 내적은 dot product $\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \boldsymbol{x}^\top \boldsymbol{y}$라고 가정한다.
 
 ### Projection onto One-Dimensional Subspaces (Lines)
 
@@ -54,7 +54,7 @@ $$
 
   $\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b}$이므로 
 
-  $$\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b} = \frac{\langle \boldsymbol{b}, \boldsymbol{x} \rangle}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{b} = \frac{\boldsymbol{b}^\intercal \boldsymbol{x}}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{b}$$
+  $$\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b} = \frac{\langle \boldsymbol{b}, \boldsymbol{x} \rangle}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{b} = \frac{\boldsymbol{b}^\top \boldsymbol{x}}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{b}$$
 
   Projection의 길이는 다음과 같다.
 
@@ -72,11 +72,11 @@ $$
 
   위의 유도를 이용하면,
 
-  $$\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b} = \boldsymbol{b}\lambda = \boldsymbol{b} \frac{\boldsymbol{b}^\intercal \boldsymbol{x}}{\lVert \boldsymbol{b} \rVert^2} = \frac{\boldsymbol{b}\boldsymbol{b}^\intercal}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{x}$$
+  $$\pi_{U}(\boldsymbol{x}) = \lambda \boldsymbol{b} = \boldsymbol{b}\lambda = \boldsymbol{b} \frac{\boldsymbol{b}^\top \boldsymbol{x}}{\lVert \boldsymbol{b} \rVert^2} = \frac{\boldsymbol{b}\boldsymbol{b}^\top}{\lVert \boldsymbol{b} \rVert^2} \boldsymbol{x}$$
 
   로부터
 
-  $$\boldsymbol{P}_{\pi} = \frac{\boldsymbol{b}\boldsymbol{b}^\intercal}{\lVert \boldsymbol{b} \rVert^2}$$
+  $$\boldsymbol{P}_{\pi} = \frac{\boldsymbol{b}\boldsymbol{b}^\top}{\lVert \boldsymbol{b} \rVert^2}$$
   
   임을 알 수 있다. $\boldsymbol{P}_{\pi}$는 랭크 1의 symmetric matrix이며 $\lVert \boldsymbol{b} \rVert^{2} = \langle \boldsymbol{b}, \boldsymbol{b} \rangle$임에 유의하자.
 
@@ -85,12 +85,12 @@ $$
 
 #### Example
 
-원점을 지나고 벡터 $\boldsymbol{b} = \begin{bmatrix}1 & 2 & 2 \end{bmatrix}^{\intercal}$에 의해 span되는 직선으로 projection시키는 projection matrix를 찾아보자. $\boldsymbol{b}$는 1차원 부분공간의 기저이다.
+원점을 지나고 벡터 $\boldsymbol{b} = \begin{bmatrix}1 & 2 & 2 \end{bmatrix}^{\top}$에 의해 span되는 직선으로 projection시키는 projection matrix를 찾아보자. $\boldsymbol{b}$는 1차원 부분공간의 기저이다.
 
 Projection matrix를 구하는 공식을 위에서 유도하였으므로 공식에 대입만 하면 된다. 대입하면 아래와 같은 행렬을 얻을 수 있다.
 
 $$
-\boldsymbol{P}_{\pi}=\frac{\boldsymbol{b} \boldsymbol{b}^{\intercal}}{\boldsymbol{b}^{\intercal} \boldsymbol{b}}=\frac{1}{9}\left[\begin{array}{l}
+\boldsymbol{P}_{\pi}=\frac{\boldsymbol{b} \boldsymbol{b}^{\top}}{\boldsymbol{b}^{\top} \boldsymbol{b}}=\frac{1}{9}\left[\begin{array}{l}
 1 \\
 2 \\
 2
@@ -103,7 +103,7 @@ $$
 \end{array}\right]
 $$
 
-실제로 $\begin{bmatrix}1 & 1 & 1\end{bmatrix}^{\intercal}$에 projection matrix를 적용해 $\boldsymbol{b}$ 위로 projection 되었는지 확인해보자. 
+실제로 $\begin{bmatrix}1 & 1 & 1\end{bmatrix}^{\top}$에 projection matrix를 적용해 $\boldsymbol{b}$ 위로 projection 되었는지 확인해보자. 
 
 $$
 \pi_{U}(\boldsymbol{x})=\boldsymbol{P}_{\pi} \boldsymbol{x}=\frac{1}{9}\left[\begin{array}{lll}
@@ -152,7 +152,7 @@ $$
   좌표를 나타내는 $\boldsymbol{\lambda}$는 다음과 같이 정의하자.
   
   $$
-  \boldsymbol{\lambda} = [\lambda_1, \ldots, \lambda_m]^\intercal \in \mathbb{R}^m
+  \boldsymbol{\lambda} = [\lambda_1, \ldots, \lambda_m]^\top \in \mathbb{R}^m
   $$
   
   이 때, projection의 선형결합은 다음처럼 쓸 수 있다.
@@ -165,9 +165,9 @@ $$
   
   $$
   \begin{aligned}
-  \langle \boldsymbol{b}_1, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_1^\intercal (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0 \\
+  \langle \boldsymbol{b}_1, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_1^\top (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0 \\
   &\vdots \\
-  \langle \boldsymbol{b}_m, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_m^\intercal (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0
+  \langle \boldsymbol{b}_m, \boldsymbol{x} - \pi_{U}(\boldsymbol{x}) \rangle &= \boldsymbol{b}_m^\top (\boldsymbol{x} - \pi_{U}  (\boldsymbol{x})) = 0
   \end{aligned}
   $$
   
@@ -175,9 +175,9 @@ $$
   
   $$
   \begin{aligned}
-  \boldsymbol{b}_1^\intercal (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0 \\
+  \boldsymbol{b}_1^\top (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0 \\
   \vdots \\
-  \boldsymbol{b}_m^\intercal (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0
+  \boldsymbol{b}_m^\top (\boldsymbol{x} - &\boldsymbol{B}\boldsymbol{\lambda}) = 0
   \end{aligned}
   $$
   
@@ -185,38 +185,38 @@ $$
   
   $$
   \begin{bmatrix}
-  \boldsymbol{b}_1^\intercal \\
+  \boldsymbol{b}_1^\top \\
   \vdots \\
-  \boldsymbol{b}_m^\intercal
+  \boldsymbol{b}_m^\top
   \end{bmatrix}
   \begin{bmatrix}
   \boldsymbol{x} - \boldsymbol{B}\boldsymbol{\lambda}
   \end{bmatrix}
-  = \boldsymbol{0} \iff \boldsymbol{B}^\intercal(\boldsymbol{x} - \boldsymbol{B}\boldsymbol{\lambda}) = \boldsymbol{0}
+  = \boldsymbol{0} \iff \boldsymbol{B}^\top(\boldsymbol{x} - \boldsymbol{B}\boldsymbol{\lambda}) = \boldsymbol{0}
   $$
   
   우항을 정리하면 다음이 된다.
   
   $$
-  \boldsymbol{B}^\intercal \boldsymbol{B} \boldsymbol{\lambda} = \boldsymbol{B}^\intercal \boldsymbol{x}
+  \boldsymbol{B}^\top \boldsymbol{B} \boldsymbol{\lambda} = \boldsymbol{B}^\top \boldsymbol{x}
   $$
   
   그리고 이 식을 **normal equation**이라고 한다.
   
-  $\boldsymbol{B}$의 열벡터들이 ordered basis이므로 각각의 열벡터들은 선형독립이다. 따라서 $\boldsymbol{B}^\intercal \boldsymbol{B} \in   \mathbb{R}^{m \times m}$은 regular하고 invertible하다. 따라서 $\boldsymbol{\lambda}$는 다음을 통해 얻을 수 있다.
+  $\boldsymbol{B}$의 열벡터들이 ordered basis이므로 각각의 열벡터들은 선형독립이다. 따라서 $\boldsymbol{B}^\top \boldsymbol{B} \in   \mathbb{R}^{m \times m}$은 regular하고 invertible하다. 따라서 $\boldsymbol{\lambda}$는 다음을 통해 얻을 수 있다.
   
   $$
-  \boldsymbol{\lambda} = (\boldsymbol{B}^{\intercal} \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal \boldsymbol{x}
+  \boldsymbol{\lambda} = (\boldsymbol{B}^{\top} \boldsymbol{B})^{-1} \boldsymbol{B}^\top \boldsymbol{x}
   $$
   
-  이 때, $(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal$를 $\boldsymbol{B}$의 **pseudo-inverse**라고 한다.   $\boldsymbol{B}^\intercal \boldsymbol{B}$는 항상 square matrix형태이므로 $\boldsymbol{B}^\intercal \boldsymbol{B}$가   positive-definite하기만 하다면(즉 $\boldsymbol{B}$가 full-rank라면!) 이는 non-square matrix $\boldsymbol{B}$에 대해서도 적용가능하다. 다만 컴퓨터 연산시에 수치적 안정성때문에 $\boldsymbol{B}^\intercal \boldsymbol{B}$에 $\epsilon I$를 더해주기도 한다.
+  이 때, $(\boldsymbol{B}^\top \boldsymbol{B})^{-1} \boldsymbol{B}^\top$를 $\boldsymbol{B}$의 **pseudo-inverse**라고 한다.   $\boldsymbol{B}^\top \boldsymbol{B}$는 항상 square matrix형태이므로 $\boldsymbol{B}^\top \boldsymbol{B}$가   positive-definite하기만 하다면(즉 $\boldsymbol{B}$가 full-rank라면!) 이는 non-square matrix $\boldsymbol{B}$에 대해서도 적용가능하다. 다만 컴퓨터 연산시에 수치적 안정성때문에 $\boldsymbol{B}^\top \boldsymbol{B}$에 $\epsilon I$를 더해주기도 한다.
   
 2. Finding the projection $\pi_{U}(\boldsymbol{x}) \in U$
   
   앞에서 대부분의 내용을 다루어 $\pi_{U}(\boldsymbol{x})$를 구하는 것은 간단하다. $\pi_{U}(\boldsymbol{x}) = \boldsymbol{B} \boldsymbol  {\lambda}$이므로 projection은 다음과 같이 구할 수 있다.
   
   $$
-  \pi_{U}(\boldsymbol{x}) = \boldsymbol{B}(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal \boldsymbol{x}
+  \pi_{U}(\boldsymbol{x}) = \boldsymbol{B}(\boldsymbol{B}^\top \boldsymbol{B})^{-1} \boldsymbol{B}^\top \boldsymbol{x}
   $$
     
 3. Finding the projection matrix $\boldsymbol{P}_{\pi}$
@@ -224,7 +224,123 @@ $$
   $\boldsymbol{P}_{\pi}\boldsymbol{x} = \pi_{U}(\boldsymbol{x})$로 부터 projection matrix는 위 식과 비교해 간단히 확인할 수 있다.
   
   $$
-  \boldsymbol{P}_{\pi} = \boldsymbol{B}(\boldsymbol{B}^\intercal \boldsymbol{B})^{-1} \boldsymbol{B}^\intercal 
+  \boldsymbol{P}_{\pi} = \boldsymbol{B}(\boldsymbol{B}^\top \boldsymbol{B})^{-1} \boldsymbol{B}^\top 
   $$
   
-  앞에서 다룬 1차원은 위 식에서 $\boldsymbol{B}^\intercal \boldsymbol{B} \in \mathbb{R}$인 특수한 경우라고 볼 수 있다.
+  앞에서 다룬 1차원은 위 식에서 $\boldsymbol{B}^\top \boldsymbol{B} \in \mathbb{R}$인 특수한 경우라고 볼 수 있다.
+
+참고로 기저를 orthonormal basis로 구성하였다면 $\boldsymbol{B}^{\top}\boldsymbol{B} = \boldsymbol{I}$가 되어 역행렬계산을 할 필요가 없어진다.
+
+#### Example
+
+교재 예제 3.11에 해당하는 내용이다. 예제로 2차원 평면위로 projection하는 경우를 살펴보자. 벡터부분공간 $U$가 $U = \operatorname{span}[ \begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix}, \begin{bmatrix}0 \\ 1\\ 2\end{bmatrix} ] \subseteq \mathbb{R}^{3}$이고 벡터 $\boldsymbol{x} = \begin{bmatrix}6 \\ 0 \\ 0\end{bmatrix} \in \mathbb{R}^{3}$일때 $\boldsymbol{x}$를 $U$로 projection한 좌표 $\boldsymbol{\lambda}$와 pojection point $\pi_{U}(\boldsymbol{x})$, projection matrix $\boldsymbol{P}_{\pi}$를 구해보자.
+
+우선, 부분공간 $U$를 표현하는 generating set을 구해보자. 주어진 벡터가 이미 선형독립인 기저이므로 행렬 $\boldsymbol{B}$로 나타내면 다음과 같다.
+
+$$\boldsymbol{B} = \begin{bmatrix}1 & 0\\ 1 & 1\\ 1 & 2\end{bmatrix}$$
+
+위에서 구한 공식을 활용하기위해 필요한 $\boldsymbol{B}^{\top}\boldsymbol{B}$와 projection 벡터 $\boldsymbol{B}^{\top} \boldsymbol{x}$도 계산해두자.
+
+$$
+\begin{aligned}
+\boldsymbol{B}^{\top} \boldsymbol{B}
+&=\left[\begin{array}{lll}
+1 & 1 & 1 \\
+0 & 1 & 2
+\end{array}\right]\left[\begin{array}{ll}
+1 & 0 \\
+1 & 1 \\
+1 & 2
+\end{array}\right]\\
+&=\left[\begin{array}{ll}
+3 & 3 \\
+3 & 5
+\end{array}\right]
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\boldsymbol{B}^{\top} \boldsymbol{x}
+&=\left[\begin{array}{lll}
+1 & 1 & 1 \\
+0 & 1 & 2
+\end{array}\right]\left[\begin{array}{l}
+6 \\
+0 \\
+0
+\end{array}\right]\\
+&=\left[\begin{array}{l}
+6 \\
+0
+\end{array}\right]
+\end{aligned}
+$$
+
+이제 normal equation인 $\boldsymbol{B}^{\top} \boldsymbol{B} \boldsymbol{\lambda} = \boldsymbol{B}^{\top} \boldsymbol{x}$를 통해 $\boldsymbol{\lambda}$를 계산하면 된다.
+
+$$
+\left[\begin{array}{ll}
+3 & 3 \\
+3 & 5
+\end{array}\right]\left[\begin{array}{l}
+\lambda_{1} \\
+\lambda_{2}
+\end{array}\right]=\left[\begin{array}{l}
+6 \\
+0
+\end{array}\right] \Longleftrightarrow \boldsymbol{\lambda}=\left[\begin{array}{c}
+5 \\
+-3
+\end{array}\right]
+$$
+
+위의 좌표를 각 basis에 대한 선형결합으로 만들면 projection $\pi_{U}(\boldsymbol{x})$를 구할 수 있다.
+
+$$
+\begin{aligned}
+\pi_{U}(\boldsymbol{x}) &= 5 \begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix} - 3 \begin{bmatrix}0 \\ 1\\ 2\end{bmatrix}\\
+&= \begin{bmatrix}5 \\ 2 \\ -1\end{bmatrix}
+\end{aligned}
+$$
+
+이 결과는 $\boldsymbol{B} \boldsymbol{\lambda}$와 같다.
+
+벡터 $\boldsymbol{x}$와 $U$로 projection된 벡터의 크기차이는 $\boldsymbol{x} - \pi_{U}(\boldsymbol{x})$의 norm으로 계산할 수 있다.
+
+$$
+\lVert \boldsymbol{x}-\pi_{U}(\boldsymbol{x}) \rVert = \left\lVert \left[\begin{array}{lll}
+1 & -2 & 1
+\end{array} \right]^{\top} \right\rVert=\sqrt{6}
+$$
+
+마지막으로, projection을 공식을 이용해 구하면 다음과 같다.
+
+$$
+\begin{aligned}
+\boldsymbol{P}_{\pi}&=\boldsymbol{B}\left(\boldsymbol{B}^{\top} \boldsymbol{B}\right)^{-1} \boldsymbol{B}^{\top}\\
+&=\frac{1}{6}\left[\begin{array}{ccc}
+5 & 2 & -1 \\
+2 & 2 & 2 \\
+-1 & 2 & 5
+\end{array}\right]
+\end{aligned}
+$$
+
+## Relationship between Least-square Solution in Linear System
+
+일반공간에서의 정의를 다시 한 번 살펴보며 정리해보자.
+
+$$
+\pi_{U}(\boldsymbol{x}) = \sum_{i=1}^{m} \lambda_i \boldsymbol{b}_i = \boldsymbol{B}\boldsymbol{\lambda}
+$$
+
+여기서 $\pi_{U}(\boldsymbol{x})$는 $U$로의 projection이며 이 projection은 projection matrix $\boldsymbol{P}_{\pi}$가 벡터 $\boldsymbol{x}$를 Linear mapping함으로써 결정된다.
+
+이를 상기하고 다음의 선형시스템을 보자.
+
+$$
+\boldsymbol{A} \boldsymbol{x} = \boldsymbol{b}
+$$
+
+그리고 $\boldsymbol{b}$가 $\boldsymbol{A}$의 span위에 있지 않다면, 즉 $\boldsymbol{A}$의 column space의 span으로 표현되지 않는다면, 해 $\boldsymbol{x}$는 존재하지 않는다. 다만 우리는 projection을 이용해 $\boldsymbol{A}$에 속하는 벡터중에서 가장 $\boldsymbol{b}$에 가까운 **approximate solution**을 찾을 수 있다. 이 최소한의 오차를 가질때의 해 $\boldsymbol{x}$를 구하는 것이 바로 **least-squares solution**인 것이다.
