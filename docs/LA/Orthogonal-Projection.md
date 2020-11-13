@@ -327,7 +327,7 @@ $$
 \end{aligned}
 $$
 
-## Relationship between Least-square Solution in Linear System
+### Relationship between Least-square Solution in Linear System
 
 일반공간에서의 정의를 다시 한 번 살펴보며 정리해보자.
 
@@ -344,3 +344,95 @@ $$
 $$
 
 그리고 $\boldsymbol{b}$가 $\boldsymbol{A}$의 span위에 있지 않다면, 즉 $\boldsymbol{A}$의 column space의 span으로 표현되지 않는다면, 해 $\boldsymbol{x}$는 존재하지 않는다. 다만 우리는 projection을 이용해 $\boldsymbol{A}$에 속하는 벡터중에서 가장 $\boldsymbol{b}$에 가까운 **approximate solution**을 찾을 수 있다. 이 최소한의 오차를 가질때의 해 $\boldsymbol{x}$를 구하는 것이 바로 **least-squares solution**인 것이다.
+
+## Gram-Schmidt Orthogonalization
+
+지금까지 기저가 주어졌을 때 projection을 하는 방법엔 대해 다루었다. 그렇다면 $n$-차원의 직교하지 않는 기저들이 주어졌을 때 어떻게 이들을 orthogonal/orthonormal하게 바꿀 수 있을까? 
+
+**Gram-Schmidt orthogonalization** 방법을 사용해서 반복적 계산을 통해 주어진 기저로부터 직교하는 기저집합을 구성할 수 있다. 
+
+계산 방법은 다음과 같다.
+
+우선 Orthogonal basis set을 구성할 첫 번째 Basis를 선택한다.
+
+$$
+\boldsymbol{u}_1 := \boldsymbol{b}_1
+$$
+
+첫번째 벡터를 기준으로 다음 계산을 통해 $\boldsymbol{b}_1$에 직교하는 벡터 $\boldsymbol{u}_2$를 얻을 수 있다.
+
+$$
+\boldsymbol{u}_2 := \boldsymbol{b}_2 - \pi_{\operatorname{span}[\boldsymbol{u}_1]}(\boldsymbol{b_2})
+$$
+
+위 식을 살펴보면 두번째 기저를 $\boldsymbol{u}_1$으로 projection하고 이 둘을 잇는 벡터 $\boldsymbol{u}_{2}$를 만든다는 것을 알 수 있다.
+
+교재 Fig 3.12에서 이를 잘 보여준다.
+<figure align=center>
+<img src="assets/images/LA/Fig_3.12.png" width=60% height=60%/>
+<figcaption>Figure 3.12: Gram-Schmidt Orthogonalization</figcaption>
+</figure>
+
+세번째 기저가 있다면 다음과 같이 구한다.
+
+$$
+\boldsymbol{u}_3 := \boldsymbol{b}_3 - \pi_{\operatorname{span}[\boldsymbol{u}_1]}(\boldsymbol{b_3}) - \pi_{\operatorname{span}[\boldsymbol{u}_2]}(\boldsymbol{b_3})
+$$
+
+이를 일반식으로 나타내면 다음과 같이 표현할 수 있다. 아래의 식을 통해 기저집합내의 모든 기저를 직교하게 만들 수 있다.
+
+$$
+\boldsymbol{u}_k := \boldsymbol{b}_k - \pi_{\operatorname{span}[\boldsymbol{u}_1, \ldots, \boldsymbol{u}_{k-1}]}(\boldsymbol{b_k}), \quad k = 2, \ldots, n
+$$
+
+이와 같이, Gram-Schmidt orthogonalization을 통해 $n$개의 기저벡터 $(\boldsymbol{b}_1, \ldots, \boldsymbol{b}_n)$를 직교벡터 $(\boldsymbol{u}_1, \ldots, \boldsymbol{u}_n)$로 변환할 수 있다. 여기서 각각의 $\boldsymbol{u}_k$를 normalize하면 orthonormal basis set이 된다.
+
+### Example
+
+다음 두 기저 벡터 $\boldsymbol{b}_1, \boldsymbol{b}_2 \in \mathbb{R}^2$를 Gram-Schmidt Orthogonalization을 이용해 직교하는 기저집합을 만들어 보자.
+
+$$
+\boldsymbol{b}_{1}=\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right], \quad \boldsymbol{b}_{2}=\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]
+$$
+
+앞서 언급한 절차에 따라 orthogonal basis를 구성해보자.
+
+우선, 첫번째 기저 벡터를 설정하자.
+
+$$
+\boldsymbol{u}_{1}:=\boldsymbol{b}_{1}=\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right]
+$$
+
+이어서 $\boldsymbol{b}_2$와 $\boldsymbol{b}_2$를 $\boldsymbol{b}_1$위로 projection한 벡터를 잇는 벡터를 만들면 된다.
+
+$$
+\begin{aligned}
+\boldsymbol{u}_{2}&:=\boldsymbol{b}_{2}-\pi_{\mathrm{span}\left[\boldsymbol{u}_{1}\right]}\left(\boldsymbol{b}_{2}\right) \\
+&= \boldsymbol{b}_{2}-\frac{\boldsymbol{u}_{1} \boldsymbol{u}_{1}^{\top}}{\lVert \boldsymbol{u}_{1} \rVert^{2}} \boldsymbol{b}_{2}\\
+&=\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]-\left[\begin{array}{ll}
+1 & 0 \\
+0 & 0
+\end{array}\right]\left[\begin{array}{l}
+1 \\
+1
+\end{array}\right]\\
+&=\left[\begin{array}{l}
+0 \\
+1
+\end{array}\right]
+\end{aligned}
+$$
+
+Orthonormal basis set으로 구성하고 싶다면 구한 $\boldsymbol{u}_1, \boldsymbol{u}_2$를 normalize만 해주면 된다. 두 벡터의 내적은 0으로 직교함을 쉽게 확인할 수 있다.
