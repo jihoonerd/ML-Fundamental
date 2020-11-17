@@ -436,3 +436,34 @@ $$
 $$
 
 Orthonormal basis set으로 구성하고 싶다면 구한 $\boldsymbol{u}_1, \boldsymbol{u}_2$를 normalize만 해주면 된다. 두 벡터의 내적은 0으로 직교함을 쉽게 확인할 수 있다.
+
+## Projection onto Affine Subspace
+
+Affine 공간으로의 projection에 대해서도 알아보자. 앞서 [Affine Space](/LA/Affine-Space.md)에서 affine 공간에 대해 다루었다. 매우 느슨하게 말하면 벡터부분공간을 어떤 벡터 $\boldsymbol{x}$만큼 이동시킨 공간이고 원점을 지나지 않는다는 특징이 있다.
+
+예를 들어 어떤 affine 공간 $L$이 있고 이 공간은 기저벡터 $\boldsymbol{b}_1, \boldsymbol{b}_2$가 구성하는 벡터공간 $U$를 $\boldsymbol{x}_0$만큼 이동시킨 공간이라고 해보자.
+
+$$L = \boldsymbol{x}_0 + U$$
+
+임의의 벡터 $\boldsymbol{x}$를 공간 $L$로 projection하는 $\pi_{L}(\boldsymbol{x})$를 구하는 것이 목적이다.구하는 방법은 직관적으로도 쉽게 이해할 수 있다. Affine 공간이 벡터부분공간 $U$를 $\boldsymbol{x}_0$만큼 이동시킨 것이므로, $L - \boldsymbol{x}_0$, 즉 $U$는 벡터부분공간이다. 따라서 앞에서 다룬 내용을 통해 벡터를 벡터부분공간 $U$로 projection하고 이를 $\boldsymbol{x}_0$만큼 이동시키면 문제가 간단히 해결된다.
+
+따라서, $L$로의 projection은 다음 식을 통해 얻을 수 있다.
+
+$$\pi_{L}(\boldsymbol{x}) = \boldsymbol{x}_0 + \pi_U (\boldsymbol{x} - \boldsymbol{x}_0)$$
+
+또한, affine 공간 $L$위로의 projection과 원래 벡터 $\boldsymbol{x}$사이의 거리는 $\boldsymbol{x} - \boldsymbol{x}_0$와 $U$의 거리와 같아야 한다.
+
+$$
+\begin{aligned}
+d(\boldsymbol{x}, L) &=\lVert \boldsymbol{x}-\pi_{L}(\boldsymbol{x}) \rVert = \lVert \boldsymbol{x}-\left(\boldsymbol{x}_{0}+\pi_{U}\left(\boldsymbol{x}-\boldsymbol{x}_{0}\right)\right) \rVert \\
+&=d\left(\boldsymbol{x}-\boldsymbol{x}_{0}, \pi_{U}\left(\boldsymbol{x}-\boldsymbol{x}_{0}\right)\right)=d\left(\boldsymbol{x}-\boldsymbol{x}_{0}, U\right)
+\end{aligned}
+$$
+
+## Conclusion
+
+이 문서에서는 벡터공간에서의 projection에 대해 알아보았다. Projection은 다른 차원 공간으로의 벡터 mapping으로의 의미가 있다. 따라서 공간에서의 이동을 기반으로하는 SVM과 같은 방법에서 필연적으로 사용하게 되는 개념이기도 하다. Projection은 선형대수학에서 거창한 개념이라기 보다는 연산자처럼 사용하므로 개념과 계산법을 숙달하는 것이 좋다.
+
+## Reference
+
+* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
