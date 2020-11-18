@@ -14,5 +14,6 @@
   * [Orthogonal Complement](/LA/Orthogonal-Complement.md "Orthogonal Complement")
   * [Inner Product of Functions](/LA/Inner-Product-of-Functions.md "Inner Product of Functions")
   * [Orthogonal Projection](/LA/Orthogonal-Projection.md "Orthogonal Projection")
+  * [Rotation](/LA/Rotation.md "Rotation")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
