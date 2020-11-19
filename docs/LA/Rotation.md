@@ -21,7 +21,72 @@ Robotics분야에서는 이러한 회전변환이 빈번하게 사용된다.(물
 
 ## Roataions in $\mathbb{R}^{2}$
 
+2차원 공간이 가장 익숙한 형태인 $\left\{\boldsymbol{e}_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right], \boldsymbol{e}_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]\right\}$의 기저로 표현되어 있다고 하자.
+
+$\theta$만큼 회전변환한 좌표계를 표현하기 위해 아래 그림을 참조하자.
+
+<figure align=center>
+<img src="assets/images/LA/Fig_3.16.png" height=50% width=50% />
+<figcaption>Fig 3.16: Rotations of the standard basis in $\mathbb{R}^2$ by an angle $\theta$</figcaption>
+</figure>
+
+기저벡터를 $\theta$만큼 회전시켰을 떄의 좌표변화는 삼각함수로 표현이 가능하다는 것을 볼 수 있고 길이나 두 기저벡터가 이루는 각도의 변화가 없음을 쉽게 확인할 수 있다.
+
+각 기저에 대한 변환은 Fig 3.16에 의해 다음과 같이 얻을 수 있다.
+
+$$
+\Phi\left(\boldsymbol{e}_{1}\right)=\left[\begin{array}{c}
+\cos \theta \\
+\sin \theta
+\end{array}\right], \quad \Phi\left(\boldsymbol{e}_{2}\right)=\left[\begin{array}{c}
+-\sin \theta \\
+\cos \theta
+\end{array}\right]
+$$
+
+따라서 rotation matrix는 다음과 같다.
+
+$$
+\boldsymbol{R}(\theta)=\left[\Phi\left(\boldsymbol{e}_{1}\right) \quad \Phi\left(\boldsymbol{e}_{2}\right)\right]=\left[\begin{array}{cc}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{array}\right]
+$$
+
 ## Rotations in $\mathbb{R}^{3}$
+
+3차원에서의 회전을 생각해보자. 3차원에서의 회전은 2차원에서의 회전을 각각의 축에 적용한 결과로 나누어 생각할 수 있다.
+
+예를 들어 $\boldsymbol{e}_1$ 축에 대해서 회전을 하게되면 $\boldsymbol{e}_1$의 성분은 보존하고 나머지에 대해 회전이 적용된다. 이러한 회전변환 $\boldsymbol{R}_{1}(\theta)$는 다음과 같다.
+
+$$
+\begin{aligned}
+\boldsymbol{R}_{1}(\theta)&=\left[\Phi\left(\boldsymbol{e}_{1}\right) \quad \Phi\left(\boldsymbol{e}_{2}\right) \quad \Phi\left(\boldsymbol{e}_{3}\right)\right]\\
+&=\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & \cos \theta & -\sin \theta \\
+0 & \sin \theta & \cos \theta
+\end{array}\right]
+\end{aligned}
+$$
+
+같은 원리로 $\boldsymbol{e}_2$와 $\boldsymbol{e}_3$에 대해 적용하면 각각의 축에 대해 다음과 같은 회전변환 $\boldsymbol{R}_2(\theta)$와 $\boldsymbol{R}_3(\theta)$를 얻게 된다.
+
+$$
+\boldsymbol{R}_{2}(\theta)=\left[\begin{array}{ccc}
+\cos \theta & 0 & \sin \theta \\
+0 & 1 & 0 \\
+-\sin \theta & 0 & \cos \theta
+\end{array}\right]
+$$
+
+$$
+\boldsymbol{R}_{3}(\theta)=\left[\begin{array}{ccc}
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1
+\end{array}\right]
+$$
 
 ## Rotations in $n$ Dimensions
 
