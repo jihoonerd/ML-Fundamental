@@ -35,4 +35,4 @@ $$\{1, \cos(x), \cos(2x), \cos(3x), \cdots\}$$
 
 ## Reference
 
-* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.s`
+* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
