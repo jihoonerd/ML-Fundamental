@@ -13,9 +13,6 @@ Inner product
 ##### 내적공간
 Inner product space
 
-##### 랭크
-Rank
-
 ##### 머신러닝
 Machine Learning
 
@@ -24,6 +21,9 @@ Vector space
 
 ##### 벡터부분공간
 Vector subspace
+
+##### 대각성분
+Diagonal element
 
 ##### 선형결합
 Linear combination

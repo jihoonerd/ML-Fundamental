@@ -78,7 +78,7 @@ $$
 
   $$\boldsymbol{P}_{\pi} = \frac{\boldsymbol{b}\boldsymbol{b}^\top}{\lVert \boldsymbol{b} \rVert^2}$$
   
-  임을 알 수 있다. $\boldsymbol{P}_{\pi}$는 랭크 1의 symmetric matrix이며 $\lVert \boldsymbol{b} \rVert^{2} = \langle \boldsymbol{b}, \boldsymbol{b} \rangle$임에 유의하자.
+  임을 알 수 있다. $\boldsymbol{P}_{\pi}$는 rank 1의 symmetric matrix이며 $\lVert \boldsymbol{b} \rVert^{2} = \langle \boldsymbol{b}, \boldsymbol{b} \rangle$임에 유의하자.
 
 
 이 과정을 통해 얻은 projection matrix $\boldsymbol{P}_{\pi}$는 공간 내 임의의 벡터 $\boldsymbol{x} \in \mathbb{R}^{n}$을 원점을 지나는 벡터 $\boldsymbol{b}$의 직선으로 projection하는 변환행렬이 된다.
