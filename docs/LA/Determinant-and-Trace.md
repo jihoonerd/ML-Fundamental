@@ -104,7 +104,7 @@ Determinant를 구하는 일반식은 Laplace Exapnsion을 이용해 구할 수 
 * $\operatorname{det}(\boldsymbol{AB}) = \operatorname{det}(\boldsymbol{A})\operatorname{det}(\boldsymbol{B})$
 * $\operatorname{det}(\boldsymbol{A}) = \operatorname{det}(\boldsymbol{A}^\top)$
 * $\boldsymbol{A}$가 역행렬을 가질 때 $\operatorname{det}(\boldsymbol{A}^{-1}) = \frac{1}{\operatorname{det}(\boldsymbol{A})}$이다.
-* Similar matrices는 같은 determinant를 가진다. (행렬 $\boldsymbol{A}$와 행렬 $\boldsymbol{B}$가 non-singular matrix $\boldsymbol{S}$를 가지고 $\boldsymbol{A} = \boldsymbol{S}^{-1}\boldsymbol{BS}$를 만족할 때 행렬 $\boldsymbol{A}, \boldsymbol{B}$는 similar하다고 한다. Similar관계에 있는 두 행렬은 Basis는 다르지만 같은 Linear mapping이다.)
+* Similar matrices는 같은 determinant를 가진다. (행렬 $\boldsymbol{A}$와 행렬 $\boldsymbol{B}$가 non-singular matrix $\boldsymbol{S}$를 가지고 $\boldsymbol{A} = \boldsymbol{S}^{-1}\boldsymbol{BS}$를 만족할 때 행렬 $\boldsymbol{A}, \boldsymbol{B}$는 similar하다고 한다. Similar관계에 있는 두 행렬은 basis는 다르지만 같은 Linear mapping이다.)
 * 한 행/열의 배수를 다른 행/열에 더하는 것은 $\operatorname{det}(\boldsymbol{A})$를 바꾸지 않는다.
 * $\operatorname{det}(\lambda\boldsymbol{A}) = \lambda^n \operatorname{det}(\boldsymbol{A})$
 * 행/열의 교환(swapping)은 $\operatorname{det}(\boldsymbol{A})$의 부호를 바꾼다.

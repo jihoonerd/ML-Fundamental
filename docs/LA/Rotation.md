@@ -21,7 +21,7 @@ Robotics분야에서는 이러한 회전변환이 빈번하게 사용된다.(물
 
 ## Roataions in $\mathbb{R}^{2}$
 
-2차원 공간이 가장 익숙한 형태인 $\left\{\boldsymbol{e}_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right], \boldsymbol{e}_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]\right\}$의 기저로 표현되어 있다고 하자.
+2차원 공간이 가장 익숙한 형태인 $\left\{\boldsymbol{e}_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right], \boldsymbol{e}_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]\right\}$의 basis로 표현되어 있다고 하자.
 
 $\theta$만큼 회전변환한 좌표계를 표현하기 위해 아래 그림을 참조하자.
 
@@ -30,9 +30,9 @@ $\theta$만큼 회전변환한 좌표계를 표현하기 위해 아래 그림을
 <figcaption>Fig 3.16: Rotations of the standard basis in $\mathbb{R}^2$ by an angle $\theta$</figcaption>
 </figure>
 
-기저벡터를 $\theta$만큼 회전시켰을 떄의 좌표변화는 삼각함수로 표현이 가능하다는 것을 볼 수 있고 길이나 두 기저벡터가 이루는 각도의 변화가 없음을 쉽게 확인할 수 있다.
+Basis 벡터를 $\theta$만큼 회전시켰을 떄의 좌표변화는 삼각함수로 표현이 가능하다는 것을 볼 수 있고 길이나 두 basis vector가 이루는 각도의 변화가 없음을 쉽게 확인할 수 있다.
 
-각 기저에 대한 변환은 Fig 3.16에 의해 다음과 같이 얻을 수 있다.
+각 basis에 대한 변환은 Fig 3.16에 의해 다음과 같이 얻을 수 있다.
 
 $$
 \Phi\left(\boldsymbol{e}_{1}\right)=\left[\begin{array}{c}

@@ -16,8 +16,8 @@ Rank는 다음가 같이 정의할 수 있다.
 Rank가 가지는 성질은 다음가 같다.
 
 * $\text{rk}(\boldsymbol{A}) = \text{rk}(\boldsymbol{A}^{\top})$: 행벡터, 열벡터의 rank는 같다.
-* $\boldsymbol{A} \in \mathbf{R}^{m \times n}$의 열은 부분공간 $U \subseteq \mathbf{R}^{m}$을 span하며 $\text{dim}(U) = \text{rk}(\boldsymbol{A})$이다. 나중에 다루지만 이 부분공간을 **image** EHsms **range**라고 한다. $U$의 기저는 가우스 소거법을 통해 pivot columns를 확인함으로써 구할 수 있다.
-* $\boldsymbol{A} \in \mathbf{R}^{n \times n}$의 행은 부분공간 $W \subseteq \mathbf{R}^{m}$을 span하며 $\text{dim}(W) = \text{rk}(\boldsymbol{A})$이다. $W$의 기저는 $\boldsymbol{A}^{\top}$에 대한 가우스 소거법을 통해 구할 수 있다.
+* $\boldsymbol{A} \in \mathbf{R}^{m \times n}$의 열은 부분공간 $U \subseteq \mathbf{R}^{m}$을 span하며 $\text{dim}(U) = \text{rk}(\boldsymbol{A})$이다. 나중에 다루지만 이 부분공간을 **image** EHsms **range**라고 한다. $U$의 basis는 가우스 소거법을 통해 pivot columns를 확인함으로써 구할 수 있다.
+* $\boldsymbol{A} \in \mathbf{R}^{n \times n}$의 행은 부분공간 $W \subseteq \mathbf{R}^{m}$을 span하며 $\text{dim}(W) = \text{rk}(\boldsymbol{A})$이다. $W$의 basis는 $\boldsymbol{A}^{\top}$에 대한 가우스 소거법을 통해 구할 수 있다.
 * Regular (invertible) 행렬 $\boldsymbol{A} \in \mathbf{R}^{n \times n}$은 $\text{rk}(\boldsymbol{A})=n$이다.
 * $\boldsymbol{A} \in \mathbf{R}^{m \times n}, \boldsymbol{b} \in \mathbf{R}^{m}$일때, 선형시스템 $\boldsymbol{Ax} = \boldsymbol{b}$는 $\text{rk}(\boldsymbol{A}) = \text{rk}(\boldsymbol{A} \mid \boldsymbol{b})$일때만 풀 수 있다.
 * 행렬 $\boldsymbol{A} \in \mathbf{R}^{m \times n}$에 대해서 $\boldsymbol{Ax} = \boldsymbol{0}$의 해에 대한 부분공간은 $n - \text{rk}(\boldsymbol{A})$를 갖는다. 행렬 $\boldsymbol{A}$가 full rank라면 0차원으로 특정 해를 갖는다. 이러한 부분공간을 **kernel** 또는 **null space** 라고한다.

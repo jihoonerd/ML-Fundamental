@@ -4,9 +4,6 @@ Gaussian elimination
 ##### 군
 Group
 
-##### 기저
-Basis
-
 ##### 내적
 Inner product
 

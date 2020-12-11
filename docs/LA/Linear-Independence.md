@@ -6,14 +6,14 @@
 
 벡터공간에 속하는 벡터는 정의에 의해 스칼라만큼 곱하거나 벡터끼리 더해도 Closure property에 의해 같은 벡터공간내 다른 벡터로써 표현된다. 그렇다면 어떤 벡터공간이 있을 때, 특정 벡터들을 스칼라 곱을 하거나 더해 공간의 모든 벡터를 표현할 수 있는 벡터집합을 생각해 볼 수 있다. 이러한 벡터들의 집합을 **기저(basis)** 라고 한다.
 
-예를 들어, 2차원의 대표적인 기저가 $\left\{ \begin{bmatrix}1 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1\end{bmatrix} \right\}$, 3차원의 대표적인 기저가 $\left\{ \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}$이다. 
+예를 들어, 2차원의 대표적인 basis가 $\left\{ \begin{bmatrix}1 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1\end{bmatrix} \right\}$, 3차원의 대표적인 basis가 $\left\{ \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}, \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \right\}$이다. 
 
 <figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/3d_two_bases_same_vector.svg/130px-3d_two_bases_same_vector.svg.png"/>
 <figcaption>Wikipedia: Basis</figcaption>
 </figure>
 
-3차원 벡터공간의 임의의 벡터는 위의 기저벡터들의 스칼라곱과 합으로써 표현이 가능하다.
+3차원 벡터공간의 임의의 벡터는 위의 basis vector들의 스칼라곱과 합으로써 표현이 가능하다.
 
 ## Linear Combination
 
@@ -49,7 +49,7 @@
 
 ## Conclusion
 
-이번 문서에서는 기저와 선형결합, 선형독립에 대해 알아보았다. 간단한 개념이지만 이 개념들은 이후 선형대수학 내용의 기초가 되므로 정확하게 이해할 필요가 있다.
+이번 문서에서는 basis와 선형결합, 선형독립에 대해 알아보았다. 간단한 개념이지만 이 개념들은 이후 선형대수학 내용의 기초가 되므로 정확하게 이해할 필요가 있다.
 
 ## Reference
 

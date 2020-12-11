@@ -76,7 +76,7 @@ $V$라는 벡터 공간에 대하여 Bilinear mapping $\Omega: V \times V \to \m
 
 ## Symmetric, Positive Definite Matrices
 
-내적의 정의를 통해 symmetric positive (semi)definite matrix도 유도할 수 있다. $n$차원 벡터공간 $V$에 대하여 기저가 $B = (\boldsymbol{b}_1, \ldots, \boldsymbol{b}_n)$라면 벡터공간 내 임의의 $\boldsymbol{x}, \boldsymbol{y}$는 기저의 선형결합으로 표현될 수 있다.
+내적의 정의를 통해 symmetric positive (semi)definite matrix도 유도할 수 있다. $n$차원 벡터공간 $V$에 대하여 basis가 $B = (\boldsymbol{b}_1, \ldots, \boldsymbol{b}_n)$라면 벡터공간 내 임의의 $\boldsymbol{x}, \boldsymbol{y}$는 basis의 선형결합으로 표현될 수 있다.
 
 $$
 \boldsymbol{x} = \sum_{i=1}^n \psi_i\boldsymbol{b}_i, \ \psi_i \in \mathbb{R}
@@ -96,7 +96,7 @@ $$
 \end{aligned}
 $$
 
-이 때, $A_{ij}:= \langle \boldsymbol{b}_i, \boldsymbol{b}_j \rangle$이며 $\hat{\boldsymbol{x}}, \hat{\boldsymbol{y}}$는 기저 $B$에 대한 $\boldsymbol{x}, \boldsymbol{y}$의 좌표이다. 이 말은 내적 $\langle \cdot, \cdot \rangle$이 행렬 $\boldsymbol{A}$에 의해 유일하게 결정된다는 것을 의미한다. 따라서 해당 내적의 symmetric 여부는 $\boldsymbol{A}$가 결정하며 내적의 positive definiteness는 $\forall \boldsymbol{x} \in V \setminus \{\boldsymbol{0}\}: \boldsymbol{x}^\top \boldsymbol{A} \boldsymbol{x} > 0$를 만족하여야 한다. 위 식에서 등호가 성립하는 경우, $\boldsymbol{A}$를 **positive semidefinite**이라고 한다.
+이 때, $A_{ij}:= \langle \boldsymbol{b}_i, \boldsymbol{b}_j \rangle$이며 $\hat{\boldsymbol{x}}, \hat{\boldsymbol{y}}$는 basis $B$에 대한 $\boldsymbol{x}, \boldsymbol{y}$의 좌표이다. 이 말은 내적 $\langle \cdot, \cdot \rangle$이 행렬 $\boldsymbol{A}$에 의해 유일하게 결정된다는 것을 의미한다. 따라서 해당 내적의 symmetric 여부는 $\boldsymbol{A}$가 결정하며 내적의 positive definiteness는 $\forall \boldsymbol{x} \in V \setminus \{\boldsymbol{0}\}: \boldsymbol{x}^\top \boldsymbol{A} \boldsymbol{x} > 0$를 만족하여야 한다. 위 식에서 등호가 성립하는 경우, $\boldsymbol{A}$를 **positive semidefinite**이라고 한다.
 
 ## Inner product for a Real-valued and Finite-dimensional Vector Space
 
@@ -112,7 +112,7 @@ $$
 
 * $\boldsymbol{A}$의 대각성분 $a_{ii}$는 모두 양수이다.
   
-  대각성분은 $i$번째 기저로 $\boldsymbol{e}_i$의 자기 자신에 대한 내적이다. 따라서 $a_{ii}$는 $\boldsymbol{e}_i^\top \boldsymbol{A} \boldsymbol{e}_i$를 계산해 얻을 수 있으며 해당 값은 positive definite에 의해 양수가 된다.
+  대각성분은 $i$번째 basis로 $\boldsymbol{e}_i$의 자기 자신에 대한 내적이다. 따라서 $a_{ii}$는 $\boldsymbol{e}_i^\top \boldsymbol{A} \boldsymbol{e}_i$를 계산해 얻을 수 있으며 해당 값은 positive definite에 의해 양수가 된다.
 
 
 ## Conclusion
