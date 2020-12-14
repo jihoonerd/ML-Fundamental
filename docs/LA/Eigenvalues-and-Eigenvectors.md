@@ -166,8 +166,8 @@ $$
 교재는 Fig 4.4에서 다섯가지 형태의 선형 변환에 대해 eigenvalue와 eigenvector가 어떻게 달라지는지 보여준다. 시각적으로 이해할 수 있게 도와주는 매우 유용한 자료이므로 꼭 살펴보도록 하자.
 
 <figure align=center>
-<img src="/assets/images/LA/Fig_4.4.png"/>
-<figcaption>Figure 4.4</figcaption>
+<img src="assets/images/LA/Fig_4.4.png"/>
+<figcaption>Figure 4.4: Determinants and eigenspaces. Overview of five linear mappings and their associated transformation matrices.</figcaption>
 </figure>
 
 각 변환은 위에서부터 순서대로 $\boldsymbol{A}_1, \ldots, \boldsymbol{A}_5$에 해당한다.
