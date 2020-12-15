@@ -208,20 +208,29 @@ $$
 > 
 > 정사각행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$이 $n$개 미만의 선형독립인 eigenvector를 가질 경우 *defective*하다고 한다.
 
---------------[여기부터]
+하지만 non-defective matrix가 반드시 $n$개의 서로다른 eigenvalue를 가질 필요는 없다. 다만 Non-defective하다면 $\mathbb{R}^{n}$의 basis를 구성해야 한다. 따라서 defective matrix에서는 $m > 1$인 algebraic multiplicity에 대해서 eigenspace의 geometric multiplicity가 $m$보다 작다.
 
-하지만 non-defective matrix가 반드시 $n$개의 서로다른 eigenvalue를 가질 필요는 없다. 다만 Non-defective하다면 $\mathbb{R}^{n}$의 basis를 구성해야 한다. 따라서 defective matrix에서는 eigenspace의 차원수 합이 $n$보다 작다.
+이제는 Symmetric과 Positive definite 성질을 살펴보자.
 
-이제는 Symmetric과 Positive definite 성질에 집중해보자. 우선 다음의 정리를 보자.
-
+> [!NOTE]
 > **Theorem**
 >
-> Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can always obtain a symmetric, positive semidefinite matrix $\boldsymbol{S} \in \mathbb{R}^{n \times n}$ by defining:
-> $$\boldsymbol{S} := \boldsymbol{A}^\top \boldsymbol{A}$$
-> If $\text{rk}(\boldsymbol{A}) = n$, then $\boldsymbol{S} := \boldsymbol{A}^\top \boldsymbol{A}$ is symmetric, positive definite.
+> 어떤 행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$에 대해서, 다음과 같이 $\boldsymbol{S}$를 정의하면 $\boldsymbol{S}$는 항상 positive semidefinite 행렬이 된다.
+> $$\boldsymbol{S} \coloneqq \boldsymbol{A}^\top \boldsymbol{A}$$
+> 만약 $\text{rk}(\boldsymbol{A}) = n$이라면, $\boldsymbol{S} := \boldsymbol{A}^\top \boldsymbol{A}$는 항상 symmetric, positive definite이다.
 
-각 성질의 성립여부는 위의 $\boldsymbol{S}$를 대입하면 쉽게 얻을 수 있다. 실제로, $\boldsymbol{S} = \boldsymbol{S}^\top$을 만족하며 positive semidefiniteness인 $\boldsymbol{x}^\top \boldsymbol{Sx} \geq 0$를 만족한다. 벡터/행렬로 표현되었을 뿐 스칼라의 제곱에 대응하는 개념이다.
+각 성질의 성립여부는 위의 $\boldsymbol{S}$ 정의에서 쉽게 확인할 수 있다. $\boldsymbol{S} = \boldsymbol{S}^\top$을 만족하며 positive semidefiniteness인 $\boldsymbol{x}^\top \boldsymbol{Sx} = \boldsymbol{x}^{\top}\boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{x} = (\boldsymbol{x}^{\top}\boldsymbol{A}^{\top})(\boldsymbol{Ax}) = (\boldsymbol{Ax}^{\top}) (\boldsymbol{Ax}) \geq 0$를 만족한다. 벡터/행렬로 표현되었을 뿐 벡터공간에서 벡터제곱에 대응하는 개념이다.
 
+이제 spectral theorem을 알아보자.
+
+> [!NOTE]
+> **Theorem: Spectral theorem**
+>
+> 만약 행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$이 symmetric하다면, $\boldsymbol{A}$에 대해서 실수인 eigenvalue와 대응하는 eigenvector가 구성하는 벡터공간 $V$에서 반드시 orthonormal basis가 존재한다.
+
+이후에 다루겠지만 spectral theorem에 의해, symmetric 행렬 $\boldsymbol{A}$가 실수 eigenvalue를 갖는 eigendecomposition이 존재함과 이에 대한 orthonormal basis가 존재함이 보장된다.
+
+---[여기부터]
 ### Example 3 (4.8)
 
 다음 행렬의 Eigenvector를 구해보자.
@@ -255,13 +264,7 @@ $$
 $$E_{1} = \text{span}[\begin{bmatrix} -1 \\ 1 \\ 0\end{bmatrix}, \frac{1}{2} \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}]$$
 
 
-## 4 Spectral Theorem
 
-Spectral theorem은 이후 다룰 Eigendecomposition이 Symmetric 행렬에 대해 *항상* 존재하고 Diagonalization이 됨을 뒷받침한다. Spectral theorem은 다음과 같다.
-
-> **Theorem: Spectral theorem**
->
-> If $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is symmetric, there exists an orthonormal basis of the corresponding vector space $V$ consisting of eigenvectors of $\boldsymbol{A}$, and each eigenvalue is real.
 
 ## 5 Eigenvalue/vector and Determinant/Trace
 
