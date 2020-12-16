@@ -230,10 +230,8 @@ $$
 
 이후에 다루겠지만 spectral theorem에 의해, symmetric 행렬 $\boldsymbol{A}$가 실수 eigenvalue를 갖는 eigendecomposition이 존재함과 이에 대한 orthonormal basis가 존재함이 보장된다.
 
----[여기부터]
-### Example 3 (4.8)
-
-다음 행렬의 Eigenvector를 구해보자.
+### Example 
+다음 행렬의 eigenvector를 구해보자.
 
 $$
 \boldsymbol{A} = \begin{bmatrix}
@@ -259,13 +257,11 @@ $$
   Eigenspace는 다음과 같다.
   $$E_{7} = \text{span}[\begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix}]$$
 
-  $E_{7}$이 $E_{1}$의 두 벡터와 직교함에 유의하자. 또한 위 행렬은 symmetric matrix로 잠시뒤에 다룰 spectral theorem에 의해 orthonormal basis로 벡터공간을 구성할 수 있다. Gram-Schmidt process를 $\boldsymbol{x}_1, \boldsymbol{x}_3$에 적용하면 $E_{1}$은 다음과 같이 Orthonormal basis로 바꿔 쓸 수 있다.
+$E_{7}$이 $E_{1}$의 두 벡터와 직교함에 유의하자. 또한 위 행렬은 symmetric matrix이므로 spectral theorem에 의해 orthonormal basis로 벡터공간을 구성할 수 있다. Gram-Schmidt process를 적용하면 $E_{1}$은 다음과 같이 orthonormal basis로 바꿔 쓸 수 있다.
 
-$$E_{1} = \text{span}[\begin{bmatrix} -1 \\ 1 \\ 0\end{bmatrix}, \frac{1}{2} \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}]$$
+$$E_{1} = \text{span}[\begin{bmatrix} -1 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}]$$
 
-
-
-
+---여기부터
 ## 5 Eigenvalue/vector and Determinant/Trace
 
 Eigenvalue/vector와 Determinant/Trace간의 유용한 관계를 정리하자.
