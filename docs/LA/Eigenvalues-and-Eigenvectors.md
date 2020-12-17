@@ -68,7 +68,7 @@ Eigenvalue와 eigenvector는 다음의 성질을 갖는다.
   $$\begin{aligned}
   \boldsymbol{Ax} = \lambda\boldsymbol{x} &\iff \boldsymbol{Ax} - \lambda\boldsymbol{x} = \boldsymbol{0}\\
   &\iff (\boldsymbol{A}-\lambda\boldsymbol{I})\boldsymbol{x} = \boldsymbol{0}\\
-  &\iff \boldsymbol{x} \in \text{ker}(\boldsymbol{A} - \lambda \boldsymbol{I})
+  &\iff \boldsymbol{x} \in \operatorname{ker}(\boldsymbol{A} - \lambda \boldsymbol{I})
   \end{aligned}
   $$
 * Similar matrices는 같은 eigenvalue를 가진다. 즉, eigenvalue를 비롯해 determinant, trace는 basis change에 대해 불변(invariant)이다.
@@ -97,7 +97,7 @@ Eigenvector는 영벡터가 아니다. 따라서 $(\boldsymbol{A}- \lambda \bold
 따라서, characteristic polynomial은 다음과 같다.
 
 $$
-p_{\boldsymbol{A}} = \text{det}(\boldsymbol{A} - \lambda \boldsymbol{I})
+p_{\boldsymbol{A}} = \operatorname{det}(\boldsymbol{A} - \lambda \boldsymbol{I})
 $$
 
 #### Eigenvalue
@@ -106,8 +106,8 @@ Characteristic polynomial의 해를 구한다.
 
 $$
 \begin{aligned}
-p_{\boldsymbol{A}} &= \text{det}(\boldsymbol{A} - \lambda \boldsymbol{I})\\
-&= \text{det}\left(\begin{bmatrix}4 & 2 \\ 1 & 3\end{bmatrix} - \begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\right)\\
+p_{\boldsymbol{A}} &= \operatorname{det}(\boldsymbol{A} - \lambda \boldsymbol{I})\\
+&= \operatorname{det}\left(\begin{bmatrix}4 & 2 \\ 1 & 3\end{bmatrix} - \begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}\right)\\
 &= \begin{vmatrix} 4-\lambda & 2 \\ 1 & 3-\lambda\end{vmatrix}\\
 &= (4-\lambda)(3-\lambda) - 2 \cdot 1
 \end{aligned}
@@ -140,14 +140,14 @@ $$
   위에 대입하면 다음과 같다.
   $$\begin{bmatrix}-1 & 2 \\ 1 & -2\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \boldsymbol{0}$$
   정리하면 $x_1 = 2x_2$의 관계를 얻는다. 따라서 $\lambda=5$의 solution space는 다음과 같다.
-  $$E_{5} = \text{span}[\begin{bmatrix}2 \\ 1 \end{bmatrix}]$$
+  $$E_{5} = \operatorname{span}[\begin{bmatrix}2 \\ 1 \end{bmatrix}]$$
 
 2) $\lambda=2$
   
   위에 대입하면 다음과 같다.
   $$\begin{bmatrix}2 & 2 \\ 1 & 1\end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \boldsymbol{0}$$
   정리하면 $x_1 = -x_2$의 관계를 얻는다. 따라서 $\lambda=2$의 solution space는 다음과 같다.
-  $$E_{2} = \text{span}[\begin{bmatrix}1 \\ -1 \end{bmatrix}]$$
+  $$E_{2} = \operatorname{span}[\begin{bmatrix}1 \\ -1 \end{bmatrix}]$$
 
 이 경우는 algebraic multiplicity와 geometric multiplicity가 모두 2인 상황이다. 하지만 앞서 언급한대로 geometric multiplicity는 algebraic multiplicity보다 적을 수도 있다. 이 경우를 살펴보자.
 
@@ -217,7 +217,7 @@ $$
 >
 > 어떤 행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$에 대해서, 다음과 같이 $\boldsymbol{S}$를 정의하면 $\boldsymbol{S}$는 항상 positive semidefinite 행렬이 된다.
 > $$\boldsymbol{S} \coloneqq \boldsymbol{A}^\top \boldsymbol{A}$$
-> 만약 $\text{rk}(\boldsymbol{A}) = n$이라면, $\boldsymbol{S} := \boldsymbol{A}^\top \boldsymbol{A}$는 항상 symmetric, positive definite이다.
+> 만약 $\operatorname{rk}(\boldsymbol{A}) = n$이라면, $\boldsymbol{S} := \boldsymbol{A}^\top \boldsymbol{A}$는 항상 symmetric, positive definite이다.
 
 각 성질의 성립여부는 위의 $\boldsymbol{S}$ 정의에서 쉽게 확인할 수 있다. $\boldsymbol{S} = \boldsymbol{S}^\top$을 만족하며 positive semidefiniteness인 $\boldsymbol{x}^\top \boldsymbol{Sx} = \boldsymbol{x}^{\top}\boldsymbol{A}^{\top} \boldsymbol{A} \boldsymbol{x} = (\boldsymbol{x}^{\top}\boldsymbol{A}^{\top})(\boldsymbol{Ax}) = (\boldsymbol{Ax}^{\top}) (\boldsymbol{Ax}) \geq 0$를 만족한다. 벡터/행렬로 표현되었을 뿐 벡터공간에서 벡터제곱에 대응하는 개념이다.
 
@@ -250,49 +250,55 @@ $$
 1) $\lambda_1 = 1$
    
   Characteristic polynomial이 중근을 갖는 경우이다. 이 때 eigenvector는 두개가 얻어지며 eigenspace는 다음과 같다.
-  $$E_{1} = \text{span}[\begin{bmatrix}-1 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix}-1 \\ 0 \\ 1\end{bmatrix}]$$
+  $$E_{1} = \operatorname{span}[\begin{bmatrix}-1 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix}-1 \\ 0 \\ 1\end{bmatrix}]$$
 
 2) $\lambda_2 = 7$
 
   Eigenspace는 다음과 같다.
-  $$E_{7} = \text{span}[\begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix}]$$
+  $$E_{7} = \operatorname{span}[\begin{bmatrix}1 \\ 1 \\ 1\end{bmatrix}]$$
 
 $E_{7}$이 $E_{1}$의 두 벡터와 직교함에 유의하자. 또한 위 행렬은 symmetric matrix이므로 spectral theorem에 의해 orthonormal basis로 벡터공간을 구성할 수 있다. Gram-Schmidt process를 적용하면 $E_{1}$은 다음과 같이 orthonormal basis로 바꿔 쓸 수 있다.
 
-$$E_{1} = \text{span}[\begin{bmatrix} -1 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}]$$
+$$E_{1} = \operatorname{span}[\begin{bmatrix} -1 \\ 1 \\ 0\end{bmatrix}, \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}]$$
 
----여기부터
-## 5 Eigenvalue/vector and Determinant/Trace
+## Relationship between Determinant/Trace with Eigenvalue/vector
 
-Eigenvalue/vector와 Determinant/Trace간의 유용한 관계를 정리하자.
+Eigenvalue/vector와 Determinant, trace간의 유용한 관계를 정리하자.
 
+> [!NOTE]
 > **Theorem**
 >
-> The determinant of a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is the product of its eigenvalues, i.e.,
-> $$\text{det}(\boldsymbol{A}) = \prod_{i=1}^n \lambda_{i}$$
-> where $\lambda_{i} \in \mathbb{C}$ are (possibly repeated) eigenvalues of $\boldsymbol{A}$
+> 행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$의 determinant는 eigenvalue의 곱과 같다.
+> $$\operatorname{det}(\boldsymbol{A}) = \prod_{i=1}^n \lambda_{i}$$
+> 이 때, $\lambda_{i} \in \mathbb{C}$는 $\boldsymbol{A}$의 eigenvalue이며 중복될 수도 있다.
 
+> [!NOTE]
 > **Theorem**
 >
-> The trace of a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is the sum of its eigenvalues, i.e.,
-> $$\text{tr}(\boldsymbol{A}) = \sum_{i=1}^{n} \lambda_i$$
-> where $\lambda_{i} \in \mathbb{C}$ are (possibly repeated) eigenvalues of $\boldsymbol{A}$
+> 행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$의 trace는 eigenvalue의 합과 같다.
+> $$\operatorname{tr}(\boldsymbol{A}) = \sum_{i=1}^{n} \lambda_i$$
+> 이 때, $\lambda_{i} \in \mathbb{C}$는 $\boldsymbol{A}$의 eigenvalue이며 중복될 수도 있다.
 
-## 6 Google's PageRank
+두 theorem에 기하학적인 의미를 부여해보자. 예를 들어 $\boldsymbol{A} \in \mathbb{R}^{2 \times 2}$인 행렬이 선형 독립인 eigenvector $\boldsymbol{x}_{1}, \boldsymbol{x}_{2}$를 갖고 둘이 orthonormal하다고 해보자. 이 두 벡터가 이루는 면적은 1이다. 이 두 벡터에 대해 eigenvalue/vector 정의식을 사용하면 $\boldsymbol{v}_{1} = \boldsymbol{A}\boldsymbol{x}_{1} = \lambda_{1} \boldsymbol{x}_{1}$, $\boldsymbol{v}_{2} = \boldsymbol{A}\boldsymbol{x}_{2} = \lambda_{2} \boldsymbol{x}_{2}$이 성립한다. Determinant는 앞에서 면적확장률의 의미를 갖는다고 언급한 바가 있다. 따라서 각 벡터가 eigenvalue인 $\lambda_{1}, \lambda_{2}$만큼 늘어났으므로 면적은 $\lvert \lambda_{1}\lambda_{2} \rvert$만큼 확장되었을 것이고 이 값은 determinant와 같게 된다. Determinant가 면적의 의미를 가졌다면 trace는 둘레의 의미를 갖는다. 같은 예시에서 trace는 행렬 $\boldsymbol{A}$에 의해 변화된 둘레가 된다.
 
-초창기 구글이 서비스를 시작했을 무렵, 다른 경쟁자 대비 강력한 구글의 검색능력의 원천은 [PageRank](https://en.wikipedia.org/wiki/PageRank)라는 알고리즘에서 비롯되었다. (Page도 Larry Page에서 따온것이라고 한다) 검색엔진은 각 웹페이지의 중요도를 파악해 검색시 중요한 페이지를 우선적으로 보여주는 것이 중요하다. 뜬금없이 Eigenvalue/vector를 이야기하다가 갑자기 이게 무슨 이야기인지 싶지만 구글의 검색엔진이 작동하는 기본원리가 바로 Eigenvalue/vector에 있다.
+## Google's PageRank
 
-이 알고리즘은 어떤 웹페이지의 중요도는 해당 페이지로의 링크에 의해 추정될 수 있다고 생각한다. 이를 표현하기 위해 PageRank는 Directed graph로 각 페이지가 어느 페이지로 링크되어 있는지를 표현한다.
+초창기 구글이 서비스를 시작했을 무렵, 다른 경쟁자 대비 강력한 구글의 검색능력의 원천은 [PageRank](https://en.wikipedia.org/wiki/PageRank)라는 알고리즘에서 비롯되었다. (Page도 Larry Page에서 따온것이라고 한다) 검색엔진은 각 웹페이지의 중요도를 파악해 검색시 중요한 페이지를 우선적으로 보여주는 것이 중요하다. 뜬금없이 eigenvalue/vector를 이야기하다가 갑자기 이게 무슨 이야기인지 싶지만 구글의 검색엔진이 작동하는 기본원리가 바로 eigenvalue/vector에 있다.
 
-![PageRank](https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/PageRanks-Example.jpg/600px-PageRanks-Example.jpg){: .align-center}
+이 알고리즘은 어떤 웹페이지의 중요도는 해당 페이지로의 링크에 의해 추정될 수 있다고 생각한다. 이를 표현하기 위해 PageRank는 directed graph로 각 페이지가 어느 페이지로 링크되어 있는지를 표현한다.
 
-PageRank 알고리즘은 어떤 웹페이지 $a_{i}$가 얼마나 많이 다른 페이지로부터 링크되어있는지를 통해  가중치를 결정한다. 이 때 링크의 수이므로 가중치는 0보다 크거나 같은 값을 갖는다. 또한 $a_{i}$로 링크가 걸린 사이트를 셀 뿐만 아니라 각 페이지 내에서 가리키는 페이지들이 얼마나 있는지를 감안해 $a_{i}$의 가중치에 반영한다. 이 정보를 통해 Transition matrix $\boldsymbol{A}$로 모델링하여 확률을 계산하게된다. 이 Transition matrix는 초기값 vector $\boldsymbol{x}$에 대해서 연속적으로 변환하면, $\boldsymbol{x}, \boldsymbol{Ax}, \boldsymbol{A}^2 \boldsymbol{x}, \ldots$ 결과적으로 어떤 벡터 $\boldsymbol{x}^{\*}$로 수렴하는 성질이 있다. 이 수렴하는 벡터가 *PageRank*이며 $\boldsymbol{A}\boldsymbol{x}^{\*} = \boldsymbol{x}^{\*}$이 성립한다. 이 식을 통해 PageRank는 Eigenvalue가 1일때의 Eigenvector로 볼 수 있다. 그리고 PageRank를 normalize한 $\boldsymbol{x}^{\*}$를 통해 특정 웹페이지로 이동할 확률로 해석할 수 있다.
+<figure align=center>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/PageRanks-Example.jpg/600px-PageRanks-Example.jpg"/>
+<figcaption>Wikipedia: PageRank</figcaption>
+</figure>
 
-## 7 Conclusion
+PageRank 알고리즘은 어떤 웹페이지 $a_{i}$가 얼마나 많이 다른 페이지로부터 링크되어있는지를 통해  가중치를 결정한다. 이 때 링크의 수이므로 가중치는 0보다 크거나 같은 값을 갖는다. 또한 $a_{i}$로 링크가 걸린 사이트를 셀 뿐만 아니라 각 페이지 내에서 가리키는 페이지들이 얼마나 있는지를 감안해 $a_{i}$의 가중치에 반영한다. 이 정보를 통해 transition matrix $\boldsymbol{A}$로 모델링하여 확률을 계산하게된다. (이 transition matrix는 Markov process의 관점에서 접근할 수도 있다) 이 transition matrix를 초기값 vector $\boldsymbol{x}$에 대해서 반복적으로 적용하면, $\boldsymbol{x}, \boldsymbol{Ax}, \boldsymbol{A}^2 \boldsymbol{x}, \ldots$으로 쓸 수 있으며 최종적으로 어떤 벡터 $\boldsymbol{x}^{*}$로 수렴하는 성질이 있다. 이 수렴하는 벡터가 **PageRank**이며 $\boldsymbol{A}\boldsymbol{x}^{*} = \boldsymbol{x}^{*}$이 성립한다. 이 식을 통해 PageRank는 Eigenvalue가 1일때의 Eigenvector로 볼 수 있다. 그리고 PageRank를 normalize한 $\boldsymbol{x}^{*}$를 통해 특정 웹페이지로 이동할 확률로 해석할 수 있다.
 
-이번 장에서는 행렬분해뿐만 아니라 선형대수학에서 가장 자주 언급되는 개념인 Eigenvalue와 Eigenvector를 다루었다. 행렬분해에서는 이 개념을 반복해서 사용하게되므로 정의식뿐만 아니라 선형변환에서 Eigenvalue와 Eigenvector의 의미, 계산하는 방법정도는 충분히 암기할만한 가치가 있다.
+## Conclusion
 
-## 8 Reference
+이번 문서에서는 선형대수학에서 매우 중요한 개념인 eigenvalue와 eigenvector를 다루었다. 정의식뿐만이 아니라 선형변환에서 eigenvalue와 eigenvector의 의미, 계산하는 방법과 성질을 정확하게 알고 있어야 한다.
+
+## Reference
 
 * [Wikipedia: PageRank](https://en.wikipedia.org/wiki/PageRank)
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
