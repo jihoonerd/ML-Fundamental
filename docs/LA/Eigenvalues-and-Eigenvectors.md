@@ -285,7 +285,7 @@ Eigenvalue/vector와 Determinant, trace간의 유용한 관계를 정리하자.
 
 초창기 구글이 서비스를 시작했을 무렵, 다른 경쟁자 대비 강력한 구글의 검색능력의 원천은 [PageRank](https://en.wikipedia.org/wiki/PageRank)라는 알고리즘에서 비롯되었다. (Page도 Larry Page에서 따온것이라고 한다) 검색엔진은 각 웹페이지의 중요도를 파악해 검색시 중요한 페이지를 우선적으로 보여주는 것이 중요하다. 뜬금없이 eigenvalue/vector를 이야기하다가 갑자기 이게 무슨 이야기인지 싶지만 구글의 검색엔진이 작동하는 기본원리가 바로 eigenvalue/vector에 있다.
 
-이 알고리즘은 어떤 웹페이지의 중요도는 해당 페이지로의 링크에 의해 추정될 수 있다고 생각한다. 이를 표현하기 위해 PageRank는 directed graph로 각 페이지가 어느 페이지로 링크되어 있는지를 표현한다.
+이 알고리즘은 어떤 웹페이지의 중요도는 해당 페이지로의 링크에 의해 추정될 수 있다고 가정한다. 이를 표현하기 위해 PageRank는 directed graph로 각 페이지가 어느 페이지로 링크되어 있는지를 표현한다.
 
 <figure align=center>
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/PageRanks-Example.jpg/600px-PageRanks-Example.jpg"/>

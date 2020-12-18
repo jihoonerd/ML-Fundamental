@@ -17,5 +17,6 @@
   * [Rotation](/LA/Rotation.md "Rotation")
   * [Determinant and Trace](/LA/Determinant-and-Trace.md "Determinant and Trace")
   * [Eigenvalues and Eigenvectors](/LA/Eigenvalues-and-Eigenvectors.md "Eigenvalues and Eigenvectors")
+  * [Cholesky Decomposition](/LA/Cholesky-Decomposition.md "Cholesky Decomposition")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
