@@ -66,29 +66,36 @@ $$
 
 따라서 $\boldsymbol{P}$의 열벡터들은 $\boldsymbol{A}$의 eigenvector에 해당함을 알 수 있다.
 
-Diagnoalization은 $\boldsymbol{P}$가 full-rank로 invertible할 때 가능하다. 즉, 즉 위의 eigenvector는 선형독립이다.
+Diagnoalization은 $\boldsymbol{P}$가 full-rank로 invertible할 때 가능하다. 즉, 위의 eigenvector는 선형독립이다.
 
----[여기부터]---
+이제 eigendecomposition을 알아보자.
+
 > [!NOTE]
 > **Theorem: Eigendecomposition**
 >
-> A square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ can be factored into
+> 어떤 정사각행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$는 $\boldsymbol{A}$의 eigenvector가 $\mathbb{R}^{n}$의 basis를 구성하는 $\boldsymbol{P} \in \mathbb{R}^{n \times n}$로 표현되고, 대각행렬 $\boldsymbol{D}$ 가 대각성분으로 $\boldsymbol{A}$의 eigenvalue를 가질 때, 다음과 같이 분해될 수 있다.
 > $$\boldsymbol{A} = \boldsymbol{PD} \boldsymbol{P}^{-1}$$
-> where $\boldsymbol{P} \in \mathbb{R}^{n \times n}$ and $\boldsymbol{D}$ is a diagonal matrix whose diagonal entries are the eigenvalues of $\boldsymbol{A}$, if and only if the eigenvectors of $\boldsymbol{A}$ form a basis of $\mathbb{R}^{n}$.
+> $n$개의 eigenvalue를 가져야 대각화가 가능하므로 non-defective한 경우에만 eigendecomposition이 가능하다.
 
-행렬 $\boldsymbol{A}$를 Symmetric matrix로 한정한다면 다음과 같은 정리를 얻을 수 있다.
+행렬 $\boldsymbol{A}$를 Symmetric matrix로 한정한다면 다음과 같은 더 강한 정리가 성립한다.
 
+> [!NOTE]
 > **Theorem**
 >
-> A symmetric matrix $\boldsymbol{S} \in \mathbb{R}^{n \times n}$ can always be diagonalized.
+> Symmetric matrix $\boldsymbol{S} \in \mathbb{R}^{n \times n}$는 항상 대각화가 가능하다.
 
-이는 Spectral theorem에서 바로 이어지는 내용이다. 상기해보자면 Spectral theorem은 다음과 같다.
+이는 Spectral theorem에서 바로 이어지는 내용이다. 상기해보자면 spectral theorem은 다음과 같다.
 
+> [!NOTE]
 > **Theorem: Spectral theorem**
 >
-> If $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is symmetric, there exists an orthonormal basis of the corresponding vector space $V$ consisting of eigenvectors of $\boldsymbol{A}$, and each eigenvalue is real.
+> 만약 행렬 $\boldsymbol{A} \in \mathbb{R}^{n \times n}$이 symmetric하다면, $\boldsymbol{A}$에 대해서 실수인 eigenvalue와 대응하는 eigenvector가 구성하는 벡터공간 $V$에서 반드시 orthonormal basis가 존재한다.
 
-# 3 Geometric Intuition for the Eigendecomposition
+따라서 symmetric 행렬이라면 eigenvector가 orthonormal basis로 구성할 수 있음이 보장되고 이 경우에는 $\boldsymbol{D} = \boldsymbol{P}^{\top}\boldsymbol{A}\boldsymbol{P}$이 성립한다.
+
+
+[여기부터]
+## Geometric Intuition for the Eigendecomposition
 
 개인적으로 이 교재를 좋아하는 이유 중 하나는 개념을 이해하는데 있어 필요한 시각적 자료가 아주 적절하게, 그리고 잘 설명하는 그림으로 들어가 있다는 것이다. 다음 그림을 보면서 Eigendecomposition을 다시 해석해보자.
 
