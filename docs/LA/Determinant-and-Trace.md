@@ -153,10 +153,10 @@ Trace는 다음의 성질을 갖는다.
 
 Characteristic polynomial은 다음에 다룰 Eigenvalues와 Eigenvectors를 구할 때 사용된다.
 
-# 3 Conclusion
+## Conclusion
 
 교재에서 determinant와 trace는 행렬의 분해(matrix decomposition)을 다루기에 앞서 소개되는 개념이다. 행렬분해를 다루기 위해서 필요하다는 것을 의미한다. 각각은 반드시 알아야하는 개념이며 아무래도 determinant가 rank와의 관계나 기하학적인 의미 등 다양한 의미를 지니다보니 시험이나 면접에서는 trace보다 더 자주 언급되는 편이다. 마지막에 소개된 characteristic polynomial은 특히 손계산으로 행렬분해와 관련된 문제를 풀 때 편리하게 사용할 수 있는 식이므로 익숙해지도록 하자.
 
-# 4 Reference
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.

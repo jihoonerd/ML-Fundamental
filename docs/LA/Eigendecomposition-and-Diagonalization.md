@@ -93,21 +93,28 @@ Diagnoalization은 $\boldsymbol{P}$가 full-rank로 invertible할 때 가능하�
 
 따라서 symmetric 행렬이라면 eigenvector가 orthonormal basis로 구성할 수 있음이 보장되고 이 경우에는 $\boldsymbol{D} = \boldsymbol{P}^{\top}\boldsymbol{A}\boldsymbol{P}$이 성립한다.
 
-
-[여기부터]
 ## Geometric Intuition for the Eigendecomposition
 
-개인적으로 이 교재를 좋아하는 이유 중 하나는 개념을 이해하는데 있어 필요한 시각적 자료가 아주 적절하게, 그리고 잘 설명하는 그림으로 들어가 있다는 것이다. 다음 그림을 보면서 Eigendecomposition을 다시 해석해보자.
+Eigendecomposition이 행렬을 어떻게 분해하는지에 대해 알아보았다.
 
-![Fig_4.7](/assets/images/2020-07-26-MML-04-04-Matrix-Decompositions/Fig_4.7.png){: .align-center}
+$$\boldsymbol{A} = \boldsymbol{PD} \boldsymbol{P}^{-1}$$
 
-Eigendecomposition은 $\boldsymbol{A}$를 $\boldsymbol{PD} \boldsymbol{P}^{-1}$로 분해한다. 즉, 어떠한 벡터 $\boldsymbol{x}$의 $\boldsymbol{A}$에 대한 Linear mapping $\boldsymbol{Ax}$는 $\boldsymbol{PD} \boldsymbol{P}^{-1} \boldsymbol{x}$와 같다. 따라서 벡터 $\boldsymbol{x}$는 왼쪽위에서 반시계반향으로 오른쪽 위까지 순차적인 변환된다.
+그렇다면 행렬 $\boldsymbol{A}$에 의한 변환 $\boldsymbol{Ax}$는 $\boldsymbol{PD} \boldsymbol{P}^{-1} \boldsymbol{x}$이다. 오른쪽부터 순서대로 행렬의 곱을 세차례에 걸쳐서 하게되며 각각의 곱도 선형변환으로써 의미를 갖는다. 여기서는 기하적으로 각각의 행렬곱에 의한 선형변환이 어떻게 벡터를 변환하는지 알아보자.
 
-제일 처음에 이뤄지는 연산은 $\boldsymbol{P}^{-1} \boldsymbol{x}$이다. $\boldsymbol{P}$는 Eigenvector space에서 기존 공간(Standard basis space)로 변환하므로 $\boldsymbol{P}$는 반대로 변환할 것이다. $\boldsymbol{P}^{-1} \boldsymbol{x}$를 통해 벡터 $\boldsymbol{x}$는 Eigenvector space에 대응하는 벡터로 변환된다 (Fig 4.7 왼쪽하단). 그리고 Diagonal matrix $\boldsymbol{D}$와 곱해지면서 각 Eigenvector의 scaling이 이루어진다. (Fig 4.7 오른쪽 하단) 이제 마지막으로 $\boldsymbol{P}$를 곱해주어 Scaling된 vector를 다시 기존 공간에 표현해주면 된다. (Fig 4.7 오른쪽 상단)
+[여기부터]
 
-정성적으로 이해하면 $\boldsymbol{A}$라는 변환을 기존 공간에서 바로 진행할 수도 있지만 같은 변환을 Eigenvector space에서 수행하고 다시 기존공간에 복원하는 것이 Eigendecomposition인 것이다. 예제를 통해 자세히 살펴보자.
+<figure align=center>
+<img src="assets/images/LA/Fig_4.7.png" width=60% height=60%/>
+<figcaption>Figure 4.7: Intuition behind the eigendecomposition as sequential transformations.</figcaption>
+</figure>
 
-# 4 Example Problem
+Eigendecomposition은 $\boldsymbol{A}$를 $\boldsymbol{PD} \boldsymbol{P}^{-1}$로 분해한다. 즉, 어떠한 벡터 $\boldsymbol{x}$의 $\boldsymbol{A}$에 대한 선형변환 $\boldsymbol{Ax}$는 $\boldsymbol{PD} \boldsymbol{P}^{-1} \boldsymbol{x}$와 같다. 따라서 벡터 $\boldsymbol{x}$는 왼쪽위에서 반시계반향으로 오른쪽 위까지 순차적인 변환된다.
+
+제일 처음에 이뤄지는 연산은 $\boldsymbol{P}^{-1} \boldsymbol{x}$이다. $\boldsymbol{P}^{-1}$는 standard basis vector $\boldsymbol{e}_{i}$로 표현되는 공간으로 바꾸어주게 된다. 즉, eigenbasis $\boldsymbol{p}_{i}$를 standard basis vector로 변환해준다. (Fig 4.7 왼쪽하단) 그리고 diagonal matrix $\boldsymbol{D}$와 곱해지면서 각 basis가 eigenvalue $\lambda_{i}$만큼의 scaling이 이루어진다. (Fig 4.7 오른쪽 하단) 마지막으로, $\boldsymbol{P}$를 곱해주어 scaling된 basis vector를 다시 기존 공간으로 변환하게 된다. (Fig 4.7 오른쪽 상단)
+
+정성적으로 이해하면, $\boldsymbol{A}$라는 변환을 바로 진행할 수도 있지만 각 basis에 대해 scaling만 하면 되는 공간으로 변환을 하고 scaling을 해준 뒤 다시 기존 공간으로 복원하는 과정으로 분해해 표현하는 것이 eigendecomposition이다. 예제를 통해 확인해보자.
+
+### Example
 
 다음 행렬의 Eigendecomposition을 해보자.
 
@@ -115,20 +122,20 @@ $$
 \boldsymbol{A} = \begin{bmatrix}2 & 1 \\ 1 & 2 \end{bmatrix}
 $$
 
-## 4.1 Step 1: Compute eigenvalues and eigenvectors
+#### Step 1: Compute eigenvalues and eigenvectors
 
 Characteristic polynomial은 다음과 같이 구해진다.
 
 $$
-\begin{eqnarray}
-\text{det}(\boldsymbol{A} - \lambda \boldsymbol{I}) &=& \text{det} \left( \begin{bmatrix} 2 - \lambda & 1 \\ 1 & 2 - \lambda \end{bmatrix} \right) \\
-&=& (2-\lambda)^2 - 1 \\
-&=& \lambda^2 - 4 \lambda +3 \\
-&=& (\lambda - 3)(\lambda -1)
-\end{eqnarray}
+\begin{aligned}
+\text{det}(\boldsymbol{A} - \lambda \boldsymbol{I}) &= \text{det} \left( \begin{bmatrix} 2 - \lambda & 1 \\ 1 & 2 - \lambda \end{bmatrix} \right) \\
+&= (2-\lambda)^2 - 1 \\
+&= \lambda^2 - 4 \lambda +3 \\
+&= (\lambda - 3)(\lambda -1)
+\end{aligned}
 $$
 
-따라서 Eigenvalue는 각각 $\lambda_{1} = 1, \lambda_{2} = 3$이다. 그리고 해당하는 Eigenvector는 다음과 같다.
+따라서 eigenvalue는 각각 $\lambda_{1} = 1, \lambda_{2} = 3$이다. 그리고 해당하는 eigenvector는 다음과 같다.
 
 $$
 \boldsymbol{p}_{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
@@ -138,19 +145,19 @@ $$
 \boldsymbol{p}_{2} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 $$
 
-## 4.2 Check for existence
+#### Step 2: Check for existence
 
-앞서 언급한대로 Diagnoalization은 Non-defective한 행렬에 대해서만 가능하다. $2 \times 2$행렬에서 두 개의 서로 다른 실수 Eigenvalue를 얻었으므로 이 행렬은 Non-defective하고 각 Eigenvector는 Linearly independent basis가 된다.
+Diagnoalization은 non-defective한 행렬에 대해서만 가능하다. $2 \times 2$행렬에서 두 개의 서로 다른 실수 eigenvalue를 얻었으므로 이 행렬은 non-defective하고 각 eigenvector는 선형독립이다.
 
-## 4.3 Construct the matrix $\boldsymbol{P}$ to diagonalize $\boldsymbol{A}$
+#### Step 3: Construct the matrix $\boldsymbol{P}$ to diagonalize $\boldsymbol{A}$
 
-이미 Eigenvector를 구하였으므로 $\boldsymbol{P}$는 다음과 같이 간단하게 구성할 수 있다.
+Eigenvector를 구하였으므로 $\boldsymbol{P}$는 다음과 같이 간단하게 구성할 수 있다.
 
 $$
-\begin{eqnarray}
-\boldsymbol{P} &=& [\boldsymbol{p}_{1}, \boldsymbol{p}_{2}] \\
-&=& \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ -1 & 1 \end{bmatrix}
-\end{eqnarray}
+\begin{aligned}
+\boldsymbol{P} &= [\boldsymbol{p}_{1}, \boldsymbol{p}_{2}] \\
+&= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ -1 & 1 \end{bmatrix}
+\end{aligned}
 $$
 
 Diagonal matrix는 각 Eigenvalue이므로 $\boldsymbol{D}$는 다음과 같다.
@@ -165,18 +172,18 @@ $$
 \begin{bmatrix}2 & 1 \\ 1 & 2\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}1 & 1 \\ -1 & 1 \end{bmatrix}\begin{bmatrix}1 & 0 \\ 0 & 3 \end{bmatrix} \frac{1}{\sqrt{2}} \begin{bmatrix}1 & -1 \\ 1 & 1 \end{bmatrix}
 $$
 
-# 5 Properties
+## Properties
 
-* Diagonal matrix $\boldsymbol{D}$는 간단하게 거듭제곱을 계산할 수 있으며 Eigendecomposition을 하면 거듭제곱을 간단히 계산하는 것도 가능하다.
+* Diagonal matrix $\boldsymbol{D}$는 간단하게 거듭제곱을 계산할 수 있으며 eigendecomposition을 하면 거듭제곱을 간단히 계산하는 것도 가능하다.
   $$\boldsymbol{A}^{k} = (\boldsymbol{PD} \boldsymbol{P}^{-1} )^{k} = \boldsymbol{P} \boldsymbol{D}^{k} \boldsymbol{P}^{-1}$$
-* Eigendecomposition을 이용하면 Determinant는 $\boldsymbol{D}$의 대각성분을 모두 곱해 얻을 수 있다.
-  $$\begin{eqnarray} \text{det}(\boldsymbol{A}) &=& \text{det}(\boldsymbol{PD} \boldsymbol{P}^{-1} ) \\ &=& \text{det}(\boldsymbol{P}) \cdot \text{det}(\boldsymbol{D}) \cdot \text{det}(\boldsymbol{P}^{-1}) \\ &=& \text{det}(\boldsymbol{D}) = \prod_{i} d_{ii} \end{eqnarray}$$
-  ($\boldsymbol{A}$의 Determinant와 $\boldsymbol{A}^{-1}$의 Determinant는 역수관계에 있다)
+* Eigendecomposition을 이용하면 determinant는 $\boldsymbol{D}$의 대각성분을 모두 곱해 얻을 수 있다.
+  $$\begin{aligned} \text{det}(\boldsymbol{A}) &= \text{det}(\boldsymbol{PD} \boldsymbol{P}^{-1} ) \\ &= \text{det}(\boldsymbol{P}) \cdot \text{det}(\boldsymbol{D}) \cdot \text{det}(\boldsymbol{P}^{-1}) \\ &= \text{det}(\boldsymbol{D}) = \prod_{i} d_{ii} \end{aligned}$$
+  ($\boldsymbol{A}$의 determinant와 $\boldsymbol{A}^{-1}$의 determinant는 역수관계에 있다)
 
-# 6 Conclusion
+## Conclusion
 
-선형대수학에서 다루는 행렬의 분행방법 중 가장 중요한 분해 중 하나인 Eigendecomposition에 대해 다루었다. 앞에 다루었던 Eigenvalue/vector의 개념을 이용한 분해법으로 행렬 변환의 특성을 이해하는데 도움이 될 뿐만 아니라 중요한 성질을 계산하는데 있어 여러모로 유용하게 사용할 수 있는 분해법이다. 하지만 Eigendecomposition은 Square matrix에 대해서만 적용가능하다는 큰 제약조건이 있다. 특히, 데이터를 다룰 때 Square matrix가 아닌 행렬을 다루는 경우가 훨씬 많다. 따라서 일반적인 행렬에 대해 적용할 수 있는 분해가 있다면 유용할 것이다. Square matrix뿐만이 아닌 일반적인 행렬에 대한 분해법이 바로 다음 포스팅에서 다룰 Singular value decomposition이다.
+선형대수학에서 다루는 행렬의 분행방법 중 가장 중요한 분해 중 하나인 eigendecomposition에 대해 다루었다. 앞에서 다루었던 eigenvalue/vector의 개념을 이용한 분해법으로 행렬 변환의 특성을 이해하는데 도움이 될 뿐만 아니라 중요한 성질을 계산하는데 있어 여러모로 유용하게 사용할 수 있는 분해법이다. 하지만 eigendecomposition은 정사각행렬이면서 non-defective한 경우에 대해서만 적용가능하다는 큰 제약조건이 있다. 특히, 데이터의 관점에서 보자면 정사각행렬이 아닌 행렬을 다루는 경우가 훨씬 많다. 따라서 일반적인 행렬에 대해 eigendecomposition스럽게 분해할 수 있다면 매우 유용할 것이다. 바로 이러한 분해법이 바로 다음 문서에서 다룰 singular value decomposition이다.
 
-# 7 Reference
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
