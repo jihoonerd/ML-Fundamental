@@ -19,5 +19,6 @@
   * [Eigenvalues and Eigenvectors](/LA/Eigenvalues-and-Eigenvectors.md "Eigenvalues and Eigenvectors")
   * [Cholesky Decomposition](/LA/Cholesky-Decomposition.md "Cholesky Decomposition")
   * [Eigendecomposition and Diagonalization](/LA/Eigendecomposition-and-Diagonalization.md "Eigendecomposition and Diagonalization")
+  * [Singular Value Decomposition](/LA/Singular-Value-Decomposition.md "Singular Value Decomposition")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
