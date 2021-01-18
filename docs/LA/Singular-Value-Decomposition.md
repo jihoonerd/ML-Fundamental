@@ -33,46 +33,52 @@ $$
 
 Eigendecomposition의 식과 SVD의 식을 비교해보면, symmetric, positive definite 행렬에 대한 SVD가 eigendecomposition임을 알 수 있다. 즉 eigendecomposition은 SVD의 특수한 경우이다.
 
-# 2 Geometric Intuitions for the SVD
+## Geometric Intuitions for the SVD
 
-Eigendecomposition에서와 비슷하게 SVD는 Linear transformation matrix $\boldsymbol{A}$가 어떻게 변환하는지에 대한 기하학적 설명을 제공한다. 각 행렬의 형태는 다르지만 Eigendecomposition이 $\boldsymbol{PD} \boldsymbol{P}^{-1}$이라는 순차적인 선형변환으로 해석했듯, SVD도 $\boldsymbol{U \Sigma}\boldsymbol{V}^{\top}$의 순차적인 변환으로 해석한다.
+Eigendecomposition에서와 비슷하게 SVD는 linear transformation matrix $\boldsymbol{A}$가 순차적으로 어떻게 변환하는지에 대한 기하학적 설명을 제공한다. 각 행렬의 형태는 다르지만 eigendecomposition이 $\boldsymbol{PD} \boldsymbol{P}^{-1}$이라는 순차적인 선형변환으로 해석했듯, SVD도 $\boldsymbol{U \Sigma}\boldsymbol{V}^{\top}$의 순차적인 변환으로 해석한다.
 
-우선 간략하게 정리하면 SVD는 일반행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$을 $n$차원 공간에서 $m$차원으로의 변환에 대해 다음과 같은 세가지 단계를 거치게 된다.
+간략하게 정리하면 SVD는 일반행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$을 $n$차원 공간에서 $m$차원으로의 변환에 대해 다음과 같은 세가지 단계를 거치게 된다.
 
 1. $\boldsymbol{V}^{\top}$에 의해 Basis를 변환한다.
 2. $\boldsymbol{\Sigma}$에 의해 Basis를 Scaling하고 $n$차원에서 $m$차원으로 차원을 바꾸게 된다.
 3. $\boldsymbol{U}$에 의해 Basis를 변환한다.
 
-![Fig_4.8](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.8.png){: .align-center}
+<figure align=center>
+<img src="/assets/images/LA/Fig_4.8.png" width=50% height=50%/>
+<figcaption>Fig 4.8</figcaption>
+</figure>
 
-이제 각 단계에서 일어나는 일들을 세부적으로 알아보자. 결과적으로 우리는 선형변환 $\Phi: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$을 설명하고자 하며, $\mathbb{R}^{n}$과 $\mathbb{R}^{m}$을 구성하는 Standard bases $B$와 $C$가 각각 있다고 하자. 그리고 각각의 변환된 Bases는 $\tilde{B}, \tilde{C}$로 표기한다.
+이제 각 단계에서 일어나는 일들을 세부적으로 알아보자. 결과적으로 우리는 선형변환 $\Phi: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$을 설명하고자 하며, $\mathbb{R}^{n}$과 $\mathbb{R}^{m}$을 구성하는 standard bases $B$와 $C$가 각각 있다고 하자. 그리고 각각의 변환된 basis는 $\tilde{B}, \tilde{C}$로 표기한다.
 
-1. 행렬 $\boldsymbol{V}$는 Basis $\tilde{B}$를 Standard Basis $B$로 변환해 준다. SVD에서 사용하는 것은 $\boldsymbol{V}^{\top} = \boldsymbol{V}^{-1}$(Orthogonal하니깐 Transpose가 Inverse!)이므로 반대 방향, 즉 $B$에서 $\tilde{B}$의 Basis로 바꾸어준다. 따라서 변환하는 벡터 $\boldsymbol{x}$는 $\tilde{B}$의 Basis로 표현된다. 위 그림에서 살펴보면, 왼쪽 상단의 벡터 공간은 붉은색과 오렌지색의 Basis를 사용한다. 여기에 $\boldsymbol{V}^{\top}$변환을 거치면서 왼쪽하단의 기본단위벡터로 표현하는 공간으로 변환된다.
+1. 행렬 $\boldsymbol{V}$는 basis $\tilde{B}$를 Standard Basis $B$로 변환해 준다. SVD에서 사용하는 것은 $\boldsymbol{V}^{\top} = \boldsymbol{V}^{-1}$(Orthogonal하니깐 Transpose가 Inverse이다)이므로 반대 방향, 즉 $B$에서 $\tilde{B}$의 basis로 바꾸어준다. 따라서 변환하는 벡터 $\boldsymbol{x}$는 $\tilde{B}$의 basis로 표현된다. 위 그림에서 살펴보면, 왼쪽 상단의 벡터 공간은 붉은색과 오렌지색의 ㅠasis를 사용한다. 여기에 $\boldsymbol{V}^{\top}$변환을 거치면서 왼쪽하단의 기본단위벡터로 표현하는 공간으로 변환된다.
 2. $\boldsymbol{\Sigma}$ 변환을 함으로써 앞의 과정을 통해 얻은 $\tilde{B}$의 좌표계에서 $\boldsymbol{\Sigma}$는 해당성분을 $\sigma$만큼 Scaling 하고 차원을 더하거나 제거하게된다. 이 결과는 $\tilde{C}$에 표현된다. 왼쪽하단에서 오른쪽하단으로의 변환을 보면 붉은색과 오렌지색은 각각 Scaling되었고 없었던 차원이 추가된 것을 볼 수 있다.
 3. $\boldsymbol{U}$는 $\mathbb{R}^{m}$차원에서의 Basis 변환으로 $\tilde{C} \rightarrow C$로 변환시킨다. 오른쪽하단에서 오른쪽상단으로의 그림은 차원은 유지하되 Basis가 다르게 표현되고 있는 것을 나타내고 있다.
 
-SVD와 Eigendecomposition의 가장 두드러지는 차이는 Codomain에서의 Basis이다. Eigendecomposition은 같은 벡터공간내에서 일련의 선형변환을 거쳐 최종적으로 기존의 Basis로 표현되는 공간으로 돌아오지만, SVD는 Domain과 Codomain에서 Basis가 모두 변경된다. 그도 그럴 것이 도착하는 차원부터가 다르다. 그리고 SVD에서 $\boldsymbol{\Sigma}$에 의해 이러한 차원간 Basis변환이 정의된다.
+SVD와 eigendecomposition의 가장 두드러지는 차이는 codomain에서의 basis이다. Eigendecomposition은 같은 벡터공간내에서 일련의 선형변환을 거쳐 최종적으로 기존의 basis로 표현되는 공간으로 돌아오지만, SVD는 domain과 codomain에서 basis가 모두 변경된다. 그도 그럴 것이 도착하는 차원부터가 다르다. 그리고 SVD에서 $\boldsymbol{\Sigma}$에 의해 이러한 차원간 Basis변환이 정의된다.
 
-## 2.1 Example Problem
+### Example Problem
 
 교재 4.12의 예제문제를 Figure 4.9를 보며 이해해보자. 
 
 변환 $\boldsymbol{A}$는 2차원 벡터 $\mathcal{X} \in \mathbb{R}^{2}$를 3차원으로 변환하는 행렬이다. 변환하고자 하는 2차원 벡터공간은 $x, y$가 각각 -1.0 ~ 1.0의 값을 가지고 있는 사각형 공간으로 다음과 같다.
 
-![Fig_4.9.1](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.9.1.png){: .align-center}
+<figure align=center>
+<img src="/assets/images/LA/Fig_4.9.1.png" width=50% height=50%/>
+<figcaption>Fig 4.9</figcaption>
+</figure>
 
 행렬 변환을 SVD로 나타내고 의미를 해석해보자.
 
 $$
-\begin{eqnarray}
-\boldsymbol{A} &=& 
+\begin{aligned}
+\boldsymbol{A} &= 
 \begin{bmatrix}
 1 & -0.8 \\
 0 & 1 \\
 1 & 0
 \end{bmatrix} \\
-&=& \boldsymbol{U\Sigma} \boldsymbol{V}^{\top} \\
-&=&
+&= \boldsymbol{U\Sigma} \boldsymbol{V}^{\top} \\
+&=
 \begin{bmatrix}
 -0.79 & 0 & -0.62 \\
 0.38 & -0.78 & -0.49 \\
@@ -87,35 +93,40 @@ $$
 -0.78 & 0.62 \\
 -0.62 & -0.78
 \end{bmatrix}
-\end{eqnarray}
+\end{aligned}
 $$
 
 1. $\boldsymbol{V}^{\top}$이 곱해지면 다음의 연산을 통해 각 점들은 새로운 위치로 이동하게 된다.
-
-$$
-\boldsymbol{V}^{\top}\boldsymbol{x} = 
-\begin{bmatrix}
--0.78 & 0.62 \\
--0.62 & -0.78
-\end{bmatrix}
-\begin{bmatrix}
-x_{1} \\
-x_{2}
-\end{bmatrix}
-$$
-
-결과적으로 위의 변환은 $\mathcal{X}$를 회전시키게된다.
-
-![Fig_4.9.2](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.9.2.png){: .align-center}
+  $$
+  \boldsymbol{V}^{\top}\boldsymbol{x} = 
+  \begin{bmatrix}
+  -0.78 & 0.62 \\
+  -0.62 & -0.78
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_{1} \\
+  x_{2}
+  \end{bmatrix}
+  $$
+  결과적으로 위의 변환은 $\mathcal{X}$를 회전시키게된다. 차원은 여전히 2차원임에 유의하자.
+  <figure align=center>
+  <img src="/assets/images/LA/Fig_4.9.2.png" width=50% height=50%/>
+  <figcaption>Fig 4.9</figcaption>
+  </figure>
 
 2. Singular value matrix $\boldsymbol{\Sigma}$는 위에서 변환된 Basis방향으로 각각 1.62배, 1.0배를 해주고 새로운 차원을 추가해준다. 밑에 그림을 보면 한쪽방향으로 1.62배만큼 늘어난 사각형으로 변해있고 3차원 공간에 표현된 것을 볼 수 있다. 눈여겨볼점은 차원이 추가가 되었을 뿐 성분 자체는 0이었으므로 $x_{3}$방향의 성분은 모두 0이다.
+  <figure align=center>
+  <img src="/assets/images/LA/Fig_4.9.3.png" width=50% height=50%/>
+  <figcaption>Fig 4.9</figcaption>
+  </figure>
 
-![Fig_4.9.3](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.9.3.png){: .align-center}
+3. 마지막으로 변환 $\boldsymbol{U}$에 의해 최종 목적지인 $\boldsymbol{A}$의 codomain $\mathbb{R}^{3}$공간으로 변환시키게 된다. $\boldsymbol{U}$는 Singular value matrix에 의한 변환을 같은 차원내에서 basis change를 하는 역할이다. 이 변환에서는 모든 방향성분이 존재하는 행렬이므로 $x_{3}$도 값을 가질 수 있다.
+  <figure align=center>
+  <img src="/assets/images/LA/Fig_4.9.4.png" width=50% height=50%/>
+  <figcaption>Fig 4.9</figcaption>
+  </figure>
 
-3. 마지막으로 변환 $\boldsymbol{U}$에 의해 최종 목적지인 $\boldsymbol{A}$의 Codomain $\mathbb{R}^{3}$공간으로 변환시키게 된다. $\boldsymbol{U}$는 Singular value matrix에 의한 변환을 같은 차원내에서 Basis change를 하는 역할이다. 이 변환에서는 모든 방향성분이 존재하는 행렬이므로 $x_{3}$도 값을 가질 수 있다.
-
-![Fig_4.9.4](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.9.4.png){: .align-center}
-
+[여기부터]
 # 3 Construction of the SVD
 
 여기서는 어떻게 SVD가 항상 존재할 수 있고, 또 어떻게 계산하는지를 다룬다.
