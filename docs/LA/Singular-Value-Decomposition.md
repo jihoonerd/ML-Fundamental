@@ -127,78 +127,77 @@ $$
   </figure>
 
 [여기부터]
-# 3 Construction of the SVD
+## Construction of the SVD
 
 여기서는 어떻게 SVD가 항상 존재할 수 있고, 또 어떻게 계산하는지를 다룬다.
 
-행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$의 SVD를 구하는 것은 Codomain $\mathbb{R}^{m}$과 Domain $\mathbb{R}^{n}$에 대해 $U = (\boldsymbol{u}_{1}, \ldots, \boldsymbol{u}_{m})$과 $V = (\boldsymbol{v}_{1}, \ldots, \boldsymbol{v}_{n})$의 Orthonormal bases를 찾는 것과 같다. 이 두 집합의 Bases를 통해 $\boldsymbol{U}, \boldsymbol{V}$를 만들면 된다.
+행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$의 SVD를 구하는 것은 codomain $\mathbb{R}^{m}$과 domain $\mathbb{R}^{n}$에 대해 $U = (\boldsymbol{u}_{1}, \ldots, \boldsymbol{u}_{m})$과 $V = (\boldsymbol{v}_{1}, \ldots, \boldsymbol{v}_{n})$인 orthonormal bases를 찾는 것과 같다. 이 두 집합의 basis를 통해 $\boldsymbol{U}, \boldsymbol{V}$를 만들면 된다.
 
 SVD를 구하는 과정은 다음의 순서대로 하면 된다.
 
-1. Right-singular vector의 Orthonormal set인 $\boldsymbol{v}_{1}, \ldots, \boldsymbol{v}_{n} \in \mathbb{R}^{n}$을 찾는다.
-  Spectral theorem에 의해 Symmetric한 행렬은 Orthonormal basis인 Eigenvector를 가지며 대각화가 가능하다. 임의의 행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$에 대해 $\boldsymbol{A}^{\top} \boldsymbol{A}$은 항상 Symmetric하고 Positive semidefinite하므로 $\boldsymbol{A}^{\top} \boldsymbol{A}$은 대각화가 가능하다.
+1. Right-singular vector의 orthonormal set인 $\boldsymbol{v}_{1}, \ldots, \boldsymbol{v}_{n} \in \mathbb{R}^{n}$을 찾는다.
+  Spectral theorem에 의해 symmetric 행렬은 orthonormal basis인 eigenvector를 가지며 대각화가 가능하다. 임의의 행렬 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$에 대해 $\boldsymbol{A}^{\top} \boldsymbol{A}$은 항상 symmetric하고 positive semidefinite하므로 $\boldsymbol{A}^{\top} \boldsymbol{A}$은 대각화가 가능하다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{A}^{\top} \boldsymbol{A} &=& \boldsymbol{PD} \boldsymbol{P}^{\top} \\
-  &=& \boldsymbol{P} \begin{bmatrix} \lambda_{1} & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & \lambda_{n} \end{bmatrix} \boldsymbol{P}^{\top}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{A}^{\top} \boldsymbol{A} &= \boldsymbol{PD} \boldsymbol{P}^{\top} \\
+  &= \boldsymbol{P} \begin{bmatrix} \lambda_{1} & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & \lambda_{n} \end{bmatrix} \boldsymbol{P}^{\top}
+  \end{aligned}
   $$
-  $\boldsymbol{P}$는 직교행렬이며 Orthonormal eigenbasis로 구성된다. 따라서 $\lambda_{i} \geqslant 0$은 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvalue이다.
-  그런데 여기서 대각화와 Right-singular vectors를 구하는게 무슨 상관이 있을까? SVD는 $\boldsymbol{A} = \boldsymbol{U \Sigma} \boldsymbol{V}^{\top}$이므로 이를 그대로 $\boldsymbol{A}^{\top} \boldsymbol{A}$에 대입하면,
+  $\boldsymbol{P}$는 직교행렬이며 orthonormal eigenbasis로 구성된다. 따라서 $\lambda_{i} \geqslant 0$은 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 eigenvalue이다.
+  그런데 여기서 대각화와 right-singular vectors를 구하는게 무슨 상관이 있을까? SVD는 $\boldsymbol{A} = \boldsymbol{U \Sigma} \boldsymbol{V}^{\top}$이므로 이를 그대로 $\boldsymbol{A}^{\top} \boldsymbol{A}$에 대입하면,
   $$
-  \begin{eqnarray}
-  \boldsymbol{A}^{\top} \boldsymbol{A} &=& ( \boldsymbol{U \Sigma} \boldsymbol{V}^{\top} )^{\top} ( \boldsymbol{U \Sigma} \boldsymbol{V}^{\top} ) \\
-  &=& \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{U}^{\top} \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{A}^{\top} \boldsymbol{A} &= ( \boldsymbol{U \Sigma} \boldsymbol{V}^{\top} )^{\top} ( \boldsymbol{U \Sigma} \boldsymbol{V}^{\top} ) \\
+  &= \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{U}^{\top} \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top}
+  \end{aligned}
   $$
-  이 때, $\boldsymbol{U}, \boldsymbol{V}$는 Orthogonal matrix이므로 $ \boldsymbol{U}^{\top} \boldsymbol{U} = \boldsymbol{I} $이다. 따라서 다음이 성립한다.
+  이 때, $\boldsymbol{U}, \boldsymbol{V}$는 orthogonal matrix이므로 $ \boldsymbol{U}^{\top} \boldsymbol{U} = \boldsymbol{I} $이다. 따라서 다음이 성립한다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{A}^{\top} \boldsymbol{A} &=& \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} \\
-  &=&\boldsymbol{V} \begin{bmatrix}\sigma_{1}^{2} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \sigma_{n}^{2} \end{bmatrix} \boldsymbol{V}^{\top}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{A}^{\top} \boldsymbol{A} &= \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} \\
+  &=\boldsymbol{V} \begin{bmatrix}\sigma_{1}^{2} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \sigma_{n}^{2} \end{bmatrix} \boldsymbol{V}^{\top}
+  \end{aligned}
   $$
   앞서 얻은 결과와 대응시켜보면 다음의 관계가 성립한다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{V}^{\top} &=& \boldsymbol{P}^{\top} \\
-  \sigma_{i}^2 &=& \lambda_{i}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{V}^{\top} &= \boldsymbol{P}^{\top} \\
+  \sigma_{i}^2 &= \lambda_{i}
+  \end{aligned}
   $$
-  따라서, $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvector가 구성하는 $\boldsymbol{P}$는 $\boldsymbol{A}$에 대한 SVD의 Right-singular vector가 구성하는 $\boldsymbol{V}$와 같다. 또한 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvalue는 $\boldsymbol{\Sigma}$의 Singular value 제곱값이다.
+  따라서, $\boldsymbol{A}^{\top} \boldsymbol{A}$의 eigenvector가 구성하는 $\boldsymbol{P}$는 $\boldsymbol{A}$에 대한 SVD의 right-singular vector가 구성하는 $\boldsymbol{V}$와 같다. 또한 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvalue는 $\boldsymbol{\Sigma}$의 Singular value 제곱값이다.
 
 2. Left-singular vector의 Orthonormal set인 $\boldsymbol{u}_{1}, \ldots, \boldsymbol{u}_{m} \in \mathbb{R}^{m}$을 찾는다.
   앞에서 한 과정을 $\boldsymbol{A} \boldsymbol{A}^{\top} \in \mathbb{R}^{m \times m}$에 대해 똑같이 적용해주면 된다. 같은 과정을 거치면 다음의 결과를 얻는다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{A} \boldsymbol{A}^{\top} &=& ( \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} ) ( \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V} )^{\top} \\
-  &=& \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{U}^{\top} \\
-  &=& \boldsymbol{U} \begin{bmatrix}\sigma_{1}^{2} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \sigma_{m}^{2} \end{bmatrix} \boldsymbol{U}^{\top}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{A} \boldsymbol{A}^{\top} &= ( \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} ) ( \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V} )^{\top} \\
+  &= \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\top} \boldsymbol{V} \boldsymbol{\Sigma}^{\top} \boldsymbol{U}^{\top} \\
+  &= \boldsymbol{U} \begin{bmatrix}\sigma_{1}^{2} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \sigma_{m}^{2} \end{bmatrix} \boldsymbol{U}^{\top}
+  \end{aligned}
   $$
-  같은 이유로 $\boldsymbol{A} \boldsymbol{A}^{\top}$의 Orthonormal eigenvector는 $\boldsymbol{A}$에 대한 SVD의 Left-singular vectors와 같고 $\boldsymbol{U}$를 구성한다. 그리고 이렇게 구해진 Eigenvector는 SVD의 Codomain에 대한 Orthonormal basis set을 구성한다.
-3. $\boldsymbol{A}$의 변환에 대해 $\boldsymbol{v}_{i}$의 Orthogonality를 보존하면서 $\boldsymbol{u}, \boldsymbol{v}$를 연결하는 관계(Singular values)를 찾는다.
-  앞의 과정을 통해 $\boldsymbol{U}, \boldsymbol{V}$를 구할 수 있으므로 남은 것은 $\boldsymbol{\Sigma}$뿐이다. Orthonormal set $V$에서 $U$로 연결하는 변환을 만드는 것이 목표이다. $\boldsymbol{A}$에 대해 $\boldsymbol{v}_{i}$의 Image가 Orthogonal함을 이용하면 이를 보일 수 있다.(Orthogonal matrix에 의해 벡터를 변환하면 각도는 보존된다) $\boldsymbol{V}$의 두 Eigenvector $\boldsymbol{v}_i, \boldsymbol{v}_{j}, i \neq j$는 서로 직교하므로 inner product는 0이다. 
+  같은 이유로 $\boldsymbol{A} \boldsymbol{A}^{\top}$의 orthonormal eigenvector는 $\boldsymbol{A}$에 대한 SVD의 left-singular vectors와 같고 $\boldsymbol{U}$를 구성한다. 그리고 이렇게 구해진 eigenvector는 SVD의 codomain에 대한 orthonormal basis set을 구성한다.
+3. $\boldsymbol{A}$의 변환에 대해 $\boldsymbol{v}_{i}$의 orthogonality를 보존하면서 $\boldsymbol{u}, \boldsymbol{v}$를 연결하는 관계(singular values)를 찾는다.
+  앞의 과정을 통해 $\boldsymbol{U}, \boldsymbol{V}$를 구할 수 있으므로 남은 것은 $\boldsymbol{\Sigma}$뿐이다. Orthonormal set $V$에서 $U$로 연결하는 변환을 만드는 것이 목표이다. $\boldsymbol{A}$에 대해 $\boldsymbol{v}_{i}$의 image가 orthogonal함을 이용하면 이를 보일 수 있다.(Orthogonal matrix에 의해 벡터를 변환하면 각도는 보존된다) $\boldsymbol{V}$의 두 eigenvector $\boldsymbol{v}_i, \boldsymbol{v}_{j}, i \neq j$는 서로 직교하므로 inner product는 0이다. 
   $$
-  \begin{eqnarray}
-  ( \boldsymbol{A} \boldsymbol{v}_{i} )^{\top} ( \boldsymbol{A} \boldsymbol{v}_{j} ) &=& \boldsymbol{v}_{i}^{\top} ( \boldsymbol{A}^{\top} \boldsymbol{A} ) \boldsymbol{v}_{j} \\
-  &=& \boldsymbol{v}_{i}^{\top} (\lambda_{j} \boldsymbol{v}_{j} ) \\
-  &=& \lambda_{j} \boldsymbol{v}_{i} \boldsymbol{v}_{j} \\
-  &=& 0
-  \end{eqnarray}
+  \begin{aligned}
+  ( \boldsymbol{A} \boldsymbol{v}_{i} )^{\top} ( \boldsymbol{A} \boldsymbol{v}_{j} ) &= \boldsymbol{v}_{i}^{\top} ( \boldsymbol{A}^{\top} \boldsymbol{A} ) \boldsymbol{v}_{j} \\
+  &= \boldsymbol{v}_{i}^{\top} (\lambda_{j} \boldsymbol{v}_{j} ) \\
+  &= \lambda_{j} \boldsymbol{v}_{i} \boldsymbol{v}_{j} \\
+  &= 0
+  \end{aligned}
   $$
-  $m \geqslant r$인 경우 $\mathbb{R}^{m}$의 $r$차원 Subspace의 Basis는 $ \\{ \boldsymbol{A} \boldsymbol{v}_{1}, \ldots, \boldsymbol{A} \boldsymbol{v}_{r} \\} $가 된다. $\mathbb{R}^{m}$에서의 Basis이므로 이들은 $\boldsymbol{U}$의 Basis가 되며 다음과 같이 Normalization을 함으로써 Left-singular vector를 구할 수 있다.
+  $m \geqslant r$인 경우 $\mathbb{R}^{m}$의 $r$차원 subspace의 basis는 $\{ \boldsymbol{A} \boldsymbol{v}_{1}, \ldots, \boldsymbol{A} \boldsymbol{v}_{r}\}$가 된다. $\mathbb{R}^{m}$에서의 basis이므로 이들은 $\boldsymbol{U}$의 basis가 되며 다음과 같이 normalization을 함으로써 left-singular vector를 구할 수 있다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{u}_{i} :&=& \frac{\boldsymbol{A} \boldsymbol{v}_{i}}{\Vert \boldsymbol{A} \boldsymbol{v}_{i} \rVert} \\
-  &=& \frac{1}{\sqrt{\lambda_{i}}} \boldsymbol{A} \boldsymbol{v}_{i} \\
-  &=& \frac{1}{\sigma_{i}} \boldsymbol{A} \boldsymbol{v}_{i}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{u}_{i} :&= \frac{\boldsymbol{A} \boldsymbol{v}_{i}}{\Vert \boldsymbol{A} \boldsymbol{v}_{i} \rVert} \\
+  &= \frac{1}{\sqrt{\lambda_{i}}} \boldsymbol{A} \boldsymbol{v}_{i} \\
+  &= \frac{1}{\sigma_{i}} \boldsymbol{A} \boldsymbol{v}_{i}
+  \end{aligned}
   $$
-  따라서 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvector, 즉 right-singular vectors $\boldsymbol{v}_{i}$를 얻으면 위에서 계산한 $\boldsymbol{A}$의 normalized image를 통해 left-singular vectors $\boldsymbol{u}_{i}$를 얻을 수 있다. 그리고 Singular value matrix에 의해 이 둘은 연결된다. 위식을 이항하면 다음의 식을 얻을 수 있는데 이 식을 *Singular value equation*이라고 한다.
-  $$ \boldsymbol{A} \boldsymbol{v}_{i} = \sigma_{i} \boldsymbol{u}_{i}, i = 1, \ldots, r $$
-  이 식은 Eigenvalue equation과 상당히 닮아있는데 Eigenvector에 해당하는 벡터부분이 다르다는 차이가 있다.
-  열이 행보다 많은 ($n > m$) 경우, Singular value equation은 $i \leqslant m$까지만 성립하며 $i > m$인 $\boldsymbol{u}_{i}$에 대해서는 정보를 얻을 수 없다. 반대로 행이 열보다 많은 ($m > n$) 경우, Singular value equation은 $i \leqslant n$에 대해서만 성립한다. $i > n$인 $\boldsymbol{v}_{i}$는 $\boldsymbol{A} \boldsymbol{v}_{i} = \boldsymbol{0}$이 된다.
+  따라서 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 eigenvector, 즉 right-singular vectors $\boldsymbol{v}_{i}$를 얻으면 위에서 계산한 $\boldsymbol{A}$의 normalized image를 통해 left-singular vectors $\boldsymbol{u}_{i}$를 얻을 수 있다. 그리고 singular value matrix에 의해 이 둘은 연결된다. 위식을 이항하면 다음의 식을 얻을 수 있는데 이 식을 **Singular value equation**이라고 한다.
+  $$\boldsymbol{A} \boldsymbol{v}_{i} = \sigma_{i} \boldsymbol{u}_{i}, i = 1, \ldots, r$$
+  이 식은 eigenvalue equation과 상당히 닮아있는데 eigenvector에 해당하는 벡터부분이 다르다는 차이가 있다. 열이 행보다 많은 $(n > m)$ 경우, Singular value equation은 $i \leqslant m$까지만 성립하며 $i > m$인 $\boldsymbol{u}_{i}$에 대해서는 정보를 얻을 수 없다. 반대로 행이 열보다 많은 ($m > n$) 경우, Singular value equation은 $i \leqslant n$에 대해서만 성립한다. $i > n$인 $\boldsymbol{v}_{i}$는 $\boldsymbol{A} \boldsymbol{v}_{i} = \boldsymbol{0}$이 된다.
 
 ## 3.1 Example Problem
 

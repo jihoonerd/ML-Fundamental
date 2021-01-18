@@ -7,7 +7,7 @@ Orthonormal basis는 이름에서 나타내듯 basis vector가 서로 직교하�
 > [!NOTE]
 > **Definition: Orthonormal Basis**
 >
-> $n$-차원 벡터공간 $V$와 $V$의 basis $\\{\boldsymbol{b}_1, \ldots, \boldsymbol{b}_n\\}$에 대해 모든 $i, j = 1, \ldots, n$가 다음을 만족하면 **Orthonormal Basis(ONB)** 라고 한다.
+> $n$-차원 벡터공간 $V$와 $V$의 basis $\{\boldsymbol{b}_1, \ldots, \boldsymbol{b}_n\}$에 대해 모든 $i, j = 1, \ldots, n$가 다음을 만족하면 **Orthonormal Basis(ONB)** 라고 한다.
 > $$\begin{aligned} \langle \boldsymbol{b}_i, \boldsymbol{b}_j \rangle &= 0 \quad \operatorname{for} \ i \neq j (i, j \in \mathbb{N}) \\ \langle \boldsymbol{b}_i, \boldsymbol{b}_i \rangle &= 1 \end{aligned}$$
 > $\langle \boldsymbol{b}_i, \boldsymbol{b}_j \rangle = 0$ 조건만 만족하는 경우에는 **orthogonal basis** 라고 한다.
 
