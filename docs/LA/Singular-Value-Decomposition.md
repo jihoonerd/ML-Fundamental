@@ -126,7 +126,6 @@ $$
   <figcaption>Fig 4.9</figcaption>
   </figure>
 
-[여기부터]
 ## Construction of the SVD
 
 여기서는 어떻게 SVD가 항상 존재할 수 있고, 또 어떻게 계산하는지를 다룬다.
@@ -198,8 +197,12 @@ SVD를 구하는 과정은 다음의 순서대로 하면 된다.
   따라서 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 eigenvector, 즉 right-singular vectors $\boldsymbol{v}_{i}$를 얻으면 위에서 계산한 $\boldsymbol{A}$의 normalized image를 통해 left-singular vectors $\boldsymbol{u}_{i}$를 얻을 수 있다. 그리고 singular value matrix에 의해 이 둘은 연결된다. 위식을 이항하면 다음의 식을 얻을 수 있는데 이 식을 **Singular value equation**이라고 한다.
   $$\boldsymbol{A} \boldsymbol{v}_{i} = \sigma_{i} \boldsymbol{u}_{i}, i = 1, \ldots, r$$
   이 식은 eigenvalue equation과 상당히 닮아있는데 eigenvector에 해당하는 벡터부분이 다르다는 차이가 있다. 열이 행보다 많은 $(n > m)$ 경우, Singular value equation은 $i \leqslant m$까지만 성립하며 $i > m$인 $\boldsymbol{u}_{i}$에 대해서는 정보를 얻을 수 없다. 반대로 행이 열보다 많은 ($m > n$) 경우, Singular value equation은 $i \leqslant n$에 대해서만 성립한다. $i > n$인 $\boldsymbol{v}_{i}$는 $\boldsymbol{A} \boldsymbol{v}_{i} = \boldsymbol{0}$이 된다.
+  
+  Singular value equation에서 $\boldsymbol{v}_{i}$를 붙여서 $\boldsymbol{V}$를 만들고 $\boldsymbol{u}_{i}$를 붙여서 $\boldsymbol{U}$를 만들면 다음과 같이 쓸 수 있다.
+  $$\boldsymbol{AV} = \boldsymbol{U \Sigma}$$
+  $\boldsymbol{A}$에 대해서 정리하면 $\boldsymbol{A}$의 SVD인 $\boldsymbol{A} = \boldsymbol{U \Sigma}\boldsymbol{V}^{\top}$이 구해진다.
 
-## 3.1 Example Problem
+### Example Problem
 
 다음 행렬의 SVD를 찾아보자.
 
@@ -208,10 +211,11 @@ $$
 $$
 
 1) Right-singular vectors as the eigen basis of $\boldsymbol{A}^{\top} \boldsymbol{A}$
+  
   앞에서 살펴본 바와 같이 Right-singular vector를 구하기 위해서는 $\boldsymbol{A}^{\top} \boldsymbol{A}$에 대해 Eigendecomposition을 하면 된다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{A}^{\top} \boldsymbol{A} &=&
+  \begin{aligned}
+  \boldsymbol{A}^{\top} \boldsymbol{A} &=
   \begin{bmatrix}
   1 & -2 \\
   0 & 1 \\
@@ -221,17 +225,18 @@ $$
   1 & 0 & 1 \\
   -2 & 1 & 0
   \end{bmatrix} \\
-  &=&
+  &=
   \begin{bmatrix}
   5 & -2 & 1 \\
   -2 & 1 & 0 \\
   1 & 0 & 1
   \end{bmatrix}
-  \end{eqnarray}
+  \end{aligned}
   $$
   이 행렬에 대해 Eigendecomposition을 적용하면 다음과 같다.
   $$
-  \boldsymbol{A}^{\top} \boldsymbol{A} =
+  \begin{aligned}
+  \boldsymbol{A}^{\top} \boldsymbol{A} &=
   \begin{bmatrix}
   \frac{5}{\sqrt{30}} & 0 & \frac{-1}{\sqrt{6}} \\
   \frac{-2}{\sqrt{30}} & \frac{1}{\sqrt{5}} & \frac{-2}{\sqrt{6}} \\
@@ -246,9 +251,11 @@ $$
   \frac{5}{\sqrt{30}} & \frac{-2}{\sqrt{30}} & \frac{1}{\sqrt{30}} \\
   0 & \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}} \\
   \frac{-1}{\sqrt{6}} & \frac{-2}{\sqrt{6}} & \frac{1}{\sqrt{6}}
-  \end{bmatrix}
+  \end{bmatrix} \\
+  &= \boldsymbol{PD}\boldsymbol{P}^{\top}
+  \end{aligned}
   $$
-  $\boldsymbol{V} = \boldsymbol{R}$이므로,
+  $\boldsymbol{V}$는 SVD에서 right singular vectors $\boldsymbol{V}$이므로,
   $$
   \boldsymbol{V} = \boldsymbol{P} = \begin{bmatrix}
   \frac{5}{\sqrt{30}} & 0 & \frac{-1}{\sqrt{6}} \\
@@ -257,22 +264,24 @@ $$
   \end{bmatrix}
   $$
 2) Singular-value matrix
-  Singular values는 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvalues의 Square root이므로 쉽게 구할 수 있다. 또한 $\text{rank}(\boldsymbol{A}) = 2$이므로 두 개의 Non-zero singular values $\sigma_{1} = \sqrt{6}, \sigma_{2} = 1$가 존재한다.
+   
+  Singular values는 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvalues의 Square root이므로 쉽게 구할 수 있다. 또한 $\operatorname{rank}(\boldsymbol{A}) = 2$이므로 두 개의 Non-zero singular values $\sigma_{1} = \sqrt{6}, \sigma_{2} = 1$가 존재한다.
   $$
   \boldsymbol{\Sigma} = \begin{bmatrix} \sqrt{6} & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}
   $$
 3) Left-singular vectors as the normalized image of the right-singular vectors
+  
   위의 공식에 대입하면 다음과 같이 $\boldsymbol{u}_{i}$를 얻을 수 있다.
   $$
-  \begin{eqnarray}
-  \boldsymbol{u}_{1} &=& \frac{1}{\sigma_{1}} \boldsymbol{A} \boldsymbol{v_{1}} \\
-  &=& \frac{1}{\sqrt{6}} \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \end{bmatrix} \begin{bmatrix} \frac{5}{\sqrt{30}} \\ \frac{-2}{\sqrt{30}} \\ \frac{1}{\sqrt{30}} \end{bmatrix} \\
-  &=& \begin{bmatrix} \frac{1}{\sqrt{5}} \\ \frac{-2}{\sqrt{5}} \end{bmatrix} \\
-  \boldsymbol{u}_{2} &=& \frac{1}{\sigma_{2}} \boldsymbol{A} \boldsymbol{v_{2}} \\
-  &=& \frac{1}{1} \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ \frac{1}{\sqrt{5}} \\ \frac{2}{\sqrt{5}} \end{bmatrix} \\
-  &=& \begin{bmatrix} \frac{2}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} \end{bmatrix} \\
-  \boldsymbol{U} &=& [ \boldsymbol{u}_{1}, \boldsymbol{u}_{2} ] = \frac{1}{\sqrt{5}} \begin{bmatrix} 1 & 2 \\ -2 & 1 \end{bmatrix}
-  \end{eqnarray}
+  \begin{aligned}
+  \boldsymbol{u}_{1} &= \frac{1}{\sigma_{1}} \boldsymbol{A} \boldsymbol{v_{1}} \\
+  &= \frac{1}{\sqrt{6}} \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \end{bmatrix} \begin{bmatrix} \frac{5}{\sqrt{30}} \\ \frac{-2}{\sqrt{30}} \\ \frac{1}{\sqrt{30}} \end{bmatrix} \\
+  &= \begin{bmatrix} \frac{1}{\sqrt{5}} \\ \frac{-2}{\sqrt{5}} \end{bmatrix} \\
+  \boldsymbol{u}_{2} &= \frac{1}{\sigma_{2}} \boldsymbol{A} \boldsymbol{v_{2}} \\
+  &= \frac{1}{1} \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ \frac{1}{\sqrt{5}} \\ \frac{2}{\sqrt{5}} \end{bmatrix} \\
+  &= \begin{bmatrix} \frac{2}{\sqrt{5}} \\ \frac{1}{\sqrt{5}} \end{bmatrix} \\
+  \boldsymbol{U} &= [ \boldsymbol{u}_{1}, \boldsymbol{u}_{2} ] = \frac{1}{\sqrt{5}} \begin{bmatrix} 1 & 2 \\ -2 & 1 \end{bmatrix}
+  \end{aligned}
   $$
   하지만 컴퓨터에서 계산할 때, SVD를 계산하기 위해 $\boldsymbol{A}^{\top} \boldsymbol{A}$를 사용하는 방식은 비효율적이어서 사용하지 않는다. 자세한 계산방법은 사용하는 LAPACK에 따라 다르다.
 
