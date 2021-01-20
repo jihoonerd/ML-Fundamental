@@ -44,7 +44,7 @@ Eigendecomposition에서와 비슷하게 SVD는 linear transformation matrix $\b
 3. $\boldsymbol{U}$에 의해 Basis를 변환한다.
 
 <figure align=center>
-<img src="/assets/images/LA/Fig_4.8.png" width=50% height=50%/>
+<img src="assets/images/LA/Fig_4.8.png" width=50% height=50%/>
 <figcaption>Fig 4.8</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ SVD와 eigendecomposition의 가장 두드러지는 차이는 codomain에서의 
 변환 $\boldsymbol{A}$는 2차원 벡터 $\mathcal{X} \in \mathbb{R}^{2}$를 3차원으로 변환하는 행렬이다. 변환하고자 하는 2차원 벡터공간은 $x, y$가 각각 -1.0 ~ 1.0의 값을 가지고 있는 사각형 공간으로 다음과 같다.
 
 <figure align=center>
-<img src="/assets/images/LA/Fig_4.9.1.png" width=50% height=50%/>
+<img src="assets/images/LA/Fig_4.9.1.png" width=50% height=50%/>
 <figcaption>Fig 4.9</figcaption>
 </figure>
 
@@ -110,19 +110,19 @@ $$
   $$
   결과적으로 위의 변환은 $\mathcal{X}$를 회전시키게된다. 차원은 여전히 2차원임에 유의하자.
   <figure align=center>
-  <img src="/assets/images/LA/Fig_4.9.2.png" width=50% height=50%/>
+  <img src="assets/images/LA/Fig_4.9.2.png" width=50% height=50%/>
   <figcaption>Fig 4.9</figcaption>
   </figure>
 
 2. Singular value matrix $\boldsymbol{\Sigma}$는 위에서 변환된 Basis방향으로 각각 1.62배, 1.0배를 해주고 새로운 차원을 추가해준다. 밑에 그림을 보면 한쪽방향으로 1.62배만큼 늘어난 사각형으로 변해있고 3차원 공간에 표현된 것을 볼 수 있다. 눈여겨볼점은 차원이 추가가 되었을 뿐 성분 자체는 0이었으므로 $x_{3}$방향의 성분은 모두 0이다.
   <figure align=center>
-  <img src="/assets/images/LA/Fig_4.9.3.png" width=50% height=50%/>
+  <img src="assets/images/LA/Fig_4.9.3.png" width=50% height=50%/>
   <figcaption>Fig 4.9</figcaption>
   </figure>
 
 3. 마지막으로 변환 $\boldsymbol{U}$에 의해 최종 목적지인 $\boldsymbol{A}$의 codomain $\mathbb{R}^{3}$공간으로 변환시키게 된다. $\boldsymbol{U}$는 Singular value matrix에 의한 변환을 같은 차원내에서 basis change를 하는 역할이다. 이 변환에서는 모든 방향성분이 존재하는 행렬이므로 $x_{3}$도 값을 가질 수 있다.
   <figure align=center>
-  <img src="/assets/images/LA/Fig_4.9.4.png" width=50% height=50%/>
+  <img src="assets/images/LA/Fig_4.9.4.png" width=50% height=50%/>
   <figcaption>Fig 4.9</figcaption>
   </figure>
 
@@ -323,7 +323,7 @@ $$
 
 SVD를 활용하면 사람들이 영화를 어떻게 평가를 했는지 그리고 어떤사람이 어떤 영화를 좋아하는지를 구조화해서 보여줄 수 있다. 특히, Left-singular vectors $\boldsymbol{u}_{i}$는 정형화된 영화간의 관계(Stereotypical movies)를 $\boldsymbol{v}_{i}$는 정형화된 사람간의 관계(Stereotypical viewers)를 보여준다.
 
-![Fig_4.10](/assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.10.png){: .align-center}
+![Fig_4.10](assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.10.png){: .align-center}
 
 Left-singular vector $\boldsymbol{u}_{1}$를 보면, Star Wars, Blade Runner와 같은 Sci-Fi 장르에서 큰 값을 가지고 있음을 볼 수 있다. 따라서 $\boldsymbol{u}_{1}$은 Sci-Fi라는특정 장르를 가리키는 벡터로 추정할 수 있다. $\boldsymbol{v}_{1}$은 Ali와 Beatrix에게서 높은 값을 가리킨다. (Transpose 되어있음에 유의) 즉 $\boldsymbol{v}_{1}$는 Sci-Fi 장를 좋아하는 사람을 가리킨다고 의미를 부여할 수 있다.
 
