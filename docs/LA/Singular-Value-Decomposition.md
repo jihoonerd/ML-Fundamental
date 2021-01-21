@@ -285,28 +285,28 @@ $$
   $$
   하지만 컴퓨터에서 계산할 때, SVD를 계산하기 위해 $\boldsymbol{A}^{\top} \boldsymbol{A}$를 사용하는 방식은 비효율적이어서 사용하지 않는다. 자세한 계산방법은 사용하는 LAPACK에 따라 다르다.
 
-# 4 Eigenvalue Decomposition vs. Singular Value Decomposition
+## Eigenvalue Decomposition vs. Singular Value Decomposition
 
-여기서는 Eigendecomposition과 SVD를 비교한다.
+여기서는 eigendecomposition과 SVD를 비교한다.
 
 * Eigendecomposition
   $$ \boldsymbol{A} = \boldsymbol{PD} \boldsymbol{P}^{-1} $$
 * SVD
   $$ \boldsymbol{A} = \boldsymbol{U \Sigma} \boldsymbol{V}^{\top} $$
-* SVD는 어떠한 크기의 행렬에도 적용이 가능한 반면 Eigendecomposition은 정사각행렬 $\mathbb{R}^{n \times n}$형태이고 $\mathbb{R}^{n}$의 Basis, 즉 Full rank인 행렬에만 적용이 가능하다.
-* Eigendecomposition의 $\boldsymbol{P}$의 벡터는 Orthogonal할 필요는 없다. 하지만 SVD의 $\boldsymbol{U}, \boldsymbol{V}$의 벡터는 Orthonormal하며 벡터의 위치변경은 Rotation에 해당한다.
+* SVD는 어떠한 크기의 행렬에도 적용이 가능한 반면 eigendecomposition은 정사각행렬 $\mathbb{R}^{n \times n}$형태이고 $\mathbb{R}^{n}$의 Basis, 즉 full rank인 행렬에만 적용이 가능하다.
+* Eigendecomposition의 $\boldsymbol{P}$의 벡터는 orthogonal할 필요는 없다. 하지만 SVD의 $\boldsymbol{U}, \boldsymbol{V}$의 벡터는 orthonormal하며 벡터의 위치변경은 rotation에 해당한다.
 * Eigendecomposition과 SVD 모두 다음의 단계를 거치며 변환된다.
   1. Change of basis in the domain
   2. Independent scaling of each new basis vector and mapping from domain to codomain
   3. Change of basis in the codomain
-  한편, SVD는 Domain과 Codomain이 다른 차원의 벡터공간을 가질 수 있다는 차이점이 있다.
-* SVD에서 $\boldsymbol{U}, \boldsymbol{V}$는 서로 역행렬의 관계가 아닌 반면 Eigendecompositino의 $\boldsymbol{P}, \boldsymbol{P}^{-1}$은 역행렬 관계에 있다.
-* SVD의 Singular value matrix $\boldsymbol{\Sigma}$는 모두 실수이고 음수가 아닌 값을 가진다. 이 성질은 Eigendecompositino의 Diagonal matrix에서 항상 성립하지는 않는다.
-* Projection 관점에서 Eigendecomposition과 SVD는 밀접하게 연관되어있다.
-  * $\boldsymbol{A}$의 Left-singular vectors는 $\boldsymbol{A} \boldsymbol{A}^{\top}$의 Eigenvector이다.
-  * $\boldsymbol{A}$의 Right-singular vectors는 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 Eigenvector이다.
-  * $\boldsymbol{A}$의 0이 아닌 Singular values는 $\boldsymbol{A} \boldsymbol{A}^{\top}$과 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 0이아닌 Eigenvalues의 Square root값이다.
-* Symmetric matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$에 대해서 Eigenvalue decomposition과 SVD는 같다. (Spectral Theorem)
+  한편, SVD는 domain과 codomain이 다른 차원의 벡터공간을 가질 수 있다는 차이점이 있다.
+* SVD에서 $\boldsymbol{U}, \boldsymbol{V}$는 서로 역행렬의 관계가 아닌 반면 eigendecomposition의 $\boldsymbol{P}, \boldsymbol{P}^{-1}$은 역행렬 관계에 있다.
+* SVD의 singular value matrix $\boldsymbol{\Sigma}$는 모두 실수이고 음수가 아닌 값을 가진다. 이 성질은 eigendecompositino의 diagonal matrix에서 항상 성립하지는 않는다.
+* Projection 관점에서 eigendecomposition과 SVD는 밀접하게 연관되어있다.
+  * $\boldsymbol{A}$의 Left-singular vectors는 $\boldsymbol{A} \boldsymbol{A}^{\top}$의 eigenvector이다.
+  * $\boldsymbol{A}$의 right-singular vectors는 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 eigenvector이다.
+  * $\boldsymbol{A}$의 0이 아닌 singular values는 $\boldsymbol{A} \boldsymbol{A}^{\top}$과 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 0이아닌 eigenvalues의 square root값이다.
+* Symmetric matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$에 대해서 eigenvalue decomposition과 SVD는 같다. (Spectral Theorem)
 
 # 5 SVD Application: Recommender system
 
