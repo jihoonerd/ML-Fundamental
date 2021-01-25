@@ -308,7 +308,7 @@ $$
   * $\boldsymbol{A}$의 0이 아닌 singular values는 $\boldsymbol{A} \boldsymbol{A}^{\top}$과 $\boldsymbol{A}^{\top} \boldsymbol{A}$의 0이아닌 eigenvalues의 square root값이다.
 * Symmetric matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$에 대해서 eigenvalue decomposition과 SVD는 같다. (Spectral Theorem)
 
-# 5 SVD Application: Recommender system
+## SVD Application: Recommender system
 
 이번에는 SVD를 실생활의 문제에서 어떻게 활용할 수 있는지를 알아보자. 교재의 Example 4.14에 해당하는 문제이다. 세명의 사람 Ali, Beatrix, Chandra가 있고 이들이 네 편의 영화 Star Wars, Blade Runner, Amelie, Delicatessen에 대해 평가를 내렸다고 하자. 평가는 최악은 0, 최고는 5로 0~5의 스케일을 갖는다. 순서대로 영화를 행으로, 사람을 열로 놓고 각 값은 평가라고 할 때 다음과 같은 행렬을 만들 수 있다.
 
@@ -323,7 +323,10 @@ $$
 
 SVD를 활용하면 사람들이 영화를 어떻게 평가를 했는지 그리고 어떤사람이 어떤 영화를 좋아하는지를 구조화해서 보여줄 수 있다. 특히, Left-singular vectors $\boldsymbol{u}_{i}$는 정형화된 영화간의 관계(Stereotypical movies)를 $\boldsymbol{v}_{i}$는 정형화된 사람간의 관계(Stereotypical viewers)를 보여준다.
 
-![Fig_4.10](assets/images/2020-07-27-MML-04-05-Matrix-Decompositions/Fig_4.10.png){: .align-center}
+<figure align=center>
+<img src="assets/images/LA/Fig_4.10.png" width=70% height=70%/>
+<figcaption>Movie ratings of three people for four movies and its SVD decomposition</figcaption>
+</figure>
 
 Left-singular vector $\boldsymbol{u}_{1}$를 보면, Star Wars, Blade Runner와 같은 Sci-Fi 장르에서 큰 값을 가지고 있음을 볼 수 있다. 따라서 $\boldsymbol{u}_{1}$은 Sci-Fi라는특정 장르를 가리키는 벡터로 추정할 수 있다. $\boldsymbol{v}_{1}$은 Ali와 Beatrix에게서 높은 값을 가리킨다. (Transpose 되어있음에 유의) 즉 $\boldsymbol{v}_{1}$는 Sci-Fi 장를 좋아하는 사람을 가리킨다고 의미를 부여할 수 있다.
 
@@ -331,12 +334,14 @@ $\boldsymbol{u}_{2}$는 Amelie, Delicatessen에 대해서 큰 값을 가지며 S
 
 그리고 사람이 영화를 '어떻게' 평가할 것인지에 대한 정보가 $\boldsymbol{\Sigma}$에 나타나게 된다. 예로, 극단적인 Sci-Fi 매니아라면 Sci-Fi 영화만 좋아하고 다른 장르에 대해서는 0점을 줄 것이다. 이와 같은 논리가 $\boldsymbol{\Sigma}$에 표현된다.
 
-결과적으로, 특정 영화는 정형화된 영화의 선형결합으로 분해되어 표현되고, 같은 방식으로 특정 사람은 영화장르 선호에 의한 선형결합으로써 분해되어 표현된다.
+결과적으로, 특정 영화는 의미를 부여할 때 장르의 선형결합으로 분해되어 표현되고, 같은 방식으로 특정 사람은 영화장르 선호에 의한 선형결합으로써 분해되어 표현된다.
 
-# 6 Conclusion
+## Conclusion
 
-SVD는 Least-squares problems이나 Linear system을 푸는 것은 물론 예제에서와 처럼 추천시스템의 기본 아이디어로 활용할 수도 있다. 주어진 행렬에 대해 낮은 차원의 행렬로 근사시킬 수 있는 성질은 특히 유용하게 활용된다. SVD는 체계적으로 주어진 행렬을 보다 단순한 행렬의 합으로 표현할 수 있기에 (마치 Fourier series나 Power series같은 느낌이랄까) 머신러닝분야에서는 차원축소의 방법이나 클러스터링으로 활용할 수도 있다. SVD는 그 자체로의 의미와 유용성이 크지만 이해하기위해서는 행렬 분해 전반에 대한 개념이해를 필요로 하므로 행렬분해를 공부한다면 최종정리용으로도 손색이 없는 주제이다. 여담이지만 현재 일하고 있는 스타트업에서 Senior레벨 이상면접을 보면 수학적 이해를 묻기 위해 선형대수학과 관련된 질문을 많이 하게되고 같이 일하는 박사님들이 거의 매 면접마다 질문하는 주제인 것을 볼 때, 관련분야에서 면접준비를 한다면 필히 한 번은 정리하고 가야하는 주제가 아닐까 생각한다.
+SVD는 least-squares problems이나 linear system을 푸는 것은 물론 예제에서와 처럼 추천시스템의 기본 아이디어로 활용할 수도 있다. 주어진 행렬에 대해 낮은 차원의 행렬로 근사시킬 수 있는 성질은 특히 유용하게 활용된다. SVD는 주어진 행렬을 단계적으로 보다 단순한 행렬의 합으로 표현할 수 있기에 머신러닝분야에서는 차원축소의 방법이나 clustering으로 활용할 수도 있다. 변환되는 각각의 과정을 일종의 manifold라고 볼 수도 있을 것이다.
 
-# 7 Reference
+여담이지만 전에 일했던 스타트업에서 senior레벨 이상의 면접을 보면 같이 일하는 박사님들께서 선형대수학과 관련된 질문으로 자주 SVD를 면접자분에게 질문하셨었다. 선형대수학이 질문으로 등장할 수 있는 면접준비를 한다면 필히 한 번은 정리하고 가야하는 주제가 아닐까 생각한다.
+
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
