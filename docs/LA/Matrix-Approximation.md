@@ -2,7 +2,7 @@
 
 수학적인 이론을 실제 application에 적용할 때, approximation은 유용한 도구이다. 특히, 컴퓨터로 이론적인 계산값을 완벽하게 재현할 수 있는 경우는 드물기 때문에 approximation을 필연적으로 해야하는 경우가 많다. 따라서 이론적 값과 상황에 따라 필요한 최소한의 오차 이내로 추정하는 것은 중요한 문제이다. 행렬은 그 자체로 변환하는 역할을 한다. 따라서 행렬을 더 낮은 Rank의 행렬의 합으로 표현할 수 있다면 계산상의 이점을 얻을 수 있을 것이다.
 
-## Rank-$k$ approximation
+## Rank-k approximation
 
 SVD는 행렬 $\boldsymbol{A}$를 다음과 같이 factorize한다.
 
