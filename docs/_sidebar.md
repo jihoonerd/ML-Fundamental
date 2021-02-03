@@ -21,5 +21,6 @@
   * [Eigendecomposition and Diagonalization](/LA/Eigendecomposition-and-Diagonalization.md "Eigendecomposition and Diagonalization")
   * [Singular Value Decomposition](/LA/Singular-Value-Decomposition.md "Singular Value Decomposition")
   * [Matrix Approximation](/LA/Matrix-Approximation.md "Matrix Approximation")
+* [Vector Calculus](/VC/README.md "Vector Calculus")
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
