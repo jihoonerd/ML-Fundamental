@@ -23,5 +23,6 @@
   * [Matrix Approximation](/LA/Matrix-Approximation.md "Matrix Approximation")
 * [Vector Calculus](/VC/README.md "Vector Calculus")
   * [Differentiation of Univariate Functions](/VC/Differentiation-of-Univariate-Functions.md)
+  * [Partial Differentiation and Gradients](/VC/Partial-Differentiation-and-Gradients.md)
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
