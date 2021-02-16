@@ -75,11 +75,11 @@ Jacobian은 change-of-variable 기법에서도 중요하게 활용된다. $\bold
 인공지능 학습의 많은 부분은 derivative-based이며 이는 gradient, Jacobian, Hessian과 같은 식들로 표현이 되므로 이 개념들에 대해서는 직관적으로 떠올릴 수 있을만큼 익숙해져야 한다.
 
 
-# 3 Example
+## Example
 
 교재에서는 $\boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{Ax}$, Chain rule, Linear Model에 대한 미분을 예제로 보여준다.
 
-## 3.1 Gradient of a Vector-Valued Function
+### Gradient of a Vector-Valued Function
 
 $$ \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{A} \boldsymbol{x}, \boldsymbol{f}(\boldsymbol{x}) \in \mathbb{R}^{M}, \boldsymbol{A} \in \mathbb{R}^{M \times N}, \boldsymbol{x} \in \mathbb{R}^{N} $$
 
@@ -109,7 +109,7 @@ A_{M1} & \cdots & A_{MN}
 \end{aligned}
 $$
 
-## 3.2 Chain Rule
+### Chain Rule
 
 실수에서 실수로의 함수 $h: \mathbb{R} \rightarrow \mathbb{R}$은 합성함수로 $h(t) = (f \circ g)(t) $이고 다음과 같이 주어졌다.
 
@@ -137,7 +137,7 @@ $$
 \end{aligned}
 $$
 
-## 3.3 Gradient of a Least-Squares Loss in a Linear Model
+### Gradient of a Least-Squares Loss in a Linear Model
 
 여기서는 행렬 미분을 이용해 Least-Square방식을 적용한다.
 
@@ -197,10 +197,10 @@ $$
 
 딥러닝 프레임워크에서 사용하는 auto differentiation 패키지들은 각 node에서의 편미분값을 저장해 전파(propagate) 시킬 수 있어 복잡한 연산에도 용이하게 적용할 수 있다.
 
-# 4 Conclusion
+## Conclusion
 
 이번 포스팅에서는 미분하려는 함수가 벡터인 경우에 어떻게 미분하는지를 살펴보았다. 앞서 언급한 것처럼 실제 계산은 대부분은 패키지에서 수행되므로 "함수와 미분하려는 대상이 모두 벡터라면 이런식으로 되는구나" 정도로 이해해도 논문을 읽거나 구현함에 있어 문제가 없다.
 
-# 5 Reference
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
