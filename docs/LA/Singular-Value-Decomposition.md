@@ -97,18 +97,10 @@ $$
 $$
 
 1. $\boldsymbol{V}^{\top}$이 곱해지면 다음의 연산을 통해 각 점들은 새로운 위치로 이동하게 된다.
-  $$
-  \boldsymbol{V}^{\top}\boldsymbol{x} = 
-  \begin{bmatrix}
-  -0.78 & 0.62 \\
-  -0.62 & -0.78
-  \end{bmatrix}
-  \begin{bmatrix}
-  x_{1} \\
-  x_{2}
-  \end{bmatrix}
-  $$
+  $$\boldsymbol{V}^{\top}\boldsymbol{x} = \begin{bmatrix} -0.78 & 0.62 \\ -0.62 & -0.78 \end{bmatrix} \begin{bmatrix} x_{1} \\ x_{2} \end{bmatrix}$$
+
   결과적으로 위의 변환은 $\mathcal{X}$를 회전시키게된다. 차원은 여전히 2차원임에 유의하자.
+
   <figure align=center>
   <img src="assets/images/LA/Fig_4.9.2.png" width=50% height=50%/>
   <figcaption>Fig 4.9</figcaption>
@@ -213,27 +205,9 @@ $$
 1) Right-singular vectors as the eigen basis of $\boldsymbol{A}^{\top} \boldsymbol{A}$
   
   앞에서 살펴본 바와 같이 Right-singular vector를 구하기 위해서는 $\boldsymbol{A}^{\top} \boldsymbol{A}$에 대해 Eigendecomposition을 하면 된다.
-  $$
-  \begin{aligned}
-  \boldsymbol{A}^{\top} \boldsymbol{A} &=
-  \begin{bmatrix}
-  1 & -2 \\
-  0 & 1 \\
-  1 & 0
-  \end{bmatrix}
-  \begin{bmatrix}
-  1 & 0 & 1 \\
-  -2 & 1 & 0
-  \end{bmatrix} \\
-  &=
-  \begin{bmatrix}
-  5 & -2 & 1 \\
-  -2 & 1 & 0 \\
-  1 & 0 & 1
-  \end{bmatrix}
-  \end{aligned}
-  $$
+  $$\begin{aligned} \boldsymbol{A}^{\top} \boldsymbol{A} &= \begin{bmatrix} 1 & -2 \\ 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 & 1 \\ -2 1 & 0 \end{bmatrix} \\ &= \begin{bmatrix} 5 & -2 & 1 \\ -2 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix}\end{aligned}$$
   이 행렬에 대해 Eigendecomposition을 적용하면 다음과 같다.
+  
   $$
   \begin{aligned}
   \boldsymbol{A}^{\top} \boldsymbol{A} &=
