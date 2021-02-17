@@ -25,5 +25,6 @@
   * [Differentiation of Univariate Functions](/VC/Differentiation-of-Univariate-Functions.md)
   * [Partial Differentiation and Gradients](/VC/Partial-Differentiation-and-Gradients.md)
   * [Gradients of Vector-Valued Functions](/VC/Gradients-of-Vector-Valued-Functions.md)
+  * [Gradients of Matrices](/VC/Gradients-of-matrices.md)
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)

@@ -1,6 +1,5 @@
 # Gradients of Vector-Valued Functions
 
-
 지금까지 다룬 미분은 단변량(Univariate)이든 편미분이든 결국 미분하는 함수는 하나의 실수값을 치역(range)으로 갖는 함수였다. 하지만 머신러닝 모형이 분류문제를 푸는 것을 생각해보면 입력값으로 벡터로 된 정보가 들어오고 출력값은 분류 클래스에 대한 확률과 같은 벡터의 형태로 나오게 된다. 즉, 벡터에서 실수로의 mapping이 아닌 벡터에서 벡터의 mapping을 하는 vector-valued function에 대한 미분을 해야한다. 이번 포스팅에서는 이러한 함수에 대한 미분에 대해 다룬다.
 
 ## Jacobian
