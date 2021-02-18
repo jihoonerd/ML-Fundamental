@@ -33,11 +33,9 @@ $4 \times 2$의 크기를 갖는 행렬 $\boldsymbol{A}$를 크기 $8$의 벡터
 
 이해하기에는 첫번째 방식이 더 쉬우나 실제 컴퓨터를 통한 연산을 할 때는 chain rule을 적용하기가 용이한 두 번째 방식이 선호된다.
 
-===
+## Useful Identities for Computing Gradients
 
-# 2 Useful Identities for Computing Gradients
-
-미적분학의 미분법칙이 있듯이 Vector calculus에도 미분법칙이 있다. 다음은 자주 사용되는 행렬/벡터의 미분공식이다.
+미적분학의 미분법칙이 있듯이 vector calculus에도 미분법칙이 있다. 다음은 자주 사용되는 행렬/벡터의 미분공식이다.
 
 $$
 \begin{aligned}
@@ -54,10 +52,10 @@ $$
 \end{aligned}
 $$
 
-# 4 Conclusion
+## Conclusion
 
-벡터간의 미분을 이번 포스팅에서는 행렬의 미분으로 확장하였다. 행렬이라 하더라도 결국 벡터미분에 적용한 원리를 동일하게 적용하여 개념적으로 크게 다르지는 않다. 또한 행렬을 미분할 때 컴퓨터가 다루기 편하도록 reshape을 한 뒤 벡터의 미분으로 바꾸어 계산한다는 점을 알 수 있었다. 벡터/행렬의 미분은 꽤나 복잡한 형태를 보이고 또 미분공식도 직관적으로 이해하기가 어렵기는 하지만 실무적으로 이러한 미분을 직접하는 일은 없으므로 편하게 받아들여도 될 것 같다. 이후 포스팅에서는 앞서 잠깐 언급된 auto differentiation이 실제로 어떻게 작동하는 지를 살펴본다.
+이번 문서에서는 미분의 범위를 행렬의 미분까지 확장하였다. 행렬이라 하더라도 결국 벡터미분에 적용한 원리를 동일하게 적용하여 개념적으로 크게 다르지는 않다. 또한 행렬을 미분할 때 컴퓨터가 다루기 편하도록 reshape을 한 뒤 벡터의 미분으로 바꾸어 계산한다는 점을 알 수 있었다. 행렬의 미분은 꽤나 복잡한 형태를 보이고 미분공식도 직관적으로 이해하기가 어렵다. 하지만 실무적으로는 auto-differentiation library를 사용하기 때문에 이러한 미분을 직접하는 일은 없으므로 편하게 받아들여도 될 것 같다.
 
-# 5 Reference
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
