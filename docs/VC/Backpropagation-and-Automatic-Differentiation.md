@@ -25,11 +25,9 @@ $$
 
 이제 이러한 문제점들을 해결한 backpropagation algorithm을 알아보자. 참고로 이 backpropagation algorithm은 무려 1960년대 초반에 제시된 알고리즘이다.
 
-===
+## Gradients in a Deep Network
 
-## 1.1 Gradients in a Deep Network
-
-Chain Rule을 적극적으로 활용하는 분야 중 하나가 딥러닝이다. 여러 레이어를 통과하는 딥러닝 방법은 여러 함수의 합성함수로 바라볼 수 있다.
+Chain rule을 적극적으로 활용하는 분야 중 하나가 딥러닝이다. 여러 레이어를 통과하는 딥러닝 방법은 여러 함수의 합성함수로 바라볼 수 있다.
 
 $$
 \begin{aligned}
@@ -40,11 +38,14 @@ $$
 
 그림을 나타내면 다음과 같다.
 
-![Fig_5.8](/assets/images/2020-08-09-MML-05-05-Vector-Calculus/Fig_5.8.png){: .align-center}
+<figure align=center>
+<img src="assets/images/VC/Fig_5.8.png" width=100% height=100%/>
+<figcaption>Fig 5.8</figcaption>
+</figure>
 
-$i$번째 레이어를 통과한 결과는 $ f_{i}(\boldsymbol{x_{i-1}}) = \sigma( \boldsymbol{A}_{i-1} \boldsymbol{x}_{i-1} + \boldsymbol{b}_{i-1}) $로 표현할 수 있다. 여기서 $\sigma$는 Activation function이다. 신경망의 weight을 업데이트하기 위해서는 Loss function $L$의 $\boldsymbol{A}_{j}, \boldsymbol{b}_{j}, j = 1, \ldots, K$에 대한 gradient를 모두 알아야 한다.
+$i$번째 레이어를 통과한 결과는 $ f_{i}(\boldsymbol{x_{i-1}}) = \sigma( \boldsymbol{A}_{i-1} \boldsymbol{x}_{i-1} + \boldsymbol{b}_{i-1}) $로 표현할 수 있다. 여기서 $\sigma$는 activation function이다. 신경망의 weight을 업데이트하기 위해서는 loss function $L$의 $\boldsymbol{A}_{j}, \boldsymbol{b}_{j}, j = 1, \ldots, K$에 대한 gradient를 모두 알아야 한다.
 
-문제를 recursive하게 접근하기위해 위의 식을 아래와 같이 바꾸어보자.
+각 레이어의 계산을 일반적으로 표현하기 위해 위의 식을 아래와 같이 바꾸어보자.
 
 $$
 \begin{aligned}
@@ -53,13 +54,13 @@ $$
 \end{aligned}
 $$
 
-만약, Loss function이 Squared loss라면,
+만약, loss function이 squared loss라면,
 
 $$
 L(\boldsymbol{\theta}) = \lVert \boldsymbol{y} - \boldsymbol{f}_{K}(\boldsymbol{\theta}, \boldsymbol{x}) \rVert^{2}
 $$
 
-을 최소화하면 된다. 그리고 이 때 $ \boldsymbol{\theta} = \\{ \boldsymbol{A}_{0}, \boldsymbol{b}_{0}, \ldots, \boldsymbol{A}_{K-1}, \boldsymbol{b}_{K-1} \\} $이다.
+을 최소화하면 된다. 그리고 이 때 $ \boldsymbol{\theta} = { \boldsymbol{A}_{0}, \boldsymbol{b}_{0}, \ldots, \boldsymbol{A}_{K-1}, \boldsymbol{b}_{K-1} \\} $이다.
 
 이제 $\boldsymbol{\theta}$에 대해 gradient를 계산해주면 된다. $\boldsymbol{\theta}_{j} = \\{\boldsymbol{A}_{j}, \boldsymbol{b}_{j}\\}, j=0,\ldots,K-1$라고 정의하면 각 $\boldsymbol{\theta}$에 대한 gradient는 다음과 같이 계산된다.
 
@@ -72,16 +73,20 @@ $$
 \end{aligned}
 $$
 
-여기서 주황색으로 표시된 항들을 살펴보면 특정 레이어를 이전 레이어에 대한 편미분으로 나타내고 있음을 볼 수 있다. 그리고 가장 오른쪽의 파란색으로 표시된 항은 특정 레이어에 대해서 입력 파라미터 $\boldsymbol{\theta}$로의 편미분값을 나타낸다.
+여기서 주황색으로 표시된 항들을 살펴보면 특정 레이어를 이전 레이어에 대한 편미분으로 나타내고 있음을 볼 수 있다. 그리고 가장 오른쪽의 파란색으로 표시된 항은 레이어에 대해서 입력 파라미터 $\boldsymbol{\theta}$로의 편미분을 나타낸다.
 
-Backpropagation은 가장 마지막 레이어에서부터 순차적으로 계산된다. 
+위 식에서 볼 수 있듯, $\partial L/\partial \boldsymbol{\theta}_{i}$를 계산할 때 대부분의 식은 이전 레이어의 식을 활용하면 된다. 여기서 back propagation은 가장 마지막 레이어에서 input레이어로 전파된다.
 
-![Fig_5.9](/assets/images/2020-08-09-MML-05-05-Vector-Calculus/Fig_5.9.png){: .align-center}
+<figure align=center>
+<img src="assets/images/VC/Fig_5.9.png" width=100% height=100%/>
+<figcaption>Fig 5.9</figcaption>
+</figure>
 
 따라서 $ \frac{\partial L}{\partial \boldsymbol{\theta}_{i+1}} $을 이미 계산했다면 이전 레이어($ \frac{\partial L}{\partial \boldsymbol{\theta}_{i}} $)에 대한 gradient를 계산할때는 위 식의 오른쪽 두 개의 항만 추가로 계산하면 된다. 나머지 항들은 이미 계산된 값을 caching해 바로 사용할 수 있다.
 
-Backpropagation의 미덕은 gradient를 계산함에 있어서 마지막 레이어에서 계산한 gradient값을 재사용하면서 앞의 레이어까지 gradient값을 효율적으로 계산한다는데 있다. 이러한 접근방식을 취하였을 때 explicit하게 매 layer에서 계산하는 것에 비해 압도적으로 계산효율이 좋을 것임을 짐작할 수 있다.
+Backpropagation의 미덕은 gradient를 계산함에 있어서 마지막 레이어에서 계산한 gradient값을 재사용하면서 앞의 레이어까지 gradient값을 효율적으로 계산한다는데 있다.
 
+===
 # 2 Automatic Differentitation
 
 결과적으로 backpropagation은 수치해석학에서 automatic differentitation의 특수한 경우이다. Automatic differentiation은 symbolic(특정 변수에 대해 정확하게 풀어내는 것으로 숫자를 이용하지 않고 $x, y, z$와 같은 변수에 대해 풀어내는 경우가 이에 해당한다)한 접근이 아닌, 수치적으로 풀어낼 수 있는 방법으로 매개변수(intermediate variables)와 chain rule을 사용해 특정 함수의 gradient를 구하는 것을 말한다.
