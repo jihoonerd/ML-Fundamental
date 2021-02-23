@@ -86,37 +86,33 @@ $$
 
 Backpropagation의 미덕은 gradient를 계산함에 있어서 마지막 레이어에서 계산한 gradient값을 재사용하면서 앞의 레이어까지 gradient값을 효율적으로 계산한다는데 있다.
 
-===
-# 2 Automatic Differentitation
+## Automatic Differentitation
 
 결과적으로 backpropagation은 수치해석학에서 automatic differentitation의 특수한 경우이다. Automatic differentiation은 symbolic(특정 변수에 대해 정확하게 풀어내는 것으로 숫자를 이용하지 않고 $x, y, z$와 같은 변수에 대해 풀어내는 경우가 이에 해당한다)한 접근이 아닌, 수치적으로 풀어낼 수 있는 방법으로 매개변수(intermediate variables)와 chain rule을 사용해 특정 함수의 gradient를 구하는 것을 말한다.
 
-예를 들어 $x, y$가 매개변수 $a, b$로 표현되어있다고 해보자. 이 때, $\frac{dy}{dx}$는 chain rule을 사용해 다음과 같이 표현할 수 있다.
+예를 들어 $x, y$가 매개변수 $a, b$로 표현되어있다고 해보자. 
 
-![Fig_5.10](/assets/images/2020-08-09-MML-05-05-Vector-Calculus/Fig_5.10.png){: .align-center}
+<figure align=center>
+<img src="assets/images/VC/Fig_5.10.png" width=50% height=50%/>
+<figcaption>Fig 5.10</figcaption>
+</figure>
 
-
+이 때, $\frac{dy}{dx}$는 chain rule을 사용해 다음과 같이 표현할 수 있다.
 $$
 \frac{dy}{dx} = \frac{dy}{db} \frac{db}{da} \frac{da}{dx}
 $$
-
-이 때, 계산방향에 따라 forward mode와 reverse mode를 정의할 수 있고 associativity가 성립하므로 forward mode는
-
+계산방향에 따라 forward mode와 reverse mode를 정의할 수 있고 associativity가 성립하므로 forward mode는 다음과 같이 나타낼 수 있다.
 $$
 \frac{dy}{dx} = \frac{dy}{db} \left( \frac{db}{da} \frac{da}{dx} \right)
 $$
-
-backward mode는
-
+Reverse mode는 다음과 같다.
 $$
 \frac{dy}{dx} = \left( \frac{dy}{db} \frac{db}{da} \right) \frac{da}{dx}
 $$
 
-의 순서로 계산된다.
+Gradient의 계산은 reverse mode를 따라가면 된다. 그렇다고 해서 forward mode로 계산을 할 수 없는 것은 아니다. Forward mode에서도 계산값을 재사용하며 gradient를 계산할 수 있다. 다만 대부분의 경우 입력레이어의 차원은 출력레이어의 차원보다 훨씬 크다. 가능한한 이미 계산한 결과를 많이 재사용해야 효율적임을 감안할 때, reverse mode가 선호되는 것이다.
 
-Gradient의 계산은 backward mode를 따라가면 된다. 그렇다고 해서 forward mode로 계산을 할 수 없는 것은 아니다. Forward mode에서도 계산값을 재사용하며 gradient를 계산할 수 있다. 다만 대부분의 경우 입력레이어의 차원은 출력레이어의 차원보다 훨씬 크다. 가능한한 이미 계산한 결과를 많이 재사용해야 효율적임을 감안할 때, backward mode가 선호되는 것이다.
-
-## 2.1 Example
+### Example
 
 다음은 computation graph를 활용해 실제 automatic differentiation이 어떻게 일어나는지를 설명하는 예제다. 예제로 제시된 함수는 이번 포스팅의 제일 처음 소개된 함수 $f$와 동일한 함수이며 교재 예제 5.14에 해당한다.
 
@@ -139,11 +135,12 @@ $$
 
 식 기준으로 가장 바깥에서 부터 안쪽으로 점점 작은 단위의 매개변수를 선언한다고 보면된다. 위의 과정은 computation graph로 표현할 때 다음과 같다.
 
-![Fig_5.11](/assets/images/2020-08-09-MML-05-05-Vector-Calculus/Fig_5.11.png){: .align-center}
+<figure align=center>
+<img src="assets/images/VC/Fig_5.11.png" width=100% height=100%/>
+<figcaption>Fig 5.11</figcaption>
+</figure>
 
-여기서의 computation graph가 바로 TensorFlow에서 표현되는 graph의 원리이다.
-
-구현측면에 있어서 이를 더 깊게 이해해야 하는데, TensorFlow에서 계산을 빠르게 하기 위해서는 이 Graph를 이용해야 한다. 재사용할 graph를 컴파일하고 이 그래프를 반복해 이용하면서 계산을 효과적으로 할 수 있어야 한다. 하지만 간혹 warning으로 그래프를 너무 많이 형성한다고 나올 때가 있는데, 이는 재사용하여야 하는 graph가 구현상의 실수로 매번 새로운 graph를 만들게 되었을 때 주로 발생한다. 한 번 컴파일하고 이를 데이터 값만 다르게 재사용해야 효율적인 계산이 가능한데 매번 그래프를 새로 컴파일해야한다면 매우 비효율적이게 된다.
+구현측면에 있어서 이를 더 깊게 이해해야 한다.TensorFlow나 PyTorch에서 계산을 빠르게 하기 위해서는 이 Graph를 이용하게 된다. PyTorch는 dynamic graph를 사용하지만 TensorFlow는 static graph를 사용하므로 TensorFlow에서는 계산에서 사용할 graph를 컴파일하고 이 그래프를 반복해 이용하면서 계산을 빠르게 하게 된다. TensorFlow 코드를 작성할 때 warning으로 그래프를 너무 많이 형성한다고 나올 때가 있는데, 이는 재사용하여야 하는 graph가 구현상의 실수로 매번 새로운 graph를 만들게 되었을 때 주로 발생한다. 한 번 컴파일하고 이를 데이터 값만 다르게 재사용해야 하는데 매번 새로운 그래프를 만들도록 프로그래밍 되는게 자주 발생하는 실수 중 하나이다.
 
 이제 위의 computation graph를 보면서 인접한 두 node의 편미분 식을 정리하면 다음과 같다.
 
@@ -169,9 +166,9 @@ $$
 \end{aligned}
 $$
 
-이제 앞에서 계산한 값들을 대입하기만 하면 목표로 했던 $\frac{\partial f}{\partial x}$를 계산할 수 있다. 보기에는 explicit하게 계산하는 것이 더 간단해 보이지만 컴퓨터로 계산할 때는 chain rule을 사용한 computation graph 방식이 압도적으로 효율적이다. 그리고 computation graph를 살펴보면 대부분의 계산 결과가 사용되는 미덕을 볼 수 있다.
+이제 앞에서 계산한 값들을 대입하기만 하면 목표로 했던 $\frac{\partial f}{\partial x}$를 계산할 수 있다. 보기에는 explicit하게 계산하는 것이 더 간단해 보이지만 컴퓨터로 계산할 때는 chain rule을 사용한 computation graph 방식이 훨씬 효율적이다. 그리고 computation graph를 살펴보면 대부분의 계산 결과가 사용되는 미덕을 볼 수 있다.
 
-## 2.2 Formalization of Automatic Differentitation
+## Formalization of Automatic Differentitation
 
 이제 위의 결과를 바탕으로 일반화를 해보자. 입력변수가 $ x_{1}, \ldots, x_{d} $이고, $x_{d+1}, \ldots, x_{D-1}$이 매개변수, 그리고 $x_{D}$가 출력변수라고 해보자.
 
@@ -193,12 +190,12 @@ $$
 \frac{\partial f}{\partial x_{i}} = \sum_{x_{j}:x_{i} \in \text{Pa}(x_{j})} \frac{\partial f}{\partial x_{j}} \frac{\partial x_{j}}{\partial x_{i}} = \sum_{x_{j}:x_{i} \in \text{Pa}(x_{j})} \frac{\partial f}{\partial x_{j}} \frac{\partial g_{j}}{\partial x_{i}}
 $$
 
-Computation graph의 강점은 어떠한 함수이던 computation graph 형태로 표현만 할 수 있고 elementary function이 미분가능한 형태라면, 같은 원리로 gradient를 구할 수 있다는 것이다.
+Computation graph의 강점은 어떠한 함수이던 computation graph 형태로 표현만 할 수 있고 elementary function이 미분가능한 형태라면, gradient를 구할 수 있다는 것이다.
 
-# 3 Conclusion
+## Conclusion
 
 이번 장에서는 backpropagation과 automatic differentiation에 대해 다루었다. 이 개념들은 딥러닝이 어떻게 학습하는 지를 설명해주는 개념들로 직접 계산할 일은 드물겠지만 딥러닝의 학습원리에 관한 내용이므로 반드시 알아둘 필요가 있다.
 
-# 4 Reference
+## Reference
 
 * Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
