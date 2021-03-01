@@ -27,5 +27,6 @@
   * [Gradients of Vector-Valued Functions](/VC/Gradients-of-Vector-Valued-Functions.md)
   * [Gradients of Matrices](/VC/Gradients-of-matrices.md)
   * [Backpropagation and Automatic Differentiation](/VC/Backpropagation-and-Automatic-Differentiation.md)
+  * [Higher-Order Derivatives](/VC/Higher-Order-Derivatives.md)
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)
