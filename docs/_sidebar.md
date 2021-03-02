@@ -28,5 +28,6 @@
   * [Gradients of Matrices](/VC/Gradients-of-matrices.md)
   * [Backpropagation and Automatic Differentiation](/VC/Backpropagation-and-Automatic-Differentiation.md)
   * [Higher-Order Derivatives](/VC/Higher-Order-Derivatives.md)
+  * [Linearization and Multivariate Taylor Series](/VC/Linearization-and-Multivariate-Taylor-Series.md)
 * [Probability and Statistics](/PS/README.md)
   * [test](/PS/test.md)

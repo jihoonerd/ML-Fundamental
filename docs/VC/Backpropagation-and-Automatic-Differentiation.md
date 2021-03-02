@@ -198,4 +198,4 @@ Computation graph의 강점은 어떠한 함수이던 computation graph 형태�
 
 ## Reference
 
-* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
+* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathemati0cs for machine learning. Cambridge, United Kingdom: Cambridge University Press.
