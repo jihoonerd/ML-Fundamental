@@ -30,4 +30,4 @@
   * [Higher-Order Derivatives](/VC/Higher-Order-Derivatives.md)
   * [Linearization and Multivariate Taylor Series](/VC/Linearization-and-Multivariate-Taylor-Series.md)
 * [Probability and Distributions](/PD/README.md)
-  * [test](/PS/test.md)
+  * [Construction of a Probability Space](/PD/Construction-of-a-Probability-Space.md)
