@@ -16,3 +16,15 @@
    3. Reproducibility: 두 가지 문제에 대해 같은 지식을 갖고 있다면 같은 가능성을 부여한다.
 
 이 Cox-Jaynes theorem에서 정의한 가능성에 대한 정의로 가능성 $p$와 이에 대한 임의의 단조함수에 의한 변환까지도 수학적으로 충분히 다룰 수 있음을 보였다.
+
+## Probability and Random Variable
+
+교재에서는 확률과 관련하여 다음의 세가지 구분되는 개념이 혼용되며 사용되고 있다고 말한다.
+
+1. Probability Space
+2. Random Variable
+3. Distribution / Law associated with a random variable
+
+따라서 확률과 분포를 다루는 문서의 목표 중 하나는 위 세가지 개념을 명확히 구분하는 것이다.
+
+우선 확률을 다루는 공간에 대해 살펴보자. 현대 수학에서 사용하는 확률의 개념은 Kolmogorov가 제시한 **sample space, event space, probability measure**, 세 가지 공리에 기초하고 있다. 확률공간(Probability Space)은  random outcome을 만들어내는 real-world process에 대해 다룬다. 
