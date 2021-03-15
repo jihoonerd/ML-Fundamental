@@ -49,3 +49,5 @@ $$\begin{aligned}
 X(hh) = 2 \\ X(ht) = 1 \\ X(th) = 1 \\ X(tt) = 0
 \end{aligned}$$
 Target space $\mathcal{T}$는 $\mathcal{T} = \{0, 1, 2\}$이고 $\mathcal{T}$의 원소의 확률, 즉 앞면이 나오지 않거나, 한 번, 또는 두 번 나올 확률이 우리가 관심있는 대상인 것이다. Sample space $\Omega$와 target space $\mathcal{T}$가 유한집합이라면 random variable함수는 lookup table이 된다. Target space의 부분집합 $S \subseteq \mathcal{T}$에 대해서 random variable $X$에 대한 특정 사건($S$)이 일어날 확률을 엄밀하게 $P_{X}(S) \in [0, 1]$로 표현한다.
+
+## 
