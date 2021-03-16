@@ -50,4 +50,16 @@ X(hh) = 2 \\ X(ht) = 1 \\ X(th) = 1 \\ X(tt) = 0
 \end{aligned}$$
 Target space $\mathcal{T}$는 $\mathcal{T} = \{0, 1, 2\}$이고 $\mathcal{T}$의 원소의 확률, 즉 앞면이 나오지 않거나, 한 번, 또는 두 번 나올 확률이 우리가 관심있는 대상인 것이다. Sample space $\Omega$와 target space $\mathcal{T}$가 유한집합이라면 random variable함수는 lookup table이 된다. Target space의 부분집합 $S \subseteq \mathcal{T}$에 대해서 random variable $X$에 대한 특정 사건($S$)이 일어날 확률을 엄밀하게 $P_{X}(S) \in [0, 1]$로 표현한다.
 
-## 
+## Statistics
+
+'확률'과 '통계'는 엄밀하게는 불확실성이라는 주제에 대해 각각 다른 측면을 다룬다. 확률에서는 확률과정(process)의 모델링을 다룬다. Random variable에 의해 나타나는 불확실성에 대해 확률이론을 사용해서 어떤 일이 일어나고 있는건지를 밝히는 것이다. 반면 통계에서는 이미 일어난 현상을 보고 그러한 현상을 만들어 낸 확률과정을 밝혀내는 것이 목적이다. 전자가 확률법칙을 통해 어떤 확률과정인지를 모델링한다면 후자는 어떤 확률과정이 이러한 현상을 만들었을지를 밝힌다. 이런 측면에서 머신러닝은 데이터를 보고 학습해 데이터를 잘 설명하는 모델을 찾는다는 점에서 통계에 가깝다고 할 수 있다.
+
+머신러닝 시스템은 generalization error 관점에서도 생각해볼 수 있다. 많은 경우 우리는 머신러닝 시스템의 예측성능에 관심이 있다. 그리고 이 예측은 당연하게도 아직 시스템이 보지 못한 데이터들이다. 보지 못한 데이터에 대한 성능을 분석하는 것은 그 자체로 확률과 통계이론을 사용하게 된다. 통계와 관련해서는 교재 8단원에서 보다 자세하게 다룬다고 언급하고 있다.
+
+## Conclusion
+
+여기서는 확률론에서 사용하는 기본 정의에 대해 알아보았다. 다른 내용보다도 sample space, event space, probability 이 세가지에 대해서 명확하게 이해하면 충분하다고 생각한다.
+
+## Reference
+
+* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
