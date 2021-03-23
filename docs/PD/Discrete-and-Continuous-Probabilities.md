@@ -20,7 +20,28 @@ $n_{ij}$는 $x_{i}, y_{i}$가 발생한 횟수이며 $N$은 모든 event의 횟�
 $$P\left(X=x_{i}, Y=y_{j}\right)=P\left(X=x_{i} \cap Y=y_{j}\right)$$
 이러한 discrete한 random variable의 확률 분포를 **probability mass function**이라고 한다. 그리고 $p(x,y)$를 joint probability라고 한다. 이를 함수처럼 $x, y$를 인자로 받아 실수인 확률을 반환하는 함수로 바라볼 수도 있다.
 
-**Marginal probability** $p(x)$는 random variable $Y$에 상관없이 $X=x$가 일어날 확률이다. 또한 random variable $X$가 확률분포 $p(x)$를 따르고 있따면 $X \sim p(x)$로 표현한다. $Y=y$일 때의 $X=x$의 확률을 conditional probability라고 하며 $p(y\mid x)$로 표현한다.
+**Marginal probability** $p(x)$는 random variable $Y$에 상관없이 $X=x$가 일어날 확률이다. 또한 random variable $X$가 확률분포 $p(x)$를 따르고 있따면 $X \sim p(x)$로 표현한다. $Y=y$일 때의 $X=x$의 확률을 **conditional probability**라고 하며 $p(y\mid x)$로 표현한다.
 
+## Continuous Probabilities
 
-## Continuous PRobabilities
+Target space가 실수 $\mathbb{R}$일 때의 continuous probability에 대해 알아보자. 엄밀한 정의를 위해서는 집합의 크기인 measure와 Borel $\sigma$-algebra까지 다루어야 하지만 여기서는 연속확률 자체보다는 성질과 활용을 다루므로 책에서 다루는 실수 random variable은 Borel $\sigma$ algebra에 해당한다는 내용정도만 받아들이고 이후 내용을 다루어보자.
+
+> [!NOTE]
+>
+> **Definition: Probability Density Function** 다음을 만족하는 $f: \mathbb{R}^{D} \rightarrow \mathbb{D}$를 pdf라고 한다.
+> * $\forall \boldsymbol{x} \in \mathbb{R}^{D} : f(\boldsymbol{x}) \geqslant 0$
+> * $\int_{\mathbb{R}^{D}} f(\boldsymbol{x}) d \boldsymbol{x} = 1$
+
+pdf는 양수를 함수값으로 가지며 전체구간의 적분이 1이되는 함수임을 알 수 있다. $a, b \in \mathbb{R}, x \in \mathbb{R}$이고 $X$가 연속인 random variable이면 다음이 성립한다.
+$$P(a \leqslant X \leqslant b) = \int_{a}^{b} f(x) dx$$
+Discrete random variable과는 다르게 특정한 random variable $P(X=x)$은 0이다.
+
+> [!NOTE]
+> 
+> **Definition: Cumulative Distribution Function**: real-valued random valriable $X$에 대해서 각 상태가 $D$ 차원으로 $\boldsymbol{x} \in \mathbb{R}^{D}$일때, cumulative distribution function은 다음과 같다.
+> $$F_{X}(\boldsymbol{x}) = P(X_{1} \leqslant x_{1}, \ldots, x_{D} \leqslant x_{D})$$
+
+cdf는 적분으로 표현하면 아래와 같이 된다.
+$$F_{X}(\boldsymbol{x})=\int_{-\infty}^{x_{1}} \cdots \int_{-\infty}^{x_{D}} f\left(z_{1}, \ldots, z_{D}\right) \mathrm{d} z_{1} \cdots \mathrm{d} z_{D}$$
+
+## Contrasting Discrete and Continuous Distributions
