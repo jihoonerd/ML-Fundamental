@@ -45,3 +45,25 @@ cdf는 적분으로 표현하면 아래와 같이 된다.
 $$F_{X}(\boldsymbol{x})=\int_{-\infty}^{x_{1}} \cdots \int_{-\infty}^{x_{D}} f\left(z_{1}, \ldots, z_{D}\right) \mathrm{d} z_{1} \cdots \mathrm{d} z_{D}$$
 
 ## Contrasting Discrete and Continuous Distributions
+
+확률은 양수의 값을 가지며 총 합은 1이 되어야 한다. 따라서 discrete random variable은 각각의 state가 $[0, 1]$에 있지만 continuous random variable은 전체적분값이 1이되면 될 뿐 pdf는 1보다 큰 값을 가질 수도 있다.
+
+<figure align=center>
+<img src="assets/images/PD/Fig_6.3.png" width=100% height=100%/>
+<figcaption>Fig 6.3</figcaption>
+</figure>
+
+교재에서 discrete과 continuous random variable에 대해서 깔끔하게 표로 정리해주고 있다.
+
+|Type|Point Probability|Interval Probability|
+|---|---|---|
+|Discrete|$P(X=x)$: pmf|Not Applicable|
+|Continous|$p(x)$: pdf|$P(X\leqslant x)$: cdf|
+
+## Conclusion
+
+Discrete probability와 continuous probability에 대해 알아보았다.엄밀하게는 분명 구분되는 개념이고 명명법도 따로 있지만 저자가 언급하듯, 머신러닝에서는 이 둘을 기술적으로 아주 정확하게 사용하지는 않고 문맥에 어느정도 의존하고 있다. 이해하는데 큰 문제가 없는 선에서 용어가 다소 혼재할 수 있음을 인지하고 교재를 보면 좋다.
+
+## Reference
+
+* Deisenroth, M. P., Faisal, A. A., & Ong, C. S. (2020). Mathematics for machine learning. Cambridge, United Kingdom: Cambridge University Press.
