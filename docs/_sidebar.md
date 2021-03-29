@@ -32,3 +32,4 @@
 * [Probability and Distributions](/PD/README.md)
   * [Construction of a Probability Space](/PD/Construction-of-a-Probability-Space.md)
   * [Discrete and Continuous Probabilities](/PD/Discrete-and-Continuous-Probabilities.md)
+  * [Sum Rule, Product Rule, and Bayes' Theorem](/PD/Sum-Rule-Product-Rule-and-Bayes-Theorem.md)
